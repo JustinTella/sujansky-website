@@ -1,0 +1,225 @@
+import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
+import { MapPin, Phone, Clock, Mail, ArrowRight } from 'lucide-react';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
+import ContactForm from '@/components/ContactForm';
+import MapEmbed from '@/components/MapEmbed';
+import officeImage from '@/assets/backround.jpg';
+import drPortrait from '@/assets/Rika+in+brown+blouse (1).webp';
+import shawnaPortrait from '@/assets/image-asset (4).webp';
+import kimPortrait from '@/assets/Kim (1).webp';
+
+function HomePage() {
+  const teamMembers = [
+    { name: 'Dr. Ulrike Sujansky', image: drPortrait, role: 'Physician' },
+    { name: 'Shawna Guzman', image: shawnaPortrait, role: 'Office Manager' },
+    { name: 'Kim J.', image: kimPortrait, role: 'Medical Assistant' }
+  ];
+
+  return (
+    <>
+      <Header />
+      <main>
+        {/* HERO - office building background */}
+        <section className="relative flex min-h-[88vh] items-end overflow-hidden pb-12 pt-28 md:pb-20 md:pt-32">
+          <div className="absolute inset-0 z-0">
+            <img
+              src={officeImage}
+              alt="Office at 34 North San Mateo Drive"
+              className="h-full w-full scale-[1.14] object-cover object-[42%_38%]"
+            />
+            <div className="absolute inset-0 bg-[linear-gradient(110deg,rgba(16,30,52,0.56)_0%,rgba(16,30,52,0.38)_30%,rgba(16,30,52,0.12)_56%,rgba(16,30,52,0.02)_100%)]" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(214,171,83,0.14),transparent_35%),radial-gradient(circle_at_bottom_left,rgba(255,255,255,0.06),transparent_30%)]" />
+          </div>
+          <div className="relative z-10 mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+              className="relative max-w-3xl"
+            >
+              <div className="pointer-events-none absolute -inset-x-6 -inset-y-8 bg-[radial-gradient(circle_at_left_center,rgba(16,30,52,0.5)_0%,rgba(16,30,52,0.34)_38%,rgba(16,30,52,0.14)_62%,transparent_82%)] blur-xl md:-inset-x-10 md:-inset-y-10" />
+              <div className="mt-5 px-1 md:px-2">
+                <p className="mb-4 text-lg font-semibold uppercase tracking-[0.18em] text-[#f1d06f] drop-shadow-[0_2px_10px_rgba(15,23,42,0.6)] md:text-xl">
+                  Partnering in Your Health
+                </p>
+                <h1 className="mb-2 text-5xl font-semibold leading-[0.95] tracking-[-0.03em] text-white drop-shadow-[0_3px_18px_rgba(15,23,42,0.45)] md:text-6xl lg:text-7xl">
+                  Ulrike Sujansky, M.D.
+                </h1>
+                <p className="mb-2 text-4xl font-medium italic leading-none tracking-[-0.02em] text-white/95 drop-shadow-[0_3px_16px_rgba(15,23,42,0.42)] md:text-5xl">
+                  Concierge Medicine
+                </p>
+                <p className="mb-5 text-3xl font-medium italic leading-none text-white/95 drop-shadow-[0_3px_16px_rgba(15,23,42,0.42)] md:text-4xl">
+                  San Mateo, CA
+                </p>
+                <div className="space-y-1 text-lg text-white/95 drop-shadow-[0_2px_10px_rgba(15,23,42,0.45)] md:text-[1.45rem]">
+                  <p className="flex items-center gap-2">
+                    <MapPin className="h-5 w-5 text-gold" />
+                    34 North San Mateo Drive, Suite 1
+                  </p>
+                  <p className="flex items-center gap-2">
+                    <Phone className="h-5 w-5 text-gold" />
+                    (650) 393-5851
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* OVERVIEW */}
+        <section className="bg-white py-20 md:py-28">
+          <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 items-start gap-16 lg:grid-cols-2">
+              <motion.div
+                initial={{ opacity: 0, y: 16, filter: 'blur(4px)' }}
+                whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+              >
+                <h2 className="mb-6 text-2xl font-bold leading-snug tracking-tight text-navy md:text-3xl">What is Concierge Medicine?</h2>
+                <p className="mb-4 text-[15px] leading-relaxed text-foreground/80">Concierge medicine represents a return to the traditional doctor-patient relationship, where your physician has the time to truly know you and your health needs. Through an annual membership, you gain direct access to Dr. Sujansky, same-day or next-day appointments, and comprehensive care that goes beyond the constraints of traditional insurance-based medicine.</p>
+                <p className="mb-8 text-[15px] leading-relaxed text-foreground/80">This model allows for longer appointments, proactive health planning, and a genuine partnership in maintaining your wellbeing.</p>
+                <Link to="/services" className="inline-flex items-center text-sm font-semibold uppercase tracking-wider text-gold transition-colors hover:text-navy">
+                  View Our Services <ArrowRight className="ml-1.5 h-4 w-4" />
+                </Link>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 16, filter: 'blur(4px)' }}
+                whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+                className="grid grid-cols-2 gap-5"
+              >
+                {[
+                  { title: 'Direct Access', desc: '24/7 communication with your physician via phone or email.', accent: 'border-t-gold' },
+                  { title: 'More Time', desc: 'Extended, unhurried visits to address all your concerns.', accent: 'border-t-steely-blue' },
+                  { title: 'Proactive Care', desc: 'Focus on prevention, wellness, and long-term health optimization.', accent: 'border-t-steely-blue' },
+                  { title: 'Coordination', desc: 'Seamless specialist referrals and hospital care management.', accent: 'border-t-gold' }
+                ].map((card, i) => (
+                  <div key={i} className={`border border-navy/70 border-t-[3px] bg-white p-5 ${card.accent}`}>
+                    <h3 className="mb-2 text-base font-semibold text-navy">{card.title}</h3>
+                    <p className="text-xs leading-relaxed text-foreground/60">{card.desc}</p>
+                  </div>
+                ))}
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
+        {/* TEAM */}
+        <section className="bg-light-gray py-20 md:py-28">
+          <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 16, filter: 'blur(4px)' }}
+              whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+              className="mb-14 text-center"
+            >
+              <p className="mb-3 text-sm font-medium uppercase tracking-[0.18em] text-gold">Our Practice</p>
+              <h3 className="text-2xl font-bold tracking-tight text-navy md:text-3xl">Meet Our Team</h3>
+              <div className="mx-auto mt-4 h-px w-24 bg-gradient-to-r from-transparent via-gold to-transparent" />
+            </motion.div>
+            <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+              {teamMembers.map((member, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 16, filter: 'blur(4px)' }}
+                  whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  transition={{ duration: 0.6, delay: index * 0.08, ease: [0.16, 1, 0.3, 1] }}
+                  className="group border border-navy/12 bg-white/80 p-4 shadow-[0_12px_30px_rgba(15,23,42,0.05)]"
+                >
+                  <div className="mb-5 overflow-hidden border border-navy/15">
+                    <img src={member.image} alt={`${member.name}, ${member.role}`} className="h-72 w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.02]" />
+                  </div>
+                  <div className="border-t border-gold/40 pt-4 text-center">
+                    <p className="text-base font-semibold text-navy">{member.name}</p>
+                    <p className="mt-1 text-sm tracking-[0.08em] text-steely-blue">{member.role}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+            <div className="mt-12 text-center">
+              <Link to="/about" className="inline-flex items-center justify-center border border-navy px-6 py-2.5 text-sm font-medium uppercase tracking-wider text-navy transition-colors duration-200 hover:bg-navy hover:text-white active:scale-[0.97]">
+                Learn More About Us
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* CONTACT */}
+        <section className="bg-white py-20 md:py-28">
+          <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 16, filter: 'blur(4px)' }}
+              whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+              className="mb-14 text-center"
+            >
+              <h2 className="text-2xl font-bold tracking-tight text-navy md:text-3xl">Get in Touch</h2>
+              <p className="mt-2 text-sm text-foreground/60">We look forward to partnering in your health.</p>
+            </motion.div>
+            <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
+              <motion.div
+                initial={{ opacity: 0, y: 16, filter: 'blur(4px)' }}
+                whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+                className="h-[400px] overflow-hidden border border-navy/70"
+              >
+                <MapEmbed />
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 16, filter: 'blur(4px)' }}
+                whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.6, delay: 0.08, ease: [0.16, 1, 0.3, 1] }}
+                className="border border-navy/70 bg-light-gray p-6"
+              >
+                <h3 className="mb-5 border-b border-gray-200 pb-3 text-lg font-semibold text-navy">Send a Message</h3>
+                <ContactForm />
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 16, filter: 'blur(4px)' }}
+                whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.6, delay: 0.16, ease: [0.16, 1, 0.3, 1] }}
+                className="space-y-6"
+              >
+                <div className="border border-navy/70 bg-white p-6">
+                  <h4 className="mb-4 flex items-center gap-2 border-b border-gray-100 pb-3 font-semibold text-navy">
+                    <MapPin className="h-4 w-4 text-gold" /> Contact Information
+                  </h4>
+                  <p className="mb-4 text-sm leading-relaxed text-foreground/80">34 North San Mateo Drive<br />Suite 1<br />San Mateo, CA 94401</p>
+                  <div className="space-y-2">
+                    <p className="flex items-center gap-2 text-sm text-foreground/80"><Phone className="h-3.5 w-3.5 text-steely-blue" /><span className="font-medium text-navy">Phone:</span> (650) 393-5851</p>
+                    <p className="flex items-center gap-2 text-sm text-foreground/80"><Mail className="h-3.5 w-3.5 text-steely-blue" /><span className="font-medium text-navy">Fax:</span> (650) 393-5871</p>
+                  </div>
+                </div>
+                <div className="border border-navy/70 bg-white p-6">
+                  <h4 className="mb-4 flex items-center gap-2 border-b border-gray-100 pb-3 font-semibold text-navy">
+                    <Clock className="h-4 w-4 text-gold" /> Office Hours
+                  </h4>
+                  <div className="space-y-2.5 text-sm text-foreground/80">
+                    <div className="flex justify-between"><span className="font-medium text-navy">Mon - Fri</span><span>9:00am - 5:00pm</span></div>
+                    <div className="flex justify-between"><span className="font-medium text-navy">Sat - Sun</span><span className="text-foreground/50">Closed</span></div>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        </section>
+      </main>
+      <Footer />
+    </>
+  );
+}
+
+export default HomePage;

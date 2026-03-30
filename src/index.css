@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: "EB Garamond", Garamond, "Times New Roman", serif;
+  overflow-x: clip;
+  background-color: hsl(var(--light-gray));
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@layer base {
+  :root {
+    --background: 30 8% 95%;
+    --foreground: 221 47% 20%;
+    
+    --card: 0 0% 100%;
+    --card-foreground: 221 47% 20%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 221 47% 20%;
+    
+    --primary: 221 47% 20%;
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 37 55% 51%;
+    --secondary-foreground: 0 0% 100%;
+    
+    --muted: 210 20% 90%;
+    --muted-foreground: 221 20% 45%;
+    
+    --accent: 208 27% 54%;
+    --accent-foreground: 0 0% 100%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 221 47% 20%;
+    
+    --radius: 0.5rem;
+
+    --navy: 221 47% 20%;
+    --gold: 37 55% 51%;
+    --steely-blue: 208 27% 54%;
+    --light-gray: 30 8% 95%;
+    --dark-blue-gray: 210 25% 35%;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html,
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  button,
+  input,
+  select,
+  textarea {
+    font: inherit;
+  }
+}
+
+@layer utilities {
+  .text-navy { color: hsl(var(--navy)); }
+  .text-gold { color: hsl(var(--gold)); }
+  .text-steely-blue { color: hsl(var(--steely-blue)); }
+  
+  .bg-navy { background-color: hsl(var(--navy)); }
+  .bg-gold { background-color: hsl(var(--gold)); }
+  .bg-light-gray { background-color: hsl(var(--light-gray)); }
+  .bg-steely-blue { background-color: hsl(var(--steely-blue)); }
+  .bg-dark-blue-gray { background-color: hsl(var(--dark-blue-gray)); }
+  
+  .border-navy { border-color: hsl(var(--navy)); }
+  .border-gold { border-color: hsl(var(--gold)); }
+  .border-steely-blue { border-color: hsl(var(--steely-blue)); }
+  
+  .text-balance { text-wrap: balance; }
+
+  .card-hover {
+    @apply rounded-lg border border-gray-300 shadow-sm transition-all duration-200 hover:shadow-md hover:border-gray-400;
+  }
+  
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .testimonial-marquee {
+    animation: testimonial-marquee 225s linear infinite;
+  }
+
+  .testimonial-marquee-paused {
+    animation-play-state: paused;
+  }
+}
+
+@keyframes testimonial-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
