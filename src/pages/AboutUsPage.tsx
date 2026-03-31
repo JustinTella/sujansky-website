@@ -89,7 +89,7 @@ function AboutUsPage() {
 
     let frameId = 0;
     let lastTime = 0;
-    const speed = 15;
+    const speed = 24;
 
     const animate = (time: number) => {
       if (!lastTime) lastTime = time;
@@ -163,9 +163,7 @@ function AboutUsPage() {
                       <Link to={member.linkTo}>{member.cta}</Link>
                     </Button>
                   ) : (
-                    <Button variant="outline" className="border border-navy text-navy hover:bg-navy hover:text-white transition-colors duration-200 active:scale-[0.98] px-5 py-2 text-sm rounded-none uppercase tracking-wide">
-                      {member.cta}
-                    </Button>
+                    <div className="h-10" aria-hidden="true" />
                   )}
                 </motion.div>
               ))}
@@ -301,7 +299,7 @@ function AboutUsPage() {
                     <span className="text-lg font-bold text-navy">4.5</span>
                     <div className="flex">{[...Array(5)].map((_, i) => <Star key={i} className="w-5 h-5 fill-gold text-gold" />)}</div>
                   </div>
-                  <a href="https://www.google.com/search?sca_esv=eafbc91c2287ff45&sxsrf=ANbL-n7zYoYCVuwobdYNd9hVb5LOYO4ryg:1774860479618&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOcTTgu3tm9hf_H12Wuru3cecKFo8cipsabK_aX5by-m9_Q_vpHYIqXy_29F97m2Z7ZW3v17mI4mOXUPwCORTZ7NKGZNmIBSdTd5O2XKbEaUmSpOJ6g%3D%3D&q=Ulrike+Sujansky,+MD+Reviews&sa=X&ved=2ahUKEwi0iKfDnseTAxWeITQIHc-YDPEQ0bkNegQILhAH&biw=1707&bih=842&dpr=1.13" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-6 py-2.5 bg-navy text-white font-medium hover:bg-steely-blue transition-colors duration-200 w-full text-sm uppercase tracking-wide active:scale-[0.98]">Review Us on Google</a>
+                  <a href="https://www.google.com/maps/place/Ulrike+Sujansky,+MD/@37.568004,-122.3289013,796m/data=!3m1!1e3!4m8!3m7!1s0x808f9e76eab22fc9:0x16272bd44374ea91!8m2!3d37.568004!4d-122.326321!9m1!1b1!16s%2Fg%2F11bv33mb38?entry=ttu&g_ep=EgoyMDI2MDMyNC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-6 py-2.5 bg-navy text-white font-medium hover:bg-steely-blue transition-colors duration-200 w-full text-sm uppercase tracking-wide active:scale-[0.98]">Review Us on Google</a>
                   <div className="mt-5 flex h-[220px] items-center justify-center overflow-hidden border border-gray-200 bg-white shadow-sm">
                     <img src={googleReviewImage} alt="Google review screenshot" className="max-h-full w-auto object-contain" />
                   </div>

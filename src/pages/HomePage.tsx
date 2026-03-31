@@ -91,7 +91,7 @@ function HomePage() {
                 whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-                className="grid grid-cols-2 gap-5"
+                className="grid grid-cols-2 gap-x-4 gap-y-6 md:gap-x-5 md:gap-y-7"
               >
                 {[
                   { title: 'Direct Access', desc: '24/7 communication with your physician via phone or email.', accent: 'border-t-gold' },
@@ -99,9 +99,9 @@ function HomePage() {
                   { title: 'Proactive Care', desc: 'Focus on prevention, wellness, and long-term health optimization.', accent: 'border-t-steely-blue' },
                   { title: 'Coordination', desc: 'Seamless specialist referrals and hospital care management.', accent: 'border-t-gold' }
                 ].map((card, i) => (
-                  <div key={i} className={`border border-navy/70 border-t-[3px] bg-white p-5 ${card.accent}`}>
-                    <h3 className="mb-2 text-base font-semibold text-navy">{card.title}</h3>
-                    <p className="text-xs leading-relaxed text-foreground/60">{card.desc}</p>
+                  <div key={i} className={`flex min-h-[8.7rem] flex-col border border-navy/70 border-t-[3px] bg-white p-4 md:min-h-[9.1rem] md:p-4.5 ${i >= 2 ? 'translate-y-4 md:translate-y-5' : ''} ${card.accent}`}>
+                    <h3 className="mb-2.5 text-[1.18rem] font-semibold leading-tight text-navy md:text-[1.28rem]">{card.title}</h3>
+                    <p className="text-[0.95rem] leading-6 text-foreground/70">{card.desc}</p>
                   </div>
                 ))}
               </motion.div>

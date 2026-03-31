@@ -43,11 +43,11 @@ function Footer() {
           <div>
             <p className="font-medium text-white/90 text-sm mb-4 uppercase tracking-wider">Reviews</p>
             <div className="space-y-3">
-              <a href="https://www.google.com/maps/place/34+North+San+Mateo+Drive+Suite+1,+San+Mateo,+CA+94401" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm text-white/50 hover:text-gold transition-colors duration-200">
+              <a href="https://www.google.com/maps/place/Ulrike+Sujansky,+MD/@37.568004,-122.3289013,796m/data=!3m1!1e3!4m8!3m7!1s0x808f9e76eab22fc9:0x16272bd44374ea91!8m2!3d37.568004!4d-122.326321!9m1!1b1!16s%2Fg%2F11bv33mb38?entry=ttu&g_ep=EgoyMDI2MDMyNC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm text-white/50 hover:text-gold transition-colors duration-200">
                 Google Reviews
               </a>
               <br />
-              <a href="https://www.yelp.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm text-white/50 hover:text-gold transition-colors duration-200">
+              <a href="https://www.yelp.com/biz/ulrike-sujansky-md-san-mateo?osq=Ulrike+Sujansky+MD" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm text-white/50 hover:text-gold transition-colors duration-200">
                 Yelp Reviews
               </a>
             </div>

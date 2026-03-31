@@ -12,6 +12,7 @@ dist
 dist-ssr
 *.local
 .env
+src/assets/Rika+at+office (2).png
 
 # Editor directories and files
 .vscode/*

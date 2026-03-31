@@ -65,7 +65,7 @@ function TestimonialsPage() {
                   <span className="text-lg font-bold text-navy">4.9</span>
                   <div className="flex">{[...Array(5)].map((_, i) => <Star key={i} className="w-5 h-5 fill-gold text-gold" />)}</div>
                 </div>
-                <a href="https://www.google.com/maps/place/34+North+San+Mateo+Drive+Suite+1,+San+Mateo,+CA+94401" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-6 py-2.5 bg-navy text-white font-medium hover:bg-steely-blue transition-colors duration-200 w-full text-sm uppercase tracking-wide">Review us on Google</a>
+                <a href="https://www.google.com/maps/place/Ulrike+Sujansky,+MD/@37.568004,-122.3289013,796m/data=!3m1!1e3!4m8!3m7!1s0x808f9e76eab22fc9:0x16272bd44374ea91!8m2!3d37.568004!4d-122.326321!9m1!1b1!16s%2Fg%2F11bv33mb38?entry=ttu&g_ep=EgoyMDI2MDMyNC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-6 py-2.5 bg-navy text-white font-medium hover:bg-steely-blue transition-colors duration-200 w-full text-sm uppercase tracking-wide">Review us on Google</a>
               </div>
               <div className="flex flex-col items-center text-center p-6 bg-white border border-gray-300">
                 <div className="w-16 h-16 flex items-center justify-center shadow-sm mb-4" style={{ backgroundColor: '#FF1A1A' }}>
@@ -76,7 +76,7 @@ function TestimonialsPage() {
                   <span className="text-lg font-bold text-navy">4.8</span>
                   <div className="flex">{[...Array(5)].map((_, i) => <Star key={i} className="w-5 h-5 fill-gold text-gold" />)}</div>
                 </div>
-                <a href="https://www.yelp.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-6 py-2.5 border border-navy text-navy font-medium hover:bg-navy hover:text-white transition-colors duration-200 w-full text-sm uppercase tracking-wide">View Yelp Reviews</a>
+                <a href="https://www.yelp.com/biz/ulrike-sujansky-md-san-mateo?osq=Ulrike+Sujansky+MD" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-6 py-2.5 border border-navy text-navy font-medium hover:bg-navy hover:text-white transition-colors duration-200 w-full text-sm uppercase tracking-wide">View Yelp Reviews</a>
               </div>
             </div>
 

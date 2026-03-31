@@ -17,42 +17,35 @@ function ContactPage() {
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.1 }} className="space-y-6 lg:col-span-1">
-              <div className="overflow-hidden shadow-sm border border-gray-300 bg-white">
+              <div className="overflow-hidden shadow-sm border border-navy/70 bg-white">
                 <img src={officePhoto} alt="Dr. Sujansky and team with laptop open" className="w-full h-56 object-cover" />
               </div>
-              <div className="h-[350px] overflow-hidden shadow-sm border border-gray-300 bg-white">
+              <div className="h-[350px] overflow-hidden shadow-sm border border-navy/70 bg-white">
                 <MapEmbed />
               </div>
             </motion.div>
 
             <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.2 }} className="lg:col-span-1">
-              <div className="bg-white p-6 md:p-8 shadow-sm h-full border border-gray-300">
-                <h2 className="text-2xl font-bold text-navy mb-2 tracking-tight">Send a Message</h2>
-                <p className="text-muted-foreground mb-6 text-sm">Fill out the form below and our team will get back to you shortly.</p>
+              <div className="h-full border border-navy/70 bg-light-gray p-6 md:p-8 shadow-sm">
+                <h2 className="mb-5 border-b border-gray-200 pb-3 text-lg font-semibold text-navy">Send a Message</h2>
                 <ContactForm />
               </div>
             </motion.div>
 
             <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.3 }} className="space-y-6 lg:col-span-1">
-              <div className="bg-white p-6 shadow-sm border border-gray-300 border-t-4 border-t-navy">
-                <h3 className="font-bold text-navy text-lg mb-4 flex items-center gap-2 border-b border-gray-200 pb-2"><MapPin className="w-5 h-5 text-gold" /> Location</h3>
-                <p className="text-sm leading-relaxed text-foreground mb-6">34 North San Mateo Drive<br />Suite 1<br />San Mateo, CA 94401</p>
-                <div className="space-y-4">
-                  <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 bg-white border border-gray-200 flex items-center justify-center"><Phone className="w-4 h-4 text-steely-blue" /></div>
-                    <p className="text-sm text-foreground"><span className="font-bold text-navy">Phone:</span> (650) 393-5851</p>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 bg-white border border-gray-200 flex items-center justify-center"><Mail className="w-4 h-4 text-steely-blue" /></div>
-                    <p className="text-sm text-foreground"><span className="font-bold text-navy">Fax:</span> (650) 393-5871</p>
-                  </div>
+              <div className="border border-navy/70 bg-white p-6 shadow-sm">
+                <h3 className="mb-4 flex items-center gap-2 border-b border-gray-100 pb-3 font-semibold text-navy"><MapPin className="h-4 w-4 text-gold" /> Contact Information</h3>
+                <p className="mb-4 text-sm leading-relaxed text-foreground/80">34 North San Mateo Drive<br />Suite 1<br />San Mateo, CA 94401</p>
+                <div className="space-y-2">
+                  <p className="flex items-center gap-2 text-sm text-foreground/80"><Phone className="h-3.5 w-3.5 text-steely-blue" /><span className="font-medium text-navy">Phone:</span> (650) 393-5851</p>
+                  <p className="flex items-center gap-2 text-sm text-foreground/80"><Mail className="h-3.5 w-3.5 text-steely-blue" /><span className="font-medium text-navy">Fax:</span> (650) 393-5871</p>
                 </div>
               </div>
-              <div className="bg-white p-6 shadow-sm border border-gray-300 border-t-4 border-t-steely-blue">
-                <h3 className="font-bold text-navy text-lg mb-4 flex items-center gap-2 border-b border-gray-200 pb-2"><Clock className="w-5 h-5 text-gold" /> Office Hours</h3>
-                <div className="space-y-3 text-sm">
-                  <div className="flex justify-between items-center border-b border-gray-100 pb-2"><span className="font-bold text-navy">Mon - Fri</span><span className="text-foreground">9:00am - 5:00pm</span></div>
-                  <div className="flex justify-between items-center pt-1"><span className="font-bold text-navy">Sat - Sun</span><span className="text-muted-foreground">Closed</span></div>
+              <div className="border border-navy/70 bg-white p-6 shadow-sm">
+                <h3 className="mb-4 flex items-center gap-2 border-b border-gray-100 pb-3 font-semibold text-navy"><Clock className="h-4 w-4 text-gold" /> Office Hours</h3>
+                <div className="space-y-2.5 text-sm text-foreground/80">
+                  <div className="flex justify-between"><span className="font-medium text-navy">Mon - Fri</span><span>9:00am - 5:00pm</span></div>
+                  <div className="flex justify-between"><span className="font-medium text-navy">Sat - Sun</span><span className="text-foreground/50">Closed</span></div>
                 </div>
               </div>
             </motion.div>

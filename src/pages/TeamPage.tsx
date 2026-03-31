@@ -19,20 +19,20 @@ function TeamPage() {
         <section className="pb-12">
           <div className="relative mb-12 overflow-hidden border-y border-navy/90 bg-navy">
             <div className="max-w-7xl mx-auto">
-              <div className="grid min-h-[300px] grid-cols-1 lg:min-h-[420px] lg:grid-cols-[1.08fr_0.92fr]">
+              <div className="grid min-h-[175px] grid-cols-1 lg:min-h-[220px] lg:grid-cols-[1.08fr_0.92fr]">
                 <motion.div
                   initial={{ opacity: 0, x: -10 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5 }}
-                  className="z-10 flex items-end px-6 pb-7 pt-10 sm:px-8 lg:px-12 lg:pb-9"
+                  className="z-10 flex items-end px-6 pb-5 pt-6 sm:px-8 lg:px-12 lg:pb-5"
                 >
                   <div>
-                    <p className="mb-3 text-2xl font-medium text-white/90 md:text-[2rem]">Meet</p>
-                    <h2 className="text-balance text-[2.4rem] font-bold leading-[0.98] tracking-tight text-white md:text-[4.25rem] lg:text-[4.9rem]">
+                    <p className="mb-2 text-xl font-medium text-white/90 md:text-[1.65rem]">Meet</p>
+                    <h2 className="text-balance text-[2rem] font-bold leading-[0.98] tracking-tight text-white md:text-[3.25rem] lg:text-[3.8rem]">
                       Doctor Ulrike Sujansky
                     </h2>
-                    <div className="mt-5 h-1 w-20 bg-gold" />
+                    <div className="mt-4 h-1 w-16 bg-gold" />
                   </div>
                 </motion.div>
                 <motion.div
@@ -40,12 +40,12 @@ function TeamPage() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: 0.1 }}
-                  className="relative flex min-h-[220px] items-end justify-end overflow-hidden px-5 pt-5 sm:px-8 lg:min-h-[420px] lg:px-10 lg:pt-8"
+                  className="relative flex min-h-[145px] items-end justify-end overflow-hidden px-5 pt-3 sm:px-8 lg:min-h-[220px] lg:px-10 lg:pt-4"
                 >
                   <img
                     src={drHero}
                     alt="Dr. Ulrike Sujansky"
-                    className="h-[245px] w-auto object-contain object-bottom sm:h-[300px] lg:h-[380px]"
+                    className="h-[190px] w-auto object-contain object-bottom sm:h-[235px] lg:h-[285px]"
                   />
                 </motion.div>
               </div>
@@ -69,9 +69,9 @@ function TeamPage() {
                 <div className="mb-8">
                   <h4 className="text-lg font-bold text-navy mb-3 uppercase tracking-wide">Education</h4>
                   <ul className="space-y-3 text-[16px] text-foreground/90 leading-8">
-                    <li className="flex items-start gap-2"><span className="text-gold mt-0.5">•</span> Undergrad at Harvard graduating summa cum laude</li>
-                    <li className="flex items-start gap-2"><span className="text-gold mt-0.5">•</span> Medical school at Stanford</li>
-                    <li className="flex items-start gap-2"><span className="text-gold mt-0.5">•</span> Internal medicine residency at Stanford</li>
+                    <li className="flex items-start gap-2"><span className="text-gold mt-0.5">•</span> Completed undergrad at Harvard graduating summa cum laude</li>
+                    <li className="flex items-start gap-2"><span className="text-gold mt-0.5">•</span> Attended medical school at Stanford</li>
+                    <li className="flex items-start gap-2"><span className="text-gold mt-0.5">•</span> Completed internal medicine residency at Stanford</li>
                   </ul>
                 </div>
                 <div>

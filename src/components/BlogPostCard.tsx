@@ -8,9 +8,11 @@ interface BlogPostCardProps {
   category: string;
   excerpt: string;
   likes: number;
+  onSelect?: () => void;
+  isActive?: boolean;
 }
 
-function BlogPostCard({ title, date, category, excerpt, likes }: BlogPostCardProps) {
+function BlogPostCard({ title, date, category, excerpt, likes, onSelect, isActive = false }: BlogPostCardProps) {
   const [liked, setLiked] = useState(false);
   const [likeCount, setLikeCount] = useState(likes);
 
@@ -20,8 +22,12 @@ function BlogPostCard({ title, date, category, excerpt, likes }: BlogPostCardPro
   };
 
   return (
-    <motion.div
-      className="bg-white p-5 border border-navy/70 shadow-sm hover:shadow-md hover:border-gold/70 transition-all duration-200"
+    <motion.button
+      type="button"
+      onClick={onSelect}
+      className={`w-full bg-white p-5 border shadow-sm text-left transition-all duration-200 hover:shadow-md hover:border-gold/70 ${
+        isActive ? 'border-gold/80 shadow-md' : 'border-navy/70'
+      }`}
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
@@ -35,13 +41,17 @@ function BlogPostCard({ title, date, category, excerpt, likes }: BlogPostCardPro
       <p className="text-sm text-foreground leading-relaxed mb-4 line-clamp-2">{excerpt}</p>
       <button
         type="button"
-        onClick={handleLike}
+        onClick={(e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          handleLike();
+        }}
         className="flex items-center gap-1.5 border-t border-gray-100 pt-3 text-xs font-medium text-gold transition-colors duration-200 hover:text-navy"
       >
         <Heart className={`h-3.5 w-3.5 ${liked ? 'fill-current' : ''}`} />
         <span>{likeCount}</span>
       </button>
-    </motion.div>
+    </motion.button>
   );
 }
 
