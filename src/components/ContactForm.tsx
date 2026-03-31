@@ -37,7 +37,7 @@ function ContactForm() {
     <form
       name="contact"
       method="POST"
-      action="/thank-you.html"
+      action="/"
       data-netlify="true"
       netlify-honeypot="bot-field"
       className="space-y-4"
