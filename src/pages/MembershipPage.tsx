@@ -4,16 +4,14 @@ import { ChevronDown, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { toast } from 'sonner';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import PageSectionHeader from '@/components/PageSectionHeader';
-import { submitWebsiteForm } from '@/lib/formSubmit';
 
 function MembershipPage() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
-  const [formData, setFormData] = useState({ firstName: '', lastName: '', email: '', phone: '' });
+  const [formData, setFormData] = useState({ first_name: '', last_name: '', email: '', phone: '' });
 
   const slides = [
     {
@@ -143,35 +141,6 @@ function MembershipPage() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!formData.firstName || !formData.lastName || !formData.email || !formData.phone) {
-      toast.error('Please fill in all required fields');
-      return;
-    }
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      toast.error('Please enter a valid email address');
-      return;
-    }
-    try {
-      await submitWebsiteForm(
-        'membership-request',
-        {
-          subject: 'Website Membership Request',
-          first_name: formData.firstName,
-          last_name: formData.lastName,
-          email: formData.email,
-          phone: formData.phone,
-          message: 'Interested in receiving membership information.',
-        }
-      );
-      toast.success('Request submitted successfully');
-      setFormData({ firstName: '', lastName: '', email: '', phone: '' });
-    } catch (error) {
-      toast.error('Failed to submit request. Please try again.');
-    }
-  };
-
   return (
     <>
       <Header />
@@ -216,21 +185,23 @@ function MembershipPage() {
               <form
                 name="membership-request"
                 method="POST"
+                action="/thank-you"
                 data-netlify="true"
                 netlify-honeypot="bot-field"
-                onSubmit={handleSubmit}
                 className="max-w-2xl mx-auto space-y-5 bg-white p-6 md:p-8 shadow-sm border border-gray-200"
               >
                 <input type="hidden" name="form-name" value="membership-request" />
                 <input type="hidden" name="bot-field" />
+                <input type="hidden" name="subject" value="Website Membership Request" />
+                <input type="hidden" name="message" value="Interested in receiving membership information." />
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                   <div>
-                    <Label htmlFor="firstName" className="text-navy font-medium">First Name <span className="text-destructive">*</span></Label>
-                    <Input id="firstName" name="firstName" type="text" value={formData.firstName} onChange={handleChange} required className="mt-1 rounded-none bg-white text-gray-900 border-gray-300" />
+                    <Label htmlFor="first_name" className="text-navy font-medium">First Name <span className="text-destructive">*</span></Label>
+                    <Input id="first_name" name="first_name" type="text" value={formData.first_name} onChange={handleChange} required className="mt-1 rounded-none bg-white text-gray-900 border-gray-300" />
                   </div>
                   <div>
-                    <Label htmlFor="lastName" className="text-navy font-medium">Last Name <span className="text-destructive">*</span></Label>
-                    <Input id="lastName" name="lastName" type="text" value={formData.lastName} onChange={handleChange} required className="mt-1 rounded-none bg-white text-gray-900 border-gray-300" />
+                    <Label htmlFor="last_name" className="text-navy font-medium">Last Name <span className="text-destructive">*</span></Label>
+                    <Input id="last_name" name="last_name" type="text" value={formData.last_name} onChange={handleChange} required className="mt-1 rounded-none bg-white text-gray-900 border-gray-300" />
                   </div>
                 </div>
                 <div>
