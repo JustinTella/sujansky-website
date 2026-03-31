@@ -213,7 +213,16 @@ function MembershipPage() {
                 <div className="mx-auto mb-4 h-1 w-16 bg-gold" />
                 <p className="text-sm text-muted-foreground max-w-2xl mx-auto">Interested in joining our practice? Fill out the form below and we'll contact you with more information about membership options and availability.</p>
               </div>
-              <form onSubmit={handleSubmit} className="max-w-2xl mx-auto space-y-5 bg-white p-6 md:p-8 shadow-sm border border-gray-200">
+              <form
+                name="membership-request"
+                method="POST"
+                data-netlify="true"
+                netlify-honeypot="bot-field"
+                onSubmit={handleSubmit}
+                className="max-w-2xl mx-auto space-y-5 bg-white p-6 md:p-8 shadow-sm border border-gray-200"
+              >
+                <input type="hidden" name="form-name" value="membership-request" />
+                <input type="hidden" name="bot-field" />
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                   <div>
                     <Label htmlFor="firstName" className="text-navy font-medium">First Name <span className="text-destructive">*</span></Label>
