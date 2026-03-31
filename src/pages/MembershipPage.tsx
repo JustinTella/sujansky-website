@@ -185,7 +185,7 @@ function MembershipPage() {
               <form
                 name="membership-request"
                 method="POST"
-                action="/thank-you"
+                action="/thank-you.html"
                 data-netlify="true"
                 netlify-honeypot="bot-field"
                 className="max-w-2xl mx-auto space-y-5 bg-white p-6 md:p-8 shadow-sm border border-gray-200"
