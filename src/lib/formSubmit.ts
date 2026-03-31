@@ -1,31 +1,22 @@
-const WEB3FORMS_ENDPOINT = 'https://api.web3forms.com/submit';
-const WEB3FORMS_ACCESS_KEY = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
-
 type SubmissionPayload = Record<string, string>;
 
-export async function submitWebsiteForm(payload: SubmissionPayload) {
-  if (!WEB3FORMS_ACCESS_KEY) {
-    throw new Error('missing-access-key');
-  }
+function encodeFormData(payload: SubmissionPayload) {
+  return new URLSearchParams(payload).toString();
+}
 
-  const response = await fetch(WEB3FORMS_ENDPOINT, {
+export async function submitWebsiteForm(formName: string, payload: SubmissionPayload) {
+  const response = await fetch('/', {
     method: 'POST',
     headers: {
-      'Content-Type': 'application/json',
-      Accept: 'application/json',
+      'Content-Type': 'application/x-www-form-urlencoded',
     },
-    body: JSON.stringify({
-      access_key: WEB3FORMS_ACCESS_KEY,
-      botcheck: false,
+    body: encodeFormData({
+      'form-name': formName,
       ...payload,
     }),
   });
 
-  const result = await response.json();
-
-  if (!response.ok || !result.success) {
-    throw new Error(result.message || 'submission-failed');
+  if (!response.ok) {
+    throw new Error('submission-failed');
   }
-
-  return result;
 }

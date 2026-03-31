@@ -26,24 +26,21 @@ function ContactForm() {
     }
     setIsSubmitting(true);
     try {
-      await submitWebsiteForm({
+      await submitWebsiteForm(
+        'contact',
+        {
         subject: `Website Contact: ${formData.subject}`,
-        from_name: 'Ulrike Sujansky Website',
-        replyto: formData.email,
         first_name: formData.firstName,
         last_name: formData.lastName,
         email: formData.email,
         phone: formData.phone,
         message: formData.message,
-      });
+        }
+      );
       toast.success('Message sent successfully');
       setFormData({ firstName: '', lastName: '', email: '', phone: '', subject: '', message: '' });
     } catch (error) {
-      if (error instanceof Error && error.message === 'missing-access-key') {
-        toast.error('Form service is not configured yet. Add your Web3Forms access key to enable sending.');
-      } else {
-        toast.error('Failed to send message. Please try again.');
-      }
+      toast.error('Failed to send message. Please try again.');
     } finally {
       setIsSubmitting(false);
     }

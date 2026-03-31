@@ -154,24 +154,21 @@ function MembershipPage() {
       return;
     }
     try {
-      await submitWebsiteForm({
-        subject: 'Website Membership Request',
-        from_name: 'Ulrike Sujansky Website',
-        replyto: formData.email,
-        first_name: formData.firstName,
-        last_name: formData.lastName,
-        email: formData.email,
-        phone: formData.phone,
-        message: 'Interested in receiving membership information.',
-      });
+      await submitWebsiteForm(
+        'membership-request',
+        {
+          subject: 'Website Membership Request',
+          first_name: formData.firstName,
+          last_name: formData.lastName,
+          email: formData.email,
+          phone: formData.phone,
+          message: 'Interested in receiving membership information.',
+        }
+      );
       toast.success('Request submitted successfully');
       setFormData({ firstName: '', lastName: '', email: '', phone: '' });
     } catch (error) {
-      if (error instanceof Error && error.message === 'missing-access-key') {
-        toast.error('Form service is not configured yet. Add your Web3Forms access key to enable sending.');
-      } else {
-        toast.error('Failed to submit request. Please try again.');
-      }
+      toast.error('Failed to submit request. Please try again.');
     }
   };
 
