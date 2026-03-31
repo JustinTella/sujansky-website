@@ -7,10 +7,13 @@ import { Label } from '@/components/ui/label';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import PageSectionHeader from '@/components/PageSectionHeader';
+import { toast } from '@/components/ui/sonner';
+import { submitNetlifyForm } from '@/lib/netlifyForms';
 
 function MembershipPage() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({ first_name: '', last_name: '', email: '', phone: '' });
 
   const slides = [
@@ -141,6 +144,27 @@ function MembershipPage() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    try {
+      await submitNetlifyForm({
+        "form-name": "membership-request",
+        ...formData,
+        subject: "Website Membership Request",
+        message: "Interested in receiving membership information.",
+      });
+
+      toast.success("Thank you for submitting. We’ll be in touch soon.");
+      setFormData({ first_name: '', last_name: '', email: '', phone: '' });
+    } catch {
+      toast.error("Failed to submit request. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <>
       <Header />
@@ -189,6 +213,7 @@ function MembershipPage() {
                 data-netlify="true"
                 netlify-honeypot="bot-field"
                 className="max-w-2xl mx-auto space-y-5 bg-white p-6 md:p-8 shadow-sm border border-gray-200"
+                onSubmit={handleSubmit}
               >
                 <input type="hidden" name="form-name" value="membership-request" />
                 <input type="hidden" name="bot-field" />
@@ -212,7 +237,9 @@ function MembershipPage() {
                   <Label htmlFor="phone" className="text-navy font-medium">Phone Number <span className="text-destructive">*</span></Label>
                   <Input id="phone" name="phone" type="tel" value={formData.phone} onChange={handleChange} required className="mt-1 rounded-none bg-white text-gray-900 border-gray-300" />
                 </div>
-                <Button type="submit" className="mt-2 w-full rounded-none bg-navy text-white uppercase font-medium transition-colors duration-200 hover:bg-navy/90 active:scale-[0.98]">Submit Request</Button>
+                <Button type="submit" disabled={isSubmitting} className="mt-2 w-full rounded-none bg-navy text-white uppercase font-medium transition-colors duration-200 hover:bg-navy/90 active:scale-[0.98] disabled:opacity-70">
+                  {isSubmitting ? 'Submitting...' : 'Submit Request'}
+                </Button>
               </form>
               <div className="mt-6 border-t border-gray-200 pt-6 text-center">
                 <p className="text-xl md:text-2xl font-bold tracking-tight text-navy">Questions or Ready to Schedule?</p>
