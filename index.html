@@ -19,8 +19,9 @@
   </head>
 
   <body>
-    <form name="contact" data-netlify="true" netlify-honeypot="bot-field" hidden>
+    <form name="contact" method="POST" action="/" netlify data-netlify="true" netlify-honeypot="bot-field" hidden>
       <input type="hidden" name="form-name" value="contact" />
+      <input type="hidden" name="bot-field" />
       <input type="text" name="first_name" />
       <input type="text" name="last_name" />
       <input type="email" name="email" />
@@ -28,8 +29,9 @@
       <input type="text" name="subject" />
       <textarea name="message"></textarea>
     </form>
-    <form name="membership-request" data-netlify="true" netlify-honeypot="bot-field" hidden>
+    <form name="membership-request" method="POST" action="/" netlify data-netlify="true" netlify-honeypot="bot-field" hidden>
       <input type="hidden" name="form-name" value="membership-request" />
+      <input type="hidden" name="bot-field" />
       <input type="text" name="first_name" />
       <input type="text" name="last_name" />
       <input type="email" name="email" />
