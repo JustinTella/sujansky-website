@@ -96,7 +96,7 @@ function ServicesPage() {
                   <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-gold">Core Offering</p>
                   <h3 className="mb-5 text-3xl font-semibold tracking-tight text-navy">Comprehensive Care</h3>
                   <p className="text-[19px] leading-9 text-foreground/80">
-                    Our Primary Care offering reflects the core of Dr. Sujansky&apos;s membership practice: direct communication, longer visits, preventive planning, and close coordination that support more personalized and responsive care.
+                    Our Primary Care offering begins with an annual executive physical that includes a thorough review of your personal and family history, physical exam, screening test data, and follow-up communications that help guide health care decisions. From there, the practice is built around direct communication, longer visits, preventive planning, and close coordination that support more personalized and responsive care.
                   </p>
                 </div>
                 <div className="overflow-hidden border border-navy/70 bg-white shadow-sm">
@@ -178,7 +178,7 @@ function ServicesPage() {
                   <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-gold">Additional Care</p>
                   <h3 className="mb-3 text-[1.65rem] font-semibold tracking-tight text-navy">On-Demand Nursing Services</h3>
                   <p className="text-[17px] leading-8 text-foreground/80">
-                    Additional nursing support can be arranged when extra hands-on care, monitoring, or short-term assistance is needed.
+                    When additional support is needed, our concierge private duty nursing team through Luminate Wellness &amp; Recovery is available around the clock. They offer flexible day, night, and live-in shifts for short-term recovery or ongoing care, with services that include medication administration, wound care, vital sign monitoring, IV vitamin and hydration therapy, and physician coordination. Discreet home visits and hotel-based care are also available.
                   </p>
                 </div>
                 <div className="border border-gray-300 bg-white px-6 py-4 shadow-sm min-h-[128px]">

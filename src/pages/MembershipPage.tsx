@@ -20,34 +20,47 @@ function MembershipPage() {
     {
       title: 'What is Concierge Medicine?',
       content:
-        'Concierge medicine comes with an annual fee that is irrespective of the number of times each patient sees or calls the doctor. It allows for more direct care that is above and beyond what patients may pay for with health insurance alone.',
+        'Dr. Ulrike Sujansky has transitioned her practice to a "private" (sometimes called "concierge" or "membership") medical practice to continue to put patient care first. Concierge medicine comes with an annual fee that is irrespective of the number of times each patient sees or calls the doctor. It allow for more direct care that is above and beyond what patients may pay for with health insurance alone.',
     },
     {
       title: 'What does the Membership Program include?',
       content: (
         <ul className="mx-auto max-w-2xl list-disc space-y-2.5 pl-5 text-left">
-          <li>Annual physical examinations</li>
-          <li>Consultations including examination and management as needed throughout the year</li>
-          <li>Detailed illness and disease prevention planning</li>
-          <li>Comprehensive liaison and coordination of inpatient, specialty, and convalescent care</li>
-          <li>Prompt personal communication via telephone and/or email</li>
+          <li>Easy direct communication with Dr. Sujansky via her personal cell phone after hours</li>
+          <li>Same day/ next day email communications including weekends and holidays</li>
+          <li>Limited practice size, which allows for more time with the doctor</li>
+          <li>Expedited call-backs and same day/ next day appointment availability</li>
+          <li>Enhanced communication with hospital physicians and staff that will help ensure a seamless transition between hospital and outpatient care</li>
         </ul>
       ),
     },
     {
       title: 'Access and Communication',
       content:
-        'Members receive prompt personal communication via telephone and/or email, plus 24 hour coverage by your physician or on-call associate in the same practice. This structure makes it easier to get timely support when questions or urgent needs come up.',
+        'Dr. Sujansky makes herself available to her patients with 24/7 access by email or her personal cell phone. Now her office visits are longer, she is more available, and she is better able to communicate on your behalf with the other physicians involved in your care.',
     },
     {
       title: 'Included Preventive Services',
-      content:
-        'Membership also includes annual flu vaccine, annual EKG, Zio patch as medically indicated, Vitamin B12 injections as medically indicated, and rapid Strep, Influenza and Covid testing on site.',
+      content: (
+        <div className="mx-auto max-w-2xl text-left">
+          <p className="mb-4 text-center text-[18px] leading-8 text-foreground">
+            Our annual executive physical does all of the following:
+          </p>
+          <ul className="list-disc space-y-2.5 pl-5">
+            <li>Thorough review of your personal and family history, physical exam, and screening test data</li>
+            <li>Follow-up communications that help guide health care decisions</li>
+            <li>Electrocardiograms (EKGs)</li>
+            <li>State-of-the-art body composition analysis for more individualized diet and exercise counseling</li>
+            <li>Hearing and vision screening</li>
+            <li>Risk assessment for depression, falls, and memory loss</li>
+          </ul>
+        </div>
+      ),
     },
     {
       title: 'Time, Flexibility, and Home Visits',
       content:
-        'The program is designed around longer and more flexible appointments where all of your health education issues and concerns are addressed. For those who live within a 10 mile radius and are unable to travel, home visits are available.',
+        'Longer and more flexible appointments in which all health education issues and concerns can be addressed. Home visits for those who live within a 10 mile radius and who are unable to travel to the office.',
     },
   ];
 
