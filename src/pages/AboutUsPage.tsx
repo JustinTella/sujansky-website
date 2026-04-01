@@ -8,10 +8,10 @@ import Footer from '@/components/Footer';
 import TestimonialCard from '@/components/TestimonialCard';
 import PageSectionHeader from '@/components/PageSectionHeader';
 import GoogleReviewLoop from '@/components/GoogleReviewLoop';
+import YelpReviewLoop from '@/components/YelpReviewLoop';
 import drPortrait from '@/assets/Rika+in+brown+blouse (1).webp';
 import kimPortrait from '@/assets/Kim (1).webp';
 import shawnaImage from '@/assets/image-asset (4).webp';
-import yelpReviewImage from '@/assets/Screenshot 2026-03-30 022824.png';
 import yelpLogoImage from '@/assets/Yelp_Logo.svg.png';
 
 type Testimonial = {
@@ -302,7 +302,7 @@ function AboutUsPage() {
                 <h3 className="text-2xl md:text-3xl font-bold text-navy mb-4 tracking-tight">Find More Reviews On</h3>
                 <div className="w-12 h-1 bg-gold mx-auto" />
               </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="mx-auto flex max-w-4xl flex-col gap-8">
                 <div className="flex flex-col items-center text-center p-6 bg-white border border-gray-300">
                   <div className="mb-2 text-[1.45rem] font-semibold tracking-tight" aria-label="Google">
                     <span style={{ color: '#4285F4' }}>G</span>
@@ -312,12 +312,18 @@ function AboutUsPage() {
                     <span style={{ color: '#34A853' }}>l</span>
                     <span style={{ color: '#EA4335' }}>e</span>
                   </div>
-                  <div className="flex items-center gap-2 mb-5">
+                  <div className="mb-5 flex items-center gap-2">
                     <span className="text-lg font-bold text-navy">4.5</span>
-                    <div className="flex">{[...Array(5)].map((_, i) => <Star key={i} className="w-5 h-5 fill-gold text-gold" />)}</div>
+                    <div className="flex">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} className="w-5 h-5 fill-gold text-gold" />
+                      ))}
+                    </div>
                   </div>
-                  <a href="https://www.google.com/maps/place/Ulrike+Sujansky,+MD/@37.568004,-122.3289013,796m/data=!3m1!1e3!4m8!3m7!1s0x808f9e76eab22fc9:0x16272bd44374ea91!8m2!3d37.568004!4d-122.326321!9m1!1b1!16s%2Fg%2F11bv33mb38?entry=ttu&g_ep=EgoyMDI2MDMyNC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-6 py-2.5 bg-navy text-white font-medium hover:bg-steely-blue transition-colors duration-200 w-full text-sm uppercase tracking-wide active:scale-[0.98]">Review Us on Google</a>
-                  <GoogleReviewLoop />
+                  <div className="w-full">
+                    <GoogleReviewLoop />
+                  </div>
+                  <a href="https://www.google.com/maps/place/Ulrike+Sujansky,+MD/@37.568004,-122.3289013,796m/data=!3m1!1e3!4m8!3m7!1s0x808f9e76eab22fc9:0x16272bd44374ea91!8m2!3d37.568004!4d-122.326321!9m1!1b1!16s%2Fg%2F11bv33mb38?entry=ttu&g_ep=EgoyMDI2MDMyNC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" className="mt-6 inline-flex items-center justify-center px-6 py-2.5 bg-navy text-white font-medium hover:bg-steely-blue transition-colors duration-200 w-full text-sm uppercase tracking-wide active:scale-[0.98]">Review Us on Google</a>
                 </div>
                 <div className="flex flex-col items-center text-center p-6 bg-white border border-gray-300">
                   <div className="mb-2 flex h-10 items-center justify-center" aria-label="Yelp">
@@ -327,10 +333,10 @@ function AboutUsPage() {
                     <span className="text-lg font-bold text-navy">4.3</span>
                     <div className="flex">{[...Array(5)].map((_, i) => <Star key={i} className="w-5 h-5 fill-gold text-gold" />)}</div>
                   </div>
-                  <a href="https://www.yelp.com/biz/ulrike-sujansky-md-san-mateo?osq=Ulrike+Sujansky+MD" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-6 py-2.5 bg-navy text-white font-medium hover:bg-steely-blue transition-colors duration-200 w-full text-sm uppercase tracking-wide active:scale-[0.98]">Review Us on Yelp</a>
-                  <div className="mt-5 flex h-[220px] items-center justify-center overflow-hidden border border-gray-200 bg-white shadow-sm">
-                    <img src={yelpReviewImage} alt="Yelp review screenshot" className="max-h-full w-auto object-contain" />
+                  <div className="w-full">
+                    <YelpReviewLoop />
                   </div>
+                  <a href="https://www.yelp.com/biz/ulrike-sujansky-md-san-mateo?osq=Ulrike+Sujansky+MD" target="_blank" rel="noopener noreferrer" className="mt-6 inline-flex items-center justify-center px-6 py-2.5 bg-navy text-white font-medium hover:bg-steely-blue transition-colors duration-200 w-full text-sm uppercase tracking-wide active:scale-[0.98]">Review Us on Yelp</a>
                 </div>
               </div>
             </motion.div>

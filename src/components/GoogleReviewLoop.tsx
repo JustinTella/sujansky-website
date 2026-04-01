@@ -18,10 +18,56 @@ type GoogleReviewResponse = {
 };
 
 const PLACE_ID = 'ChIJyS-y6naej4ARkep0Q9QrJxY';
+const LIVE_SITE_FUNCTION = 'https://sujansky.netlify.app/.netlify/functions/google-reviews';
+const FALLBACK_GOOGLE_REVIEWS: GoogleReviewResponse = {
+  placeName: 'Ulrike Sujansky, MD',
+  rating: 4.5,
+  userRatingCount: 16,
+  reviews: [
+    {
+      author: 'rak s',
+      profilePhoto:
+        'https://lh3.googleusercontent.com/a-/ALV-UjXme_6VzxwffcJTbtnQ5yq7pxKeo0TIJiASyc_A-6-27KBoYv06jw=s128-c0x00000000-cc-rp-mo',
+      rating: 5,
+      relativeTime: '5 years ago',
+      publishTime: '2020-10-01T17:28:50.457877Z',
+      text:
+        'All I can say, is Dr. Sujansky is one in a million. She provides my disabled brother with excellent care. She and her office manager Shauna are incredibly patient and kind to him.',
+    },
+    {
+      author: 'Lindy Hewitt',
+      profilePhoto:
+        'https://lh3.googleusercontent.com/a/ACg8ocJmTC3462kBSSzaEjQ5FfXpTYp64wh7ZABRbBcCu7UYOCPdLQ=s128-c0x00000000-cc-rp-mo',
+      rating: 5,
+      relativeTime: '5 years ago',
+      publishTime: '2020-08-28T16:16:52.602849Z',
+      text:
+        'My first visit with Dr. Sujansky was great. She and her staff made me feel that they had all the time in the world to answer my questions. She is very personable.',
+    },
+    {
+      author: 'Nanci Nishimura',
+      profilePhoto:
+        'https://lh3.googleusercontent.com/a/ACg8ocJ8SxuaUtLHmAVD64Y5TLOLMZ--LwCKI9m7WYJQmEnpvJWiBw=s128-c0x00000000-cc-rp-mo',
+      rating: 5,
+      relativeTime: '6 years ago',
+      publishTime: '2020-03-04T19:56:15.268716Z',
+      text: 'Very attentive and responsive.',
+    },
+    {
+      author: 'David Jackson',
+      profilePhoto:
+        'https://lh3.googleusercontent.com/a/ACg8ocIkwQNjax4ELkkS16GjFNw56EiNPX2jL5NbnnmGEKPkNxeKMw=s128-c0x00000000-cc-rp-mo',
+      rating: 5,
+      relativeTime: '6 years ago',
+      publishTime: '2019-09-17T20:23:10.487599Z',
+      text:
+        'I am a new patient of Dr. Sujansky and have found her extremely accessible for my needs. She has a caring attitude and is very competent. Highly recommended.',
+    },
+  ],
+};
 
 function GoogleReviewLoop() {
   const [data, setData] = useState<GoogleReviewResponse | null>(null);
-  const [error, setError] = useState(false);
   const [offset, setOffset] = useState(0);
   const trackRef = useRef<HTMLDivElement | null>(null);
   const offsetRef = useRef(0);
@@ -31,7 +77,10 @@ function GoogleReviewLoop() {
 
     async function loadReviews() {
       try {
-        const response = await fetch(`/.netlify/functions/google-reviews?placeId=${PLACE_ID}`);
+        const isLocal =
+          window.location.hostname === '127.0.0.1' || window.location.hostname === 'localhost';
+        const baseUrl = isLocal ? LIVE_SITE_FUNCTION : '/.netlify/functions/google-reviews';
+        const response = await fetch(`${baseUrl}?placeId=${PLACE_ID}`);
         const payload = (await response.json()) as GoogleReviewResponse | { error?: string };
 
         if (!response.ok || 'error' in payload) {
@@ -43,7 +92,7 @@ function GoogleReviewLoop() {
         }
       } catch {
         if (!cancelled) {
-          setError(true);
+          setData(FALLBACK_GOOGLE_REVIEWS);
         }
       }
     }
@@ -59,12 +108,17 @@ function GoogleReviewLoop() {
     return [...data.reviews, ...data.reviews];
   }, [data]);
 
+  const displayReviews = useMemo(() => {
+    if (!reviews.length) return [];
+    return reviews.length >= 8 ? reviews : [...reviews, ...reviews];
+  }, [reviews]);
+
   useEffect(() => {
-    if (!reviews.length) return;
+    if (!displayReviews.length) return;
 
     let frameId = 0;
     let lastTime = 0;
-    const speed = 18;
+    const speed = 20;
 
     const animate = (time: number) => {
       if (!lastTime) lastTime = time;
@@ -86,15 +140,7 @@ function GoogleReviewLoop() {
 
     frameId = window.requestAnimationFrame(animate);
     return () => window.cancelAnimationFrame(frameId);
-  }, [reviews.length]);
-
-  if (error) {
-    return (
-      <div className="mt-5 border border-gray-200 bg-white p-5 text-left text-sm leading-7 text-foreground/70 shadow-sm">
-        Live Google reviews will appear here once the Google Places API key is added to your live site environment.
-      </div>
-    );
-  }
+  }, [displayReviews.length]);
 
   if (!data) {
     return (
@@ -105,39 +151,17 @@ function GoogleReviewLoop() {
   }
 
   return (
-    <div className="mt-5 border border-gray-200 bg-white p-4 shadow-sm">
-      <div className="mb-4 flex items-center justify-between gap-4 border-b border-gray-100 pb-3">
-        <div className="min-w-0 text-left">
-          <p className="truncate text-sm font-semibold uppercase tracking-[0.16em] text-gold">
-            Live Google Reviews
-          </p>
-          <p className="truncate text-sm text-navy/70">{data.placeName}</p>
-        </div>
-        <div className="shrink-0 text-right">
-          <div className="flex items-center justify-end gap-2">
-            <span className="text-lg font-bold text-navy">{data.rating?.toFixed(1) ?? '—'}</span>
-            <div className="flex">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} className="h-4 w-4 fill-gold text-gold" />
-              ))}
-            </div>
-          </div>
-          {data.userRatingCount ? (
-            <p className="text-xs text-foreground/55">{data.userRatingCount} Google ratings</p>
-          ) : null}
-        </div>
-      </div>
-
+    <div className="mt-5 w-full overflow-hidden">
       <div className="overflow-hidden">
         <div
           ref={trackRef}
-          className="flex w-max gap-4 pr-4"
-          style={{ transform: `translateX(${offset}px)` }}
+          className="flex w-max gap-4 pr-4 will-change-transform"
+          style={{ transform: `translate3d(${offset}px, 0, 0)` }}
         >
-          {reviews.map((review, index) => (
+          {displayReviews.map((review, index) => (
             <article
               key={`${review.author}-${index}`}
-              className="flex min-h-[205px] w-[19rem] shrink-0 flex-col justify-between border border-gray-200 bg-[#fbfaf6] p-5 text-left"
+              className="flex min-h-[198px] w-[15rem] shrink-0 flex-col border border-gray-200 bg-[#fbfaf6] p-4 text-left shadow-[0_8px_24px_rgba(20,36,74,0.05)]"
             >
               <div>
                 <div className="mb-3 flex items-center gap-3">
@@ -154,7 +178,7 @@ function GoogleReviewLoop() {
                   )}
                   <div className="min-w-0">
                     <p className="truncate text-sm font-semibold text-navy">{review.author}</p>
-                    <div className="flex items-center gap-2">
+                    <div className="mt-0.5 flex items-center gap-2">
                       <div className="flex">
                         {[...Array(5)].map((_, i) => (
                           <Star
@@ -171,7 +195,7 @@ function GoogleReviewLoop() {
                     </div>
                   </div>
                 </div>
-                <p className="line-clamp-6 text-[15px] leading-7 text-navy/82">{review.text}</p>
+                <p className="line-clamp-5 text-[14px] leading-6.5 text-navy/82">{review.text}</p>
               </div>
             </article>
           ))}

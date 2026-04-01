@@ -1,4 +1,8 @@
 const DEFAULT_PLACE_ID = 'ChIJyS-y6naej4ARkep0Q9QrJxY';
+const DEFAULT_HEADERS = {
+  'Content-Type': 'application/json',
+  'Access-Control-Allow-Origin': '*',
+};
 
 export async function handler(event) {
   const apiKey = process.env.GOOGLE_PLACES_API_KEY;
@@ -6,9 +10,7 @@ export async function handler(event) {
   if (!apiKey) {
     return {
       statusCode: 500,
-      headers: {
-        'Content-Type': 'application/json',
-      },
+      headers: DEFAULT_HEADERS,
       body: JSON.stringify({ error: 'missing-google-places-api-key' }),
     };
   }
@@ -29,9 +31,7 @@ export async function handler(event) {
     if (!response.ok || !data) {
       return {
         statusCode: response.status || 500,
-        headers: {
-          'Content-Type': 'application/json',
-        },
+        headers: DEFAULT_HEADERS,
         body: JSON.stringify({
           error: 'google-places-request-failed',
           details: data,
@@ -61,7 +61,7 @@ export async function handler(event) {
     return {
       statusCode: 200,
       headers: {
-        'Content-Type': 'application/json',
+        ...DEFAULT_HEADERS,
         'Cache-Control': 'public, max-age=1800',
       },
       body: JSON.stringify({
@@ -74,9 +74,7 @@ export async function handler(event) {
   } catch (error) {
     return {
       statusCode: 500,
-      headers: {
-        'Content-Type': 'application/json',
-      },
+      headers: DEFAULT_HEADERS,
       body: JSON.stringify({
         error: 'google-places-fetch-error',
         message: error instanceof Error ? error.message : 'unknown-error',
