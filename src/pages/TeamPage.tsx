@@ -3,7 +3,6 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import PageSectionHeader from '@/components/PageSectionHeader';
 import drHero from '@/assets/Picture1.png';
-import officeImage from '@/assets/Rika+with+Jennifer (1).webp';
 
 function TeamPage() {
   return (
@@ -60,7 +59,7 @@ function TeamPage() {
                 </h3>
                 <div className="mb-8">
                   <h4 className="text-lg font-bold text-navy mb-3 uppercase tracking-wide">Experience</h4>
-                  <ul className="space-y-3 text-[16px] text-foreground/90 leading-8">
+                  <ul className="space-y-3 text-[18px] text-foreground/90 leading-9">
                     <li className="flex items-start gap-2"><span className="text-gold mt-0.5">•</span> In practice in San Mateo for 30 years</li>
                     <li className="flex items-start gap-2"><span className="text-gold mt-0.5">•</span> Chair of Department of Medicine at Peninsula Hospital (2015-2019)</li>
                     <li className="flex items-start gap-2"><span className="text-gold mt-0.5">•</span> Founded the Private Doctors of the Peninsula</li>
@@ -68,7 +67,7 @@ function TeamPage() {
                 </div>
                 <div className="mb-8">
                   <h4 className="text-lg font-bold text-navy mb-3 uppercase tracking-wide">Education</h4>
-                  <ul className="space-y-3 text-[16px] text-foreground/90 leading-8">
+                  <ul className="space-y-3 text-[18px] text-foreground/90 leading-9">
                     <li className="flex items-start gap-2"><span className="text-gold mt-0.5">•</span> Completed undergrad at Harvard graduating summa cum laude</li>
                     <li className="flex items-start gap-2"><span className="text-gold mt-0.5">•</span> Attended medical school at Stanford</li>
                     <li className="flex items-start gap-2"><span className="text-gold mt-0.5">•</span> Completed internal medicine residency at Stanford</li>
@@ -76,7 +75,7 @@ function TeamPage() {
                 </div>
                 <div>
                   <h4 className="text-lg font-bold text-navy mb-3 uppercase tracking-wide">Professional Associations</h4>
-                  <ul className="space-y-3 text-[16px] text-foreground/90 leading-8">
+                  <ul className="space-y-3 text-[18px] text-foreground/90 leading-9">
                     <li className="flex items-start gap-2"><span className="text-gold mt-0.5">•</span> American College of Physicians</li>
                     <li className="flex items-start gap-2"><span className="text-gold mt-0.5">•</span> San Mateo County Medical Association</li>
                     <li className="flex items-start gap-2"><span className="text-gold mt-0.5">•</span> California Medical Association</li>
@@ -89,22 +88,19 @@ function TeamPage() {
               </motion.div>
 
               <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.6, delay: 0.08, ease: [0.16, 1, 0.3, 1] }} className="space-y-10">
-                <div className="bg-white p-6 shadow-sm border border-gray-300 border-t-4 border-t-steely-blue">
-                  <h4 className="text-lg font-bold text-navy mb-3 uppercase tracking-wide border-b border-gray-200 pb-2">Family Life</h4>
-                  <p className="mt-3 text-[16px] text-foreground/90 leading-8">
-                    Dr. Sujansky is married and has two sons, born in 2000 and 2003. She loves to spend her free time by skiing at Kirkwood, sharing good meals with friends and family, and trying desperately to keep up with her two growing boys.
-                  </p>
-                </div>
-                <div className="overflow-hidden shadow-sm border border-gray-300 bg-white">
-                  <img src={officeImage} alt="Dr. Sujansky with a patient" className="w-full h-[300px] object-cover" />
-                </div>
                 <div className="bg-white p-6 shadow-sm border border-gray-300 border-t-4 border-t-gold">
                   <h4 className="text-lg font-bold text-navy mb-3 uppercase tracking-wide border-b border-gray-200 pb-2">Certifications</h4>
-                  <p className="mt-3 text-[16px] text-foreground/90 leading-8">
+                  <p className="mt-3 text-[18px] text-foreground/90 leading-9">
                     Board Certified by the American Board of Internal Medicine in 1997, recertified in 2017.
                   </p>
-                  <p className="mt-3 text-[16px] text-foreground/90 leading-8">
+                  <p className="mt-3 text-[18px] text-foreground/90 leading-9">
                     Nominated as a Fellow of the American College of Physicians in 2019.
+                  </p>
+                </div>
+                <div className="bg-white p-6 shadow-sm border border-gray-300 border-t-4 border-t-steely-blue">
+                  <h4 className="text-lg font-bold text-navy mb-3 uppercase tracking-wide border-b border-gray-200 pb-2">Family Life</h4>
+                  <p className="mt-3 text-[18px] text-foreground/90 leading-9">
+                    Dr. Sujansky is married and has two sons, born in 2000 and 2003. She loves to spend her free time by skiing at Kirkwood, sharing good meals with friends and family, and trying desperately to keep up with her two growing boys.
                   </p>
                 </div>
               </motion.div>

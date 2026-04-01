@@ -7,11 +7,11 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import TestimonialCard from '@/components/TestimonialCard';
 import PageSectionHeader from '@/components/PageSectionHeader';
+import GoogleReviewLoop from '@/components/GoogleReviewLoop';
 import drPortrait from '@/assets/Rika+in+brown+blouse (1).webp';
 import kimPortrait from '@/assets/Kim (1).webp';
 import shawnaImage from '@/assets/image-asset (4).webp';
 import yelpReviewImage from '@/assets/Screenshot 2026-03-30 022824.png';
-import googleReviewImage from '@/assets/Screenshot 2026-03-30 023815.png';
 import yelpLogoImage from '@/assets/Yelp_Logo.svg.png';
 
 type Testimonial = {
@@ -34,7 +34,7 @@ function AboutUsPage() {
   const teamMembers = [
     { name: 'Ulrike Sujansky', title: 'M.D., FACP', image: drPortrait, cta: 'Meet Dr. Sujansky', linkTo: '/dr-sujansky' },
     { name: 'Shawna Guzman', title: 'Office Manager', image: shawnaImage, cta: 'Learn More' },
-    { name: 'Kim J.', title: 'Medical Assistant', image: kimPortrait, cta: 'Learn More' },
+    { name: 'Kim Jimenez', title: 'Medical Assistant', image: kimPortrait, cta: 'Learn More' },
   ];
 
   const testimonials: Testimonial[] = [
@@ -61,12 +61,26 @@ function AboutUsPage() {
   ];
 
   const clientRanges = [
-    { id: 'professionals', label: 'Busy professionals in their 30s and 40s who want direct access and preventive care', highlightName: 'Susan W.' },
-    { id: 'families', label: 'Parents and families balancing demanding schedules and long-term wellness', highlightName: 'Edwina T.' },
-    { id: 'executives', label: 'Executives, consultants, and business owners seeking more personalized medicine', highlightName: 'Philip G.' },
-    { id: 'retirees', label: 'Retirees in their 60s, 70s, and beyond who value continuity and close follow-up', highlightName: 'Margaret R.' },
-    { id: 'active', label: 'Athletes and highly active patients focused on optimization and recovery', highlightName: 'Dale B.' },
-    { id: 'specialist-care', label: 'Patients navigating specialist care who want strong coordination and advocacy', highlightName: 'Harumi N.' },
+    {
+      id: 'professionals',
+      label: 'Busy professionals who want direct access, preventive care, and more time with their physician',
+      highlightName: 'Susan W.',
+    },
+    {
+      id: 'families',
+      label: 'Families and couples balancing long-term wellness, scheduling demands, and coordinated care',
+      highlightName: 'Edwina T.',
+    },
+    {
+      id: 'executives',
+      label: 'Executives, consultants, and business owners seeking a more personalized, concierge-style experience',
+      highlightName: 'Philip G.',
+    },
+    {
+      id: 'retirees',
+      label: 'Retirees who value continuity, close follow-up, thoughtful guidance, and lasting physician relationships',
+      highlightName: 'Margaret R.',
+    },
   ];
 
   const selectedRange = clientRanges.find((range) => range.id === selectedRangeId) ?? null;
@@ -154,7 +168,7 @@ function AboutUsPage() {
                   <div
                     className="mb-4 w-full overflow-hidden border border-gray-300 bg-white p-2 shadow-[0_8px_24px_rgba(20,36,74,0.06)]"
                   >
-                    <img src={member.image} alt={`${member.name}, ${member.title}`} className={`w-full object-cover object-top ${index === 0 ? 'h-[350px]' : 'h-72'}`} />
+                    <img src={member.image} alt={`${member.name}, ${member.title}`} className="h-[350px] w-full object-cover object-top" />
                   </div>
                   <p className="font-bold text-navy text-lg mb-0.5">{member.name}</p>
                   <p className="text-sm text-steely-blue font-medium mb-4">{member.title}</p>
@@ -246,6 +260,9 @@ function AboutUsPage() {
               <div className="mb-6">
                 <h3 className="text-2xl font-bold tracking-tight text-navy">Our Patients Range From</h3>
                 <div className="mt-3 h-1 w-16 bg-gold" />
+                <p className="mt-4 text-[15px] leading-7 text-foreground/75">
+                  Click the filter that best reflects you and hear from current patients with similar lifestyles and needs.
+                </p>
               </div>
               <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
                 {clientRanges.map((item) => (
@@ -300,9 +317,7 @@ function AboutUsPage() {
                     <div className="flex">{[...Array(5)].map((_, i) => <Star key={i} className="w-5 h-5 fill-gold text-gold" />)}</div>
                   </div>
                   <a href="https://www.google.com/maps/place/Ulrike+Sujansky,+MD/@37.568004,-122.3289013,796m/data=!3m1!1e3!4m8!3m7!1s0x808f9e76eab22fc9:0x16272bd44374ea91!8m2!3d37.568004!4d-122.326321!9m1!1b1!16s%2Fg%2F11bv33mb38?entry=ttu&g_ep=EgoyMDI2MDMyNC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-6 py-2.5 bg-navy text-white font-medium hover:bg-steely-blue transition-colors duration-200 w-full text-sm uppercase tracking-wide active:scale-[0.98]">Review Us on Google</a>
-                  <div className="mt-5 flex h-[220px] items-center justify-center overflow-hidden border border-gray-200 bg-white shadow-sm">
-                    <img src={googleReviewImage} alt="Google review screenshot" className="max-h-full w-auto object-contain" />
-                  </div>
+                  <GoogleReviewLoop />
                 </div>
                 <div className="flex flex-col items-center text-center p-6 bg-white border border-gray-300">
                   <div className="mb-2 flex h-10 items-center justify-center" aria-label="Yelp">

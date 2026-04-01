@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import ScrollToTop from "@/components/ScrollToTop";
+import TextOfficeBubble from "@/components/TextOfficeBubble";
 import HomePage from "./pages/HomePage";
 import MembershipPage from "./pages/MembershipPage";
 import ServicesPage from "./pages/ServicesPage";
@@ -12,6 +13,8 @@ import BlogPage from "./pages/BlogPage";
 import ContactPage from "./pages/ContactPage";
 import ThankYouPage from "./pages/ThankYouPage";
 import NotFound from "./pages/NotFound";
+import PrivacyPolicyPage from "./pages/PrivacyPolicyPage";
+import TermsOfServicePage from "./pages/TermsOfServicePage";
 
 const queryClient = new QueryClient();
 
@@ -21,6 +24,7 @@ const App = () => (
       <Sonner position="top-center" />
       <BrowserRouter>
         <ScrollToTop />
+        <TextOfficeBubble />
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/membership" element={<MembershipPage />} />
@@ -31,6 +35,8 @@ const App = () => (
           <Route path="/testimonials" element={<Navigate to="/about" replace />} />
           <Route path="/blog" element={<BlogPage />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+          <Route path="/terms-of-service" element={<TermsOfServicePage />} />
           <Route path="/thank-you" element={<ThankYouPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

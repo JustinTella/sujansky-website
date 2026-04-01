@@ -12,7 +12,7 @@ import { submitWebsiteForm } from '@/lib/formSubmit';
 
 function MembershipPage() {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
+  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({ first_name: '', last_name: '', email: '', phone: '' });
 
@@ -197,7 +197,7 @@ function MembershipPage() {
                     <h2 className="text-2xl md:text-3xl font-bold text-navy mb-6 text-balance tracking-tight">
                       {slides[currentSlide].title}
                     </h2>
-                    <div className="text-base leading-relaxed text-foreground">{slides[currentSlide].content}</div>
+                    <div className="text-[18px] leading-9 text-foreground">{slides[currentSlide].content}</div>
                   </motion.div>
                 </AnimatePresence>
               </div>
@@ -235,11 +235,20 @@ function MembershipPage() {
                 <h2 className="text-2xl md:text-3xl font-bold text-navy mb-3 text-balance tracking-tight">
                   Begin Your Membership Conversation
                 </h2>
-                <div className="mx-auto mb-4 h-1 w-16 bg-gold" />
-                <p className="text-sm text-muted-foreground max-w-2xl mx-auto">
-                  Interested in joining our practice? Fill out the form below and we'll contact you with
-                  more information about membership options and availability.
+                <div className="mx-auto mb-5 h-1 w-36 bg-gold" />
+                <p className="mx-auto max-w-2xl text-[21px] leading-10 text-foreground/88">
+                  Please call <span className="font-semibold text-navy">(650) 393-5851</span> if you have
+                  questions or would like to schedule an initial appointment.
                 </p>
+              </div>
+              <div className="mb-6 mt-8 h-px w-full bg-gray-200" />
+              <div className="mx-auto mb-6 max-w-2xl text-center">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-gold">
+                  Alternatively
+                </p>
+                <h3 className="mt-2 text-xl md:text-2xl font-semibold tracking-tight text-navy">
+                  Fill Out the Form Below
+                </h3>
               </div>
               <form
                 className="max-w-2xl mx-auto space-y-5 bg-white p-6 md:p-8 shadow-sm border border-gray-200"
@@ -311,13 +320,6 @@ function MembershipPage() {
                   {isSubmitting ? 'Submitting...' : 'Submit Request'}
                 </Button>
               </form>
-              <div className="mt-6 border-t border-gray-200 pt-6 text-center">
-                <p className="text-xl md:text-2xl font-bold tracking-tight text-navy">Questions or Ready to Schedule?</p>
-                <p className="mt-2 text-base leading-relaxed text-foreground/80">
-                  Please call <span className="font-semibold text-navy">(650) 393-5851</span> if you have
-                  any more questions or would like to schedule an initial appointment.
-                </p>
-              </div>
             </div>
           </motion.div>
 
@@ -328,9 +330,9 @@ function MembershipPage() {
             transition={{ duration: 0.5, delay: 0.08 }}
             className="mb-16 bg-white shadow-sm border border-gray-300 p-6 md:p-10"
           >
-            <div className="mb-8">
+            <div className="mb-8 text-center">
               <h2 className="text-2xl md:text-3xl font-bold text-navy tracking-tight">Frequently Asked Questions</h2>
-              <div className="mt-3 h-1 w-16 bg-gold" />
+              <div className="mx-auto mt-3 h-1 w-16 bg-gold" />
             </div>
             <div className="space-y-4">
               {faqItems.map((item, index) => (
@@ -356,7 +358,7 @@ function MembershipPage() {
                         transition={{ duration: 0.22 }}
                       >
                         <div className="border-t border-gray-200 px-5 py-4 md:px-6">
-                          <p className="text-[15px] leading-relaxed text-foreground/80">{item.answer}</p>
+                          <p className="text-[18px] leading-9 text-foreground/80">{item.answer}</p>
                         </div>
                       </motion.div>
                     )}
