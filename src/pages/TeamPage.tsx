@@ -101,7 +101,13 @@ function TeamPage() {
                 <div className="bg-white p-6 shadow-sm border border-gray-300 border-t-4 border-t-steely-blue">
                   <h4 className="text-lg font-bold text-navy mb-3 uppercase tracking-wide border-b border-gray-200 pb-2">Family Life</h4>
                   <p className="mt-3 text-[18px] text-foreground/90 leading-9">
-                    Dr. Sujansky is married and has two sons. She loves to spend her free time with skiing, hiking, knitting, and reading. She enjoys traveling and sharing a good meal with friends and family.
+                    Dr. Sujansky is married and has two sons and will be glad to talk about them anytime, anywhere. She loves to spend her free time with skiing (and apres-skiing!), hiking, knitting, and reading. She enjoys traveling to exotic places. At home, she looks forward to sharing good meal of pasta carbonara with friends and family.
+                  </p>
+                </div>
+                <div className="bg-white p-6 shadow-sm border border-gray-300 border-t-4 border-t-gold">
+                  <h4 className="text-lg font-bold text-navy mb-3 uppercase tracking-wide border-b border-gray-200 pb-2">Why I Practice</h4>
+                  <p className="mt-3 text-[18px] text-foreground/90 leading-9">
+                    "I've wanted to be a doctor since I was a small child and I still love my job. I feel privileged to be able to spend more time with my patients so that I can care about them, not just care for them. I try to combine this time-honored doctor-patient relationships with modern medical advances."
                   </p>
                 </div>
               </motion.div>

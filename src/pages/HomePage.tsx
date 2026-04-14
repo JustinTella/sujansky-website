@@ -5,7 +5,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ContactForm from '@/components/ContactForm';
 import MapEmbed from '@/components/MapEmbed';
-import officeImage from '@/assets/backround.jpg';
+import officeImage from '@/assets/Gemini_Generated_Image_l6jcc5l6jcc5l6jc.png';
 import drPortrait from '@/assets/Rika+in+brown+blouse (1).webp';
 import shawnaPortrait from '@/assets/image-asset (4).webp';
 import kimPortrait from '@/assets/Kim (1).webp';
@@ -27,7 +27,7 @@ function HomePage() {
             <img
               src={officeImage}
               alt="Office at 34 North San Mateo Drive"
-              className="h-full w-full scale-[1.2] object-cover object-[30%_38%]"
+              className="h-full w-full scale-[1.08] object-cover object-left"
             />
             <div className="absolute inset-0 bg-[linear-gradient(110deg,rgba(16,30,52,0.56)_0%,rgba(16,30,52,0.38)_30%,rgba(16,30,52,0.12)_56%,rgba(16,30,52,0.02)_100%)]" />
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(214,171,83,0.14),transparent_35%),radial-gradient(circle_at_bottom_left,rgba(255,255,255,0.06),transparent_30%)]" />
