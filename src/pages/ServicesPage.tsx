@@ -173,6 +173,22 @@ function ServicesPage() {
                   <p className="text-[17px] leading-8 text-foreground/80">
                     Our Travel Medicine program prepares you for international travel with personalized health planning, destination-specific vaccinations, prescription medications, and a curated travel health kit.
                   </p>
+                  <div className="mt-6 border border-gold/35 bg-[linear-gradient(135deg,rgba(184,142,63,0.08),rgba(255,255,255,0.88))] px-5 py-5">
+                    <p className="mb-2 text-sm font-semibold uppercase tracking-[0.18em] text-gold">Planning a Trip?</p>
+                    <p className="text-[17px] leading-8 text-foreground/80">
+                      If you are a current patient preparing for a trip, please complete the form around three weeks in advance so our office can review your plans and follow up about a personalized travel kit. Prospective patients interested in a tailored medicine kit are also welcome to complete the form, and we will be in touch.
+                    </p>
+                    <div className="mt-5 flex justify-center">
+                      <a
+                        href="https://forms.gle/t9sRSCfSpkM2AxT79"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-flex min-w-[240px] justify-center border border-navy bg-navy px-7 py-3.5 text-sm font-semibold uppercase tracking-[0.14em] text-white shadow-[0_10px_24px_rgba(20,36,74,0.12)] transition-colors duration-200 hover:bg-white hover:text-navy"
+                      >
+                        Request a Travel Kit
+                      </a>
+                    </div>
+                  </div>
                 </div>
                 <div className="border border-gray-300 bg-white px-6 py-4 shadow-sm min-h-[128px]">
                   <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-gold">Additional Care</p>

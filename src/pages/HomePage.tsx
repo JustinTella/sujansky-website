@@ -144,8 +144,8 @@ function HomePage() {
               ))}
             </div>
             <div className="mt-12 text-center">
-              <Link to="/about" className="inline-flex items-center justify-center border border-navy px-6 py-2.5 text-sm font-medium uppercase tracking-wider text-navy transition-colors duration-200 hover:bg-navy hover:text-white active:scale-[0.97]">
-                Learn More About Us
+              <Link to="/team" className="inline-flex items-center justify-center border border-navy px-14 py-5 text-xl font-semibold uppercase tracking-[0.16em] text-navy transition-colors duration-200 hover:bg-navy hover:text-white active:scale-[0.97]">
+                Meet the Office
               </Link>
             </div>
           </div>

@@ -28,9 +28,9 @@ function AboutUsPage() {
   const [testimonialIndex, setTestimonialIndex] = useState(0);
 
   const teamMembers = [
-    { name: 'Ulrike Sujansky', title: 'M.D., FACP', image: drPortrait, cta: 'Meet Dr. Sujansky', linkTo: '/dr-sujansky' },
-    { name: 'Shawna G.', title: 'Office Manager', image: shawnaImage, cta: 'Learn More' },
-    { name: 'Kim J.', title: 'Medical Assistant', image: kimPortrait, cta: 'Learn More' },
+    { name: 'Ulrike Sujansky', title: 'M.D., FACP', image: drPortrait },
+    { name: 'Shawna G.', title: 'Office Manager', image: shawnaImage },
+    { name: 'Kim J.', title: 'Medical Assistant', image: kimPortrait },
   ];
 
   const testimonials: Testimonial[] = [
@@ -123,16 +123,14 @@ function AboutUsPage() {
                     <img src={member.image} alt={`${member.name}, ${member.title}`} className="h-[350px] w-full object-cover object-top" />
                   </div>
                   <p className="font-bold text-navy text-lg mb-0.5">{member.name}</p>
-                  <p className="text-sm text-steely-blue font-medium mb-4">{member.title}</p>
-                  {member.linkTo ? (
-                    <Button asChild className="bg-navy text-white hover:bg-steely-blue transition-colors duration-200 active:scale-[0.98] shadow-sm px-6 py-2 text-sm rounded-none uppercase tracking-wide">
-                      <Link to={member.linkTo}>{member.cta}</Link>
-                    </Button>
-                  ) : (
-                    <div className="h-10" aria-hidden="true" />
-                  )}
+                  <p className="text-sm text-steely-blue font-medium">{member.title}</p>
                 </motion.div>
               ))}
+            </div>
+            <div className="mb-12 text-center">
+              <Button asChild className="rounded-none bg-navy px-10 py-6 text-base font-semibold uppercase tracking-[0.14em] text-white shadow-sm transition-colors duration-200 hover:bg-steely-blue active:scale-[0.98]">
+                <Link to="/team">Learn More About the Practice</Link>
+              </Button>
             </div>
           </div>
         </section>

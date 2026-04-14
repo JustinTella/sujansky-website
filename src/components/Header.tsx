@@ -49,7 +49,7 @@ function Header() {
 
   const aboutLinks = [
     { path: '/about', label: 'About Us', hash: '' },
-    { path: '/dr-sujansky', label: 'Dr. Sujansky' },
+    { path: '/team', label: 'Meet the Office' },
     { path: '/about#testimonials', label: 'Testimonials' }
   ];
 
@@ -112,7 +112,7 @@ function Header() {
               <Link
                 to="/about"
                 onClick={(e) => handleNavClick(e, '/about')}
-                className={`${linkBase} inline-flex items-center gap-1 ${isActive('/about') || isActive('/dr-sujansky') ? activeStyle : ''}`}
+                className={`${linkBase} inline-flex items-center gap-1 ${isActive('/about') || isActive('/team') || isActive('/dr-sujansky') ? activeStyle : ''}`}
               >
                 About Us
                 <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${aboutOpen ? 'rotate-180' : ''}`} />
@@ -171,7 +171,7 @@ function Header() {
               </div>
             </div>
             <div>
-              <Link to="/about" onClick={() => setMobileMenuOpen(false)} className={`block py-2.5 text-sm font-medium text-navy hover:text-gold ${isActive('/about') || isActive('/dr-sujansky') ? 'text-gold' : ''}`}>
+              <Link to="/about" onClick={() => setMobileMenuOpen(false)} className={`block py-2.5 text-sm font-medium text-navy hover:text-gold ${isActive('/about') || isActive('/team') || isActive('/dr-sujansky') ? 'text-gold' : ''}`}>
                 About Us
               </Link>
               <div className="pl-4 space-y-1 border-l border-gray-200 ml-2">
