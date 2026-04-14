@@ -71,6 +71,31 @@ html {
     @apply bg-background text-foreground;
   }
 
+  /* Increase body copy readability for older audiences. */
+  main p:not(.hero-text),
+  main li,
+  main label,
+  main input,
+  main textarea,
+  main select {
+    font-size: 1.125rem !important;
+    line-height: 1.85 !important;
+  }
+
+  footer p,
+  footer li,
+  footer a {
+    font-size: 1.0625rem !important;
+    line-height: 1.7 !important;
+  }
+
+  /* Slightly boost the smallest text styles without touching headers. */
+  main .text-xs,
+  main .text-sm {
+    font-size: 1.0625rem !important;
+    line-height: 1.7 !important;
+  }
+
   button,
   input,
   select,

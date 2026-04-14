@@ -51,7 +51,7 @@ export async function handler(event) {
           review.text?.text ||
           '',
       }))
-      .filter((review) => review.rating >= 4 && review.text)
+      .filter((review) => review.rating >= 4 && review.text.trim().length > 0)
       .sort((a, b) => {
         const aTime = new Date(a.publishTime || 0).getTime();
         const bTime = new Date(b.publishTime || 0).getTime();

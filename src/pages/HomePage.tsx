@@ -13,8 +13,8 @@ import kimPortrait from '@/assets/Kim (1).webp';
 function HomePage() {
   const teamMembers = [
     { name: 'Dr. Ulrike Sujansky', image: drPortrait, role: 'Physician' },
-    { name: 'Shawna Guzman', image: shawnaPortrait, role: 'Office Manager' },
-    { name: 'Kim Jimenez', image: kimPortrait, role: 'Medical Assistant' }
+    { name: 'Shawna G.', image: shawnaPortrait, role: 'Office Manager' },
+    { name: 'Kim J.', image: kimPortrait, role: 'Medical Assistant' }
   ];
 
   return (
@@ -27,7 +27,7 @@ function HomePage() {
             <img
               src={officeImage}
               alt="Office at 34 North San Mateo Drive"
-              className="h-full w-full scale-[1.14] object-cover object-[42%_38%]"
+              className="h-full w-full scale-[1.2] object-cover object-[30%_38%]"
             />
             <div className="absolute inset-0 bg-[linear-gradient(110deg,rgba(16,30,52,0.56)_0%,rgba(16,30,52,0.38)_30%,rgba(16,30,52,0.12)_56%,rgba(16,30,52,0.02)_100%)]" />
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(214,171,83,0.14),transparent_35%),radial-gradient(circle_at_bottom_left,rgba(255,255,255,0.06),transparent_30%)]" />
@@ -41,25 +41,25 @@ function HomePage() {
             >
               <div className="pointer-events-none absolute -inset-x-6 -inset-y-8 bg-[radial-gradient(circle_at_left_center,rgba(16,30,52,0.5)_0%,rgba(16,30,52,0.34)_38%,rgba(16,30,52,0.14)_62%,transparent_82%)] blur-xl md:-inset-x-10 md:-inset-y-10" />
               <div className="mt-5 px-1 md:px-2">
-                <p className="mb-4 text-lg font-semibold uppercase tracking-[0.18em] text-[#f1d06f] drop-shadow-[0_2px_10px_rgba(15,23,42,0.6)] md:text-xl">
+                <p className="hero-text mb-2 text-2xl font-semibold uppercase tracking-[0.18em] text-[#f1d06f] drop-shadow-[0_2px_10px_rgba(15,23,42,0.6)] md:text-3xl">
                   Partnering in Your Health
                 </p>
                 <h1 className="mb-2 text-5xl font-semibold leading-[0.95] tracking-[-0.03em] text-white drop-shadow-[0_3px_18px_rgba(15,23,42,0.45)] md:text-6xl lg:text-7xl">
                   Ulrike Sujansky, M.D.
                 </h1>
-                <p className="mb-2 text-4xl font-medium italic leading-none tracking-[-0.02em] text-white/95 drop-shadow-[0_3px_16px_rgba(15,23,42,0.42)] md:text-5xl">
+                <p className="hero-text mb-1 text-4xl font-medium italic leading-none tracking-[-0.02em] text-white/95 drop-shadow-[0_3px_16px_rgba(15,23,42,0.42)] md:text-5xl">
                   Concierge Medicine
                 </p>
-                <p className="mb-5 text-3xl font-medium italic leading-none text-white/95 drop-shadow-[0_3px_16px_rgba(15,23,42,0.42)] md:text-4xl">
+                <p className="hero-text mb-3 text-4xl font-medium italic leading-none text-white/95 drop-shadow-[0_3px_16px_rgba(15,23,42,0.42)] md:text-5xl">
                   San Mateo, CA
                 </p>
-                <div className="space-y-1 text-lg text-white/95 drop-shadow-[0_2px_10px_rgba(15,23,42,0.45)] md:text-[1.45rem]">
-                  <p className="flex items-center gap-2">
-                    <MapPin className="h-5 w-5 text-gold" />
+                <div className="space-y-2 text-xl text-white/95 drop-shadow-[0_2px_10px_rgba(15,23,42,0.45)] md:text-2xl">
+                  <p className="hero-text flex items-center gap-2">
+                    <MapPin className="h-6 w-6 text-gold" />
                     34 North San Mateo Drive, Suite 1
                   </p>
-                  <p className="flex items-center gap-2">
-                    <Phone className="h-5 w-5 text-gold" />
+                  <p className="hero-text flex items-center gap-2">
+                    <Phone className="h-6 w-6 text-gold" />
                     (650) 393-5851
                   </p>
                 </div>

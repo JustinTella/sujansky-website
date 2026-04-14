@@ -1,5 +1,6 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
-import { Star } from 'lucide-react';
+import { useEffect, useMemo, useState } from 'react';
+import { ChevronLeft, ChevronRight, Star } from 'lucide-react';
+import { AnimatePresence, motion } from 'framer-motion';
 
 type GoogleReview = {
   author: string;
@@ -68,9 +69,7 @@ const FALLBACK_GOOGLE_REVIEWS: GoogleReviewResponse = {
 
 function GoogleReviewLoop() {
   const [data, setData] = useState<GoogleReviewResponse | null>(null);
-  const [offset, setOffset] = useState(0);
-  const trackRef = useRef<HTMLDivElement | null>(null);
-  const offsetRef = useRef(0);
+  const [index, setIndex] = useState(0);
 
   useEffect(() => {
     let cancelled = false;
@@ -103,44 +102,15 @@ function GoogleReviewLoop() {
     };
   }, []);
 
-  const reviews = useMemo(() => {
-    if (!data?.reviews?.length) return [];
-    return [...data.reviews, ...data.reviews];
-  }, [data]);
-
-  const displayReviews = useMemo(() => {
-    if (!reviews.length) return [];
-    return reviews.length >= 8 ? reviews : [...reviews, ...reviews];
-  }, [reviews]);
-
-  useEffect(() => {
-    if (!displayReviews.length) return;
-
-    let frameId = 0;
-    let lastTime = 0;
-    const speed = 20;
-
-    const animate = (time: number) => {
-      if (!lastTime) lastTime = time;
-      const delta = (time - lastTime) / 1000;
-      lastTime = time;
-
-      const track = trackRef.current;
-      const halfWidth = track ? track.scrollWidth / 2 : 0;
-
-      let nextOffset = offsetRef.current - speed * delta;
-      if (halfWidth > 0 && Math.abs(nextOffset) >= halfWidth) {
-        nextOffset += halfWidth;
-      }
-
-      offsetRef.current = nextOffset;
-      setOffset(nextOffset);
-      frameId = window.requestAnimationFrame(animate);
-    };
-
-    frameId = window.requestAnimationFrame(animate);
-    return () => window.cancelAnimationFrame(frameId);
-  }, [displayReviews.length]);
+  const reviews = useMemo(() => data?.reviews ?? [], [data]);
+  const visibleCount = 3;
+  const visibleReviews = useMemo(
+    () =>
+      reviews.length
+        ? Array.from({ length: visibleCount }, (_, i) => reviews[(index + i) % reviews.length])
+        : [],
+    [reviews, index]
+  );
 
   if (!data) {
     return (
@@ -151,55 +121,79 @@ function GoogleReviewLoop() {
   }
 
   return (
-    <div className="mt-5 w-full overflow-hidden">
-      <div className="overflow-hidden">
-        <div
-          ref={trackRef}
-          className="flex w-max gap-4 pr-4 will-change-transform"
-          style={{ transform: `translate3d(${offset}px, 0, 0)` }}
+    <div className="mt-5 w-full">
+      <div className="flex items-center justify-between gap-4">
+        <button
+          type="button"
+          onClick={() => setIndex((prev) => (prev - 1 + reviews.length) % reviews.length)}
+          className="hidden h-9 w-9 items-center justify-center border border-navy/30 text-navy transition-colors duration-200 hover:bg-navy hover:text-white md:flex"
+          aria-label="Previous Google review"
         >
-          {displayReviews.map((review, index) => (
-            <article
-              key={`${review.author}-${index}`}
-              className="flex min-h-[198px] w-[15rem] shrink-0 flex-col border border-gray-200 bg-[#fbfaf6] p-4 text-left shadow-[0_8px_24px_rgba(20,36,74,0.05)]"
+          <ChevronLeft className="h-4 w-4" />
+        </button>
+        <div className="flex flex-1 justify-center">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -20 }}
+              transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+              className="flex justify-center gap-4"
             >
-              <div>
-                <div className="mb-3 flex items-center gap-3">
-                  {review.profilePhoto ? (
-                    <img
-                      src={review.profilePhoto}
-                      alt={review.author}
-                      className="h-10 w-10 rounded-full object-cover"
-                    />
-                  ) : (
-                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-navy/10 text-sm font-semibold text-navy">
-                      {review.author.charAt(0)}
-                    </div>
-                  )}
-                  <div className="min-w-0">
-                    <p className="truncate text-sm font-semibold text-navy">{review.author}</p>
-                    <div className="mt-0.5 flex items-center gap-2">
-                      <div className="flex">
-                        {[...Array(5)].map((_, i) => (
-                          <Star
-                            key={i}
-                            className={`h-3.5 w-3.5 ${
-                              i < review.rating ? 'fill-gold text-gold' : 'text-gray-300'
-                            }`}
-                          />
-                        ))}
+              {visibleReviews.map((review) => (
+                <article
+                  key={`${review.author}-${review.publishTime ?? review.text}`}
+                  className="flex min-h-[198px] w-[15rem] shrink-0 flex-col border border-gray-200 bg-[#fbfaf6] p-4 text-left shadow-[0_8px_24px_rgba(20,36,74,0.05)]"
+                >
+                  <div>
+                    <div className="mb-3 flex items-center gap-3">
+                      {review.profilePhoto ? (
+                        <img
+                          src={review.profilePhoto}
+                          alt={review.author}
+                          referrerPolicy="no-referrer"
+                          className="h-10 w-10 rounded-full object-cover"
+                        />
+                      ) : (
+                        <div className="flex h-10 w-10 items-center justify-center rounded-full bg-navy/10 text-sm font-semibold text-navy">
+                          {review.author.charAt(0)}
+                        </div>
+                      )}
+                      <div className="min-w-0">
+                        <p className="truncate text-sm font-semibold text-navy">{review.author}</p>
+                        <div className="mt-0.5 flex items-center gap-2">
+                          <div className="flex">
+                            {[...Array(5)].map((_, i) => (
+                              <Star
+                                key={i}
+                                className={`h-3.5 w-3.5 ${
+                                  i < review.rating ? 'fill-gold text-gold' : 'text-gray-300'
+                                }`}
+                              />
+                            ))}
+                          </div>
+                          {review.relativeTime ? (
+                            <span className="text-xs text-foreground/55">{review.relativeTime}</span>
+                          ) : null}
+                        </div>
                       </div>
-                      {review.relativeTime ? (
-                        <span className="text-xs text-foreground/55">{review.relativeTime}</span>
-                      ) : null}
                     </div>
+                    <p className="line-clamp-5 text-[14px] leading-6.5 text-navy/82">{review.text}</p>
                   </div>
-                </div>
-                <p className="line-clamp-5 text-[14px] leading-6.5 text-navy/82">{review.text}</p>
-              </div>
-            </article>
-          ))}
+                </article>
+              ))}
+            </motion.div>
+          </AnimatePresence>
         </div>
+        <button
+          type="button"
+          onClick={() => setIndex((prev) => (prev + 1) % reviews.length)}
+          className="hidden h-9 w-9 items-center justify-center border border-navy/30 text-navy transition-colors duration-200 hover:bg-navy hover:text-white md:flex"
+          aria-label="Next Google review"
+        >
+          <ChevronRight className="h-4 w-4" />
+        </button>
       </div>
     </div>
   );
