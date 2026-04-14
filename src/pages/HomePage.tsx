@@ -137,8 +137,8 @@ function HomePage() {
                     <img src={member.image} alt={`${member.name}, ${member.role}`} className="h-72 w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.02]" />
                   </div>
                   <div className="border-t border-gold/40 pt-4 text-center">
-                    <p className="text-base font-semibold text-navy">{member.name}</p>
-                    <p className="mt-1 text-sm tracking-[0.08em] text-steely-blue">{member.role}</p>
+                    <p className="text-lg font-semibold text-navy">{member.name}</p>
+                    <p className="mt-1 text-lg tracking-[0.08em] text-steely-blue">{member.role}</p>
                   </div>
                 </motion.div>
               ))}

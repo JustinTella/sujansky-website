@@ -32,6 +32,9 @@ function Header() {
           window.history.pushState(null, '', path);
         }
       }
+    } else if (location.pathname === path) {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
     setMobileMenuOpen(false);
     setServicesOpen(false);
@@ -66,7 +69,7 @@ function Header() {
           </Link>
 
           <nav className="hidden lg:flex items-center gap-14 xl:gap-16">
-            <Link to="/membership" className={`${linkBase} ${isActive('/membership') ? activeStyle : ''}`}>
+            <Link to="/membership" onClick={(e) => handleNavClick(e, '/membership')} className={`${linkBase} ${isActive('/membership') ? activeStyle : ''}`}>
               Membership
             </Link>
 
@@ -77,6 +80,7 @@ function Header() {
             >
               <Link
                 to="/services"
+                onClick={(e) => handleNavClick(e, '/services')}
                 className={`${linkBase} inline-flex items-center gap-1 ${isActive('/services') ? activeStyle : ''}`}
               >
                 Services
@@ -107,6 +111,7 @@ function Header() {
             >
               <Link
                 to="/about"
+                onClick={(e) => handleNavClick(e, '/about')}
                 className={`${linkBase} inline-flex items-center gap-1 ${isActive('/about') || isActive('/dr-sujansky') ? activeStyle : ''}`}
               >
                 About Us
@@ -130,11 +135,11 @@ function Header() {
               )}
             </div>
 
-            <Link to="/blog" className={`${linkBase} ${isActive('/blog') ? activeStyle : ''}`}>
+            <Link to="/blog" onClick={(e) => handleNavClick(e, '/blog')} className={`${linkBase} ${isActive('/blog') ? activeStyle : ''}`}>
               Blog
             </Link>
 
-            <Link to="/contact" className={`${linkBase} ${isActive('/contact') ? activeStyle : ''}`}>
+            <Link to="/contact" onClick={(e) => handleNavClick(e, '/contact')} className={`${linkBase} ${isActive('/contact') ? activeStyle : ''}`}>
               Contact
             </Link>
           </nav>
