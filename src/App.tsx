@@ -16,12 +16,22 @@ import PrivacyPolicyPage from "./pages/PrivacyPolicyPage";
 import TermsOfServicePage from "./pages/TermsOfServicePage";
 
 const queryClient = new QueryClient();
+const routerBasename =
+  import.meta.env.BASE_URL === "/"
+    ? undefined
+    : import.meta.env.BASE_URL.replace(/\/$/, "");
+
+const redirectedPath = sessionStorage.getItem("spa-redirect");
+if (redirectedPath) {
+  sessionStorage.removeItem("spa-redirect");
+  window.history.replaceState(null, "", `${import.meta.env.BASE_URL}${redirectedPath}`);
+}
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Sonner position="top-center" />
-      <BrowserRouter>
+      <BrowserRouter basename={routerBasename}>
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<HomePage />} />
