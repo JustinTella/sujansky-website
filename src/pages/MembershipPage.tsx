@@ -27,20 +27,21 @@ function MembershipPage() {
       content: (
         <ul className="mx-auto max-w-2xl list-disc space-y-2.5 pl-5 text-left">
           <li>Easy direct communication with Dr. Sujansky via her personal cell phone after hours</li>
-          <li>Same day/ next day email communications including weekends and holidays</li>
+          <li>Same day/next day email communications including weekends and holidays</li>
           <li>Limited practice size, which allows for more time with the doctor</li>
-          <li>Expedited call-backs and same day/ next day appointment availability</li>
+          <li>Expedited call-backs and same day/next day appointment availability</li>
           <li>Enhanced communication with hospital physicians and staff that will help ensure a seamless transition between hospital and outpatient care</li>
+          <li>Home visits can be arranged for those who are homebound</li>
         </ul>
       ),
     },
     {
-      title: 'Access and Communication',
+      title: 'Expanded Communication',
       content:
-        'Dr. Sujansky makes herself available to her patients with 24/7 access by email or her personal cell phone. Now her office visits are longer, she is more available, and she is better able to communicate on your behalf with the other physicians involved in your care.',
+        'Dr. Sujansky makes herself available to her patients with 24/7 communication by email or her personal cell phone. Now her office visits are longer, she is more available, and she is better able to communicate on your behalf with the other physicians involved in your care.',
     },
     {
-      title: 'Included Preventive Services',
+      title: 'Included Services',
       content: (
         <div className="mx-auto max-w-2xl text-left">
           <p className="mb-4 text-center text-[18px] leading-8 text-foreground">
@@ -57,11 +58,6 @@ function MembershipPage() {
         </div>
       ),
     },
-    {
-      title: 'Time, Flexibility, and Home Visits',
-      content:
-        'Longer and more flexible appointments in which all health education issues and concerns can be addressed. Home visits for those who live within a 10 mile radius and who are unable to travel to the office.',
-    },
   ];
 
   const faqItems = [
@@ -73,7 +69,7 @@ function MembershipPage() {
     {
       question: 'How is this different from traditional medicine?',
       answer:
-        'In a typical primary care practice, the doctor has a patient panel of thousands of patients. This translates into long wait times and shorter office visits for patients. Dr. Sujansky has also noticed that the emphasis on electronic medical records systems places even more demands on the physician and even less time is left for directly caring for the patient. Time and reimbursement pressures have therefore eroded the physician-patient relationship. In membership medicine, on the other hand, all of these external pressures have been stripped away and we are back to the way medicine was meant to be practiced. Dr. Sujansky is free to spend as much time with a patient as she may need.',
+        'In a typical concierge care practice, the doctor has a patient panel of thousands of patients. This translates into long wait times and shorter office visits for patients. Dr. Sujansky has also noticed that the emphasis on electronic medical records systems places even more demands on the physician and even less time is left for directly caring for the patient. Time and reimbursement pressures have therefore eroded the physician-patient relationship. In membership medicine, on the other hand, all of these external pressures have been stripped away and we are back to the way medicine was meant to be practiced. Dr. Sujansky is free to spend as much time with a patient as she may need.',
     },
     {
       question: 'What does the Membership Program include?',
@@ -103,7 +99,7 @@ function MembershipPage() {
     {
       question: 'Do I need to have health insurance?',
       answer:
-        'Yes. Private medical practices do not take the place of general health insurance coverage. The overall goal is for our private medicine practice to improve and maintain your health, and for your insurance plan to cover necessary and more complex medical intervention when needed. By providing you with extraordinary and connected primary care, your plan utilization can often be reduced.',
+        'Yes. Private medical practices do not take the place of general health insurance coverage. The overall goal is for our private medicine practice to improve and maintain your health, and for your insurance plan to cover necessary and more complex medical intervention when needed. By providing you with extraordinary and connected concierge care, your plan utilization can often be reduced.',
     },
     {
       question: 'What about lab, x-ray, specialists fees and hospitalization?',
@@ -138,7 +134,7 @@ function MembershipPage() {
     {
       question: 'What if I have more questions?',
       answer:
-        'Please call our office at 650 393-5851 to speak with our staff. Shawna, our office manager and Private Medicine coordinator, can discuss details of our new practice concept with you. Dr. Sujansky would also be happy to talk to you personally on the phone if you have questions.',
+        'Please call our office at 650 393-5851 to speak with our staff. Shawna G., our office manager and Private Medicine coordinator, can discuss details of our new practice concept with you. Dr. Sujansky would also be happy to talk to you personally on the phone if you have questions.',
     },
   ];
 

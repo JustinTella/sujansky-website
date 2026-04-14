@@ -39,8 +39,8 @@ function Header() {
   };
 
   const serviceLinks = [
-    { path: '/services#primary-care', label: 'Primary Care' },
-    { path: '/services#wellness', label: 'Preventative Care' },
+    { path: '/services#primary-care', label: 'Concierge Care' },
+    { path: '/services#wellness', label: 'Concierge Plus' },
     { path: '/services#additional-services', label: 'Additional Services' }
   ];
 

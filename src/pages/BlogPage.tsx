@@ -59,7 +59,25 @@ function BlogPage() {
       .replaceAll('â€™', '\'')
       .replaceAll('â€œ', '"')
       .replaceAll('â€\x9d', '"')
-      .replaceAll('â€¦', '...');
+      .replaceAll('â€¦', '...')
+      .replace(/<\s*strong\s*>/gi, '**')
+      .replace(/<\s*\/\s*strong\s*>/gi, '**')
+      .replace(/<\s*b\s*>/gi, '**')
+      .replace(/<\s*\/\s*b\s*>/gi, '**');
+
+  const renderBoldText = (text: string) => {
+    const parts = text.split(/(\*\*[^*]+\*\*)/g).filter(Boolean);
+    return parts.map((part, index) => {
+      if (part.startsWith('**') && part.endsWith('**')) {
+        return (
+          <strong key={index} className="font-semibold text-navy">
+            {part.slice(2, -2)}
+          </strong>
+        );
+      }
+      return <span key={index}>{part}</span>;
+    });
+  };
 
   return (
     <>
@@ -141,14 +159,14 @@ function BlogPage() {
                         normalizeLine(line).startsWith('•') ? (
                           <div key={index} className="flex items-start gap-3">
                             <span className="mt-1.5 text-gold">•</span>
-                            <p>{normalizeLine(line).replace(/^[•]\s*/, '')}</p>
+                            <p>{renderBoldText(normalizeLine(line).replace(/^[•]\s*/, ''))}</p>
                           </div>
                         ) : (
                           <p
                             key={index}
                             className={isSectionHeading(normalizeLine(line)) ? 'pt-2 text-lg font-semibold text-navy' : ''}
                           >
-                            {normalizeLine(line)}
+                            {renderBoldText(normalizeLine(line))}
                           </p>
                         )
                       ))}

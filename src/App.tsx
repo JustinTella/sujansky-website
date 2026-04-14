@@ -3,7 +3,6 @@ import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import ScrollToTop from "@/components/ScrollToTop";
-import TextOfficeBubble from "@/components/TextOfficeBubble";
 import HomePage from "./pages/HomePage";
 import MembershipPage from "./pages/MembershipPage";
 import ServicesPage from "./pages/ServicesPage";
@@ -24,7 +23,6 @@ const App = () => (
       <Sonner position="top-center" />
       <BrowserRouter>
         <ScrollToTop />
-        <TextOfficeBubble />
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/membership" element={<MembershipPage />} />

@@ -66,7 +66,7 @@ function ServicesPage() {
   ];
 
   const wellnessServices = [
-    'Everything included in the Primary Care package',
+    'Everything included in the Concierge Care package',
     '__SUBHEAD_AS_WELL_AS__',
     'Polygenic DNA tests and risk scores',
     'Pulmonary function test',
@@ -83,7 +83,7 @@ function ServicesPage() {
         </div>
 
         <section id="primary-care" className="scroll-mt-24">
-          <ServiceSectionHeader title="Primary Care" />
+          <ServiceSectionHeader title="Concierge Care" />
           <div className="max-w-7xl mx-auto mb-24 px-4 sm:px-6 lg:px-8 md:mb-32">
             <div className="grid grid-cols-1 items-start gap-12 md:gap-16 lg:grid-cols-2 lg:gap-20">
               <motion.div
@@ -96,7 +96,7 @@ function ServicesPage() {
                   <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-gold">Core Offering</p>
                   <h3 className="mb-5 text-3xl font-semibold tracking-tight text-navy">Comprehensive Care</h3>
                   <p className="text-[19px] leading-9 text-foreground/80">
-                    Our Primary Care offering begins with an annual executive physical that includes a thorough review of your personal and family history, physical exam, screening test data, and follow-up communications that help guide health care decisions. From there, the practice is built around direct communication, longer visits, preventive planning, and close coordination that support more personalized and responsive care.
+                    Our Concierge Care offering begins with an annual executive physical that includes a thorough review of your personal and family history, physical exam, screening test data, and follow-up communications that help guide health care decisions. From there, the practice is built around direct communication, longer visits, preventive planning, and close coordination that support more personalized and responsive care.
                   </p>
                 </div>
                 <div className="overflow-hidden border border-navy/70 bg-white shadow-sm">
@@ -120,7 +120,7 @@ function ServicesPage() {
         </section>
 
         <section id="wellness" className="scroll-mt-24 border-t border-navy/15 bg-[linear-gradient(to_bottom,rgba(20,36,74,0.03),rgba(20,36,74,0)_120px)] pt-16 md:pt-20">
-          <ServiceSectionHeader title="Preventative Care" />
+          <ServiceSectionHeader title="Concierge Plus" />
           <div className="max-w-7xl mx-auto mb-24 px-4 sm:px-6 lg:px-8 md:mb-32">
             <div className="grid grid-cols-1 items-start gap-8 md:gap-10 lg:grid-cols-[1.08fr_0.92fr] lg:gap-14">
               <motion.div
@@ -133,13 +133,13 @@ function ServicesPage() {
                   <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-gold">Advanced Prevention</p>
                   <h3 className="mb-5 text-3xl font-semibold tracking-tight text-navy">A More Proactive Approach</h3>
                   <p className="text-[19px] leading-9 text-foreground/80">
-                    Our Preventative Care offering is an enhanced program designed for patients who want to take a proactive approach to their long-term health. It focuses on advanced diagnostics and early detection to help you stay ahead of potential health concerns.
+                    Our Concierge Plus offering is an enhanced program designed for patients who want to take a proactive approach to their long-term health. It focuses on advanced diagnostics and early detection to help you stay ahead of potential health concerns.
                   </p>
                 </div>
                 <div className="flex items-center justify-center overflow-hidden border border-navy/70 bg-white shadow-sm mx-auto w-fit">
                   <img
                     src={preventativeImage}
-                    alt="Preventative care"
+                    alt="Concierge Plus care"
                     className="h-72 w-auto object-cover object-center md:h-80"
                   />
                 </div>
@@ -178,7 +178,7 @@ function ServicesPage() {
                   <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-gold">Additional Care</p>
                   <h3 className="mb-3 text-[1.65rem] font-semibold tracking-tight text-navy">On-Demand Nursing Services</h3>
                   <p className="text-[17px] leading-8 text-foreground/80">
-                    When additional support is needed, our concierge private duty nursing team through Luminate Wellness &amp; Recovery is available around the clock. They offer flexible day, night, and live-in shifts for short-term recovery or ongoing care, with services that include medication administration, wound care, vital sign monitoring, IV vitamin and hydration therapy, and physician coordination. Discreet home visits and hotel-based care are also available.
+                    When additional support is needed, we can help arrange concierge private duty nursing through Luminate Wellness &amp; Recovery. We coordinate setup for flexible day, night, and live-in shifts for short-term recovery or ongoing care, including medication administration, wound care, vital sign monitoring, IV vitamin and hydration therapy, and physician coordination. Discreet home visits and hotel-based care are also available.
                   </p>
                 </div>
                 <div className="border border-gray-300 bg-white px-6 py-4 shadow-sm min-h-[128px]">

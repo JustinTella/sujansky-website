@@ -1,7 +1,7 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
-import { motion } from 'framer-motion';
+import { useMemo, useState } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Star } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Star } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -25,16 +25,12 @@ type Testimonial = {
 function AboutUsPage() {
   const [selectedRangeId, setSelectedRangeId] = useState<string | null>(null);
   const [selectedTestimonialName, setSelectedTestimonialName] = useState<string | null>(null);
-  const [marqueeOffset, setMarqueeOffset] = useState(0);
-  const marqueeViewportRef = useRef<HTMLDivElement | null>(null);
-  const marqueeTrackRef = useRef<HTMLDivElement | null>(null);
-  const cardRefs = useRef<Record<string, HTMLDivElement[]>>({});
-  const marqueeOffsetRef = useRef(0);
+  const [testimonialIndex, setTestimonialIndex] = useState(0);
 
   const teamMembers = [
     { name: 'Ulrike Sujansky', title: 'M.D., FACP', image: drPortrait, cta: 'Meet Dr. Sujansky', linkTo: '/dr-sujansky' },
-    { name: 'Shawna Guzman', title: 'Office Manager', image: shawnaImage, cta: 'Learn More' },
-    { name: 'Kim Jimenez', title: 'Medical Assistant', image: kimPortrait, cta: 'Learn More' },
+    { name: 'Shawna G.', title: 'Office Manager', image: shawnaImage, cta: 'Learn More' },
+    { name: 'Kim J.', title: 'Medical Assistant', image: kimPortrait, cta: 'Learn More' },
   ];
 
   const testimonials: Testimonial[] = [
@@ -85,68 +81,24 @@ function AboutUsPage() {
 
   const selectedRange = clientRanges.find((range) => range.id === selectedRangeId) ?? null;
   const activeTestimonialName = selectedTestimonialName ?? selectedRange?.highlightName ?? null;
-  const scrollingTestimonials = [...testimonials, ...testimonials];
-  const marqueeStyle = useMemo(
-    () => ({
-      transform: `translateX(${marqueeOffset}px)`,
-      transition: activeTestimonialName ? 'transform 1100ms cubic-bezier(0.22, 1, 0.36, 1)' : 'none',
-    }),
-    [activeTestimonialName, marqueeOffset]
+  const visibleCount = 3;
+  const visibleTestimonials = useMemo(
+    () =>
+      Array.from({ length: visibleCount }, (_, i) =>
+        testimonials[(testimonialIndex + i + testimonials.length) % testimonials.length]
+      ),
+    [testimonialIndex, testimonials]
   );
-
-  useEffect(() => {
-    marqueeOffsetRef.current = marqueeOffset;
-  }, [marqueeOffset]);
-
-  useEffect(() => {
-    if (activeTestimonialName) return;
-
-    let frameId = 0;
-    let lastTime = 0;
-    const speed = 24;
-
-    const animate = (time: number) => {
-      if (!lastTime) lastTime = time;
-      const delta = (time - lastTime) / 1000;
-      lastTime = time;
-
-      const track = marqueeTrackRef.current;
-      const halfWidth = track ? track.scrollWidth / 2 : 0;
-
-      let nextOffset = marqueeOffsetRef.current - speed * delta;
-      if (halfWidth > 0 && Math.abs(nextOffset) >= halfWidth) {
-        nextOffset += halfWidth;
-      }
-
-      marqueeOffsetRef.current = nextOffset;
-      setMarqueeOffset(nextOffset);
-      frameId = window.requestAnimationFrame(animate);
-    };
-
-    frameId = window.requestAnimationFrame(animate);
-    return () => window.cancelAnimationFrame(frameId);
-  }, [activeTestimonialName]);
-
-  useEffect(() => {
-    if (!activeTestimonialName) {
-      return;
-    }
-
-    const viewport = marqueeViewportRef.current;
-    const matches = cardRefs.current[activeTestimonialName];
-    if (!viewport || !matches?.length) return;
-
-    const viewportCenter = viewport.clientWidth / 2;
-    const targetCard = matches.reduce((closest, card) => {
-      const cardCenter = card.offsetLeft + card.offsetWidth / 2 + marqueeOffsetRef.current;
-      const closestCenter = closest.offsetLeft + closest.offsetWidth / 2 + marqueeOffsetRef.current;
-      return Math.abs(cardCenter - viewportCenter) < Math.abs(closestCenter - viewportCenter) ? card : closest;
-    }, matches[0]);
-
-    const desiredOffset = viewportCenter - (targetCard.offsetLeft + targetCard.offsetWidth / 2);
-    marqueeOffsetRef.current = desiredOffset;
-    setMarqueeOffset(desiredOffset);
-  }, [activeTestimonialName]);
+  const highlightedIndex = activeTestimonialName
+    ? testimonials.findIndex((t) => t.name === activeTestimonialName)
+    : -1;
+  const jumpToTestimonial = (name: string | null) => {
+    if (!name) return;
+    const idx = testimonials.findIndex((t) => t.name === name);
+    if (idx === -1) return;
+    const startIndex = (idx - 1 + testimonials.length) % testimonials.length;
+    setTestimonialIndex(startIndex);
+  };
 
   return (
     <>
@@ -205,48 +157,62 @@ function AboutUsPage() {
               transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
               className="mb-12 overflow-hidden"
             >
-              <div ref={marqueeViewportRef} className="overflow-hidden">
-                <div
-                  ref={marqueeTrackRef}
-                  className="flex w-max gap-6 pr-6"
-                  style={marqueeStyle}
+              <div className="flex items-center justify-between gap-4">
+                <button
+                  type="button"
+                  onClick={() => setTestimonialIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length)}
+                  className="hidden h-10 w-10 items-center justify-center border border-navy/30 text-navy transition-colors duration-200 hover:bg-navy hover:text-white md:flex"
+                  aria-label="Previous testimonial"
                 >
-                {scrollingTestimonials.map((testimonial, index) => (
-                  <div
-                    key={`${testimonial.name}-${index}`}
-                    className="w-[20rem] shrink-0"
-                    ref={(node) => {
-                      if (!node) return;
-                      if (!cardRefs.current[testimonial.name]) {
-                        cardRefs.current[testimonial.name] = [];
-                      }
-                      cardRefs.current[testimonial.name][index < testimonials.length ? 0 : 1] = node;
-                    }}
-                  >
-                    <TestimonialCard
-                      quote={testimonial.quote}
-                      name={testimonial.name}
-                      profession={testimonial.profession}
-                      yearJoined={testimonial.yearJoined}
-                      onClick={() => {
-                        if (activeTestimonialName === testimonial.name) {
-                          setSelectedRangeId(null);
-                          setSelectedTestimonialName(null);
-                          return;
-                        }
+                  <ChevronLeft className="h-5 w-5" />
+                </button>
+                <div className="flex flex-1 justify-center">
+                  <AnimatePresence mode="wait">
+                    <motion.div
+                      key={testimonialIndex}
+                      initial={{ opacity: 0, x: 24 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      exit={{ opacity: 0, x: -24 }}
+                      transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+                      className="flex justify-center gap-6"
+                    >
+                      {visibleTestimonials.map((testimonial) => (
+                        <div key={testimonial.name} className="w-[20rem] shrink-0">
+                          <TestimonialCard
+                            quote={testimonial.quote}
+                            name={testimonial.name}
+                            profession={testimonial.profession}
+                            yearJoined={testimonial.yearJoined}
+                            onClick={() => {
+                              if (activeTestimonialName === testimonial.name) {
+                                setSelectedRangeId(null);
+                                setSelectedTestimonialName(null);
+                                return;
+                              }
 
-                        setSelectedRangeId(null);
-                        setSelectedTestimonialName(testimonial.name);
-                      }}
-                      className={
-                        activeTestimonialName === testimonial.name
-                          ? 'border-gold bg-[#fffaf0] shadow-[0_16px_40px_rgba(191,150,70,0.22)] cursor-pointer'
-                          : 'cursor-pointer hover:border-navy/40'
-                      }
-                    />
-                  </div>
-                ))}
+                              setSelectedRangeId(null);
+                              setSelectedTestimonialName(testimonial.name);
+                              jumpToTestimonial(testimonial.name);
+                            }}
+                            className={
+                              activeTestimonialName === testimonial.name
+                                ? 'border-gold bg-[#fffaf0] shadow-[0_16px_40px_rgba(191,150,70,0.22)] cursor-pointer'
+                                : 'cursor-pointer hover:border-navy/40'
+                            }
+                          />
+                        </div>
+                      ))}
+                    </motion.div>
+                  </AnimatePresence>
                 </div>
+                <button
+                  type="button"
+                  onClick={() => setTestimonialIndex((prev) => (prev + 1) % testimonials.length)}
+                  className="hidden h-10 w-10 items-center justify-center border border-navy/30 text-navy transition-colors duration-200 hover:bg-navy hover:text-white md:flex"
+                  aria-label="Next testimonial"
+                >
+                  <ChevronRight className="h-5 w-5" />
+                </button>
               </div>
             </motion.div>
 
@@ -258,7 +224,7 @@ function AboutUsPage() {
               className="mb-12 border border-gray-300 bg-white p-8 shadow-sm"
             >
               <div className="mb-6">
-                <h3 className="text-2xl font-bold tracking-tight text-navy">Our Patients Range From</h3>
+                <h3 className="text-2xl font-bold tracking-tight text-navy">Who Are Our Patients</h3>
                 <div className="mt-3 h-1 w-16 bg-gold" />
                 <p className="mt-4 text-[15px] leading-7 text-foreground/75">
                   Click the filter that best reflects you and hear from current patients with similar lifestyles and needs.
@@ -278,6 +244,7 @@ function AboutUsPage() {
 
                       setSelectedRangeId(item.id);
                       setSelectedTestimonialName(item.highlightName);
+                      jumpToTestimonial(item.highlightName);
                     }}
                     className={`border px-5 py-4 text-left transition-all duration-200 ${
                       selectedRange?.id === item.id

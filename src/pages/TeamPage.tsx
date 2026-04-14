@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import PageSectionHeader from '@/components/PageSectionHeader';
-import drHero from '@/assets/Picture1.png';
+import drHero from '@/assets/poo.png';
 
 function TeamPage() {
   return (
@@ -16,7 +16,7 @@ function TeamPage() {
         </section>
 
         <section className="pb-12">
-          <div className="relative mb-12 overflow-hidden border-y border-navy/90 bg-navy">
+          <div className="relative mb-12 overflow-hidden border-y border-navy/20 bg-[linear-gradient(120deg,#f7f3ec_0%,#fefaf4_55%,#f3efe6_100%)]">
             <div className="max-w-7xl mx-auto">
               <div className="grid min-h-[175px] grid-cols-1 lg:min-h-[220px] lg:grid-cols-[1.08fr_0.92fr]">
                 <motion.div
@@ -24,14 +24,14 @@ function TeamPage() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5 }}
-                  className="z-10 flex items-end px-6 pb-5 pt-6 sm:px-8 lg:px-12 lg:pb-5"
+                  className="z-10 flex items-end px-6 pb-6 pt-7 sm:px-8 lg:px-12 lg:pb-7"
                 >
                   <div>
-                    <p className="mb-2 text-xl font-medium text-white/90 md:text-[1.65rem]">Meet</p>
-                    <h2 className="text-balance text-[2rem] font-bold leading-[0.98] tracking-tight text-white md:text-[3.25rem] lg:text-[3.8rem]">
+                    <p className="mb-3 text-sm font-semibold uppercase tracking-[0.28em] text-gold md:text-base">Meet</p>
+                    <div className="mb-3 h-0.5 w-20 bg-navy/70" />
+                    <h2 className="text-balance text-[2.1rem] font-semibold leading-[1.02] tracking-tight text-navy md:text-[3.1rem] lg:text-[3.7rem]">
                       Doctor Ulrike Sujansky
                     </h2>
-                    <div className="mt-4 h-1 w-16 bg-gold" />
                   </div>
                 </motion.div>
                 <motion.div
@@ -39,12 +39,12 @@ function TeamPage() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: 0.1 }}
-                  className="relative flex min-h-[145px] items-end justify-end overflow-hidden px-5 pt-3 sm:px-8 lg:min-h-[220px] lg:px-10 lg:pt-4"
+                  className="relative flex min-h-[145px] items-end justify-end overflow-hidden px-5 pt-4 sm:px-8 lg:min-h-[220px] lg:px-10 lg:pt-6"
                 >
                   <img
                     src={drHero}
                     alt="Dr. Ulrike Sujansky"
-                    className="h-[190px] w-auto object-contain object-bottom sm:h-[235px] lg:h-[285px]"
+                    className="h-[210px] w-auto object-contain object-bottom sm:h-[260px] lg:h-[320px]"
                   />
                 </motion.div>
               </div>
@@ -60,16 +60,15 @@ function TeamPage() {
                 <div className="mb-8">
                   <h4 className="text-lg font-bold text-navy mb-3 uppercase tracking-wide">Experience</h4>
                   <ul className="space-y-3 text-[18px] text-foreground/90 leading-9">
-                    <li className="flex items-start gap-2"><span className="text-gold mt-0.5">•</span> In practice in San Mateo for 30 years</li>
+                    <li className="flex items-start gap-2"><span className="text-gold mt-0.5">•</span> In practice in San Mateo for over 25 years</li>
                     <li className="flex items-start gap-2"><span className="text-gold mt-0.5">•</span> Chair of Department of Medicine at Peninsula Hospital (2015-2019)</li>
-                    <li className="flex items-start gap-2"><span className="text-gold mt-0.5">•</span> Founded the Private Doctors of the Peninsula</li>
                   </ul>
                 </div>
                 <div className="mb-8">
                   <h4 className="text-lg font-bold text-navy mb-3 uppercase tracking-wide">Education</h4>
                   <ul className="space-y-3 text-[18px] text-foreground/90 leading-9">
                     <li className="flex items-start gap-2"><span className="text-gold mt-0.5">•</span> Completed undergrad at Harvard graduating summa cum laude</li>
-                    <li className="flex items-start gap-2"><span className="text-gold mt-0.5">•</span> Attended medical school at Stanford</li>
+                    <li className="flex items-start gap-2"><span className="text-gold mt-0.5">•</span> Passed Stanford School of Medicine</li>
                     <li className="flex items-start gap-2"><span className="text-gold mt-0.5">•</span> Completed internal medicine residency at Stanford</li>
                   </ul>
                 </div>
@@ -80,7 +79,6 @@ function TeamPage() {
                     <li className="flex items-start gap-2"><span className="text-gold mt-0.5">•</span> San Mateo County Medical Association</li>
                     <li className="flex items-start gap-2"><span className="text-gold mt-0.5">•</span> California Medical Association</li>
                     <li className="flex items-start gap-2"><span className="text-gold mt-0.5">•</span> American Academy of Medical Acupuncture</li>
-                    <li className="flex items-start gap-2"><span className="text-gold mt-0.5">•</span> Private Practice Doctors of the Peninsula (founding member)</li>
                     <li className="flex items-start gap-2"><span className="text-gold mt-0.5">•</span> Board Certified by American Board of Internal Medicine in 1997, recertified in 2017</li>
                     <li className="flex items-start gap-2"><span className="text-gold mt-0.5">•</span> Nominated as a Fellow of the American College of Physicians in 2019</li>
                   </ul>
@@ -100,7 +98,7 @@ function TeamPage() {
                 <div className="bg-white p-6 shadow-sm border border-gray-300 border-t-4 border-t-steely-blue">
                   <h4 className="text-lg font-bold text-navy mb-3 uppercase tracking-wide border-b border-gray-200 pb-2">Family Life</h4>
                   <p className="mt-3 text-[18px] text-foreground/90 leading-9">
-                    Dr. Sujansky is married and has two sons, born in 2000 and 2003. She loves to spend her free time by skiing at Kirkwood, sharing good meals with friends and family, and trying desperately to keep up with her two growing boys.
+                    Dr. Sujansky is married and has two sons. She loves to spend her free time with skiing, hiking, knitting, and reading. She enjoys traveling and sharing a good meal with friends and family.
                   </p>
                 </div>
               </motion.div>
