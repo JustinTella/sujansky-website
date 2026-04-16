@@ -5,7 +5,6 @@ import Footer from '@/components/Footer';
 import ContactForm from '@/components/ContactForm';
 import MapEmbed from '@/components/MapEmbed';
 import PageSectionHeader from '@/components/PageSectionHeader';
-import officePhoto from '@/assets/image-asset (5).webp';
 
 function ContactPage() {
   return (
@@ -16,11 +15,8 @@ function ContactPage() {
           <PageSectionHeader title="Contact Us" />
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.1 }} className="space-y-6 lg:col-span-1">
-              <div className="overflow-hidden shadow-sm border border-navy/70 bg-white">
-                <img src={officePhoto} alt="Dr. Sujansky and team with laptop open" className="w-full h-56 object-cover" />
-              </div>
-              <div className="h-[350px] overflow-hidden shadow-sm border border-navy/70 bg-white">
+            <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.1 }} className="lg:col-span-1">
+              <div className="h-full min-h-[420px] overflow-hidden shadow-sm border border-navy/70 bg-white">
                 <MapEmbed />
               </div>
             </motion.div>

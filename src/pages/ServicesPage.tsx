@@ -49,6 +49,9 @@ function ServicesPage() {
       <strong>EKG screening</strong> and <strong>concise individualized</strong> body composition evaluation for more tailored counseling
     </>,
     <>
+      <strong>Pulmonary function testing</strong> to assess lung health and respiratory performance
+    </>,
+    <>
       <strong>Preventive planning</strong>, routine immunizations, travel medicine, and well-woman care as appropriate
     </>,
     <>
@@ -69,7 +72,6 @@ function ServicesPage() {
     'Everything included in the Concierge Care package',
     '__SUBHEAD_AS_WELL_AS__',
     'Polygenic DNA tests and risk scores',
-    'Pulmonary function test',
     'Microbiome diagnostic',
     'Complimentary home IV therapy (2x per year)',
   ];
@@ -119,36 +121,47 @@ function ServicesPage() {
           </div>
         </section>
 
-        <section id="wellness" className="scroll-mt-24 border-t border-navy/15 bg-[linear-gradient(to_bottom,rgba(20,36,74,0.03),rgba(20,36,74,0)_120px)] pt-16 md:pt-20">
+        <section id="wellness" className="relative scroll-mt-24 border-t border-navy/15 bg-[linear-gradient(to_bottom,rgba(20,36,74,0.03),rgba(20,36,74,0)_120px)] pt-16 md:pt-20">
+          <div className="pointer-events-none absolute inset-0 z-10 flex items-center justify-center">
+            <div className="flex flex-col items-center gap-3 border border-[#c9a84c]/40 bg-[#fdf8ee] px-14 py-7 shadow-[0_6px_32px_rgba(180,140,60,0.15)]">
+              <div className="flex items-center gap-4 w-full">
+                <span className="h-px flex-1 bg-[#c9a84c]/40" />
+                <p className="text-2xl font-semibold uppercase tracking-[0.28em] text-[#a8882e]">Coming Soon</p>
+                <span className="h-px flex-1 bg-[#c9a84c]/40" />
+              </div>
+              <p className="text-sm tracking-wide text-[#8a7040]/70">This program is currently in development</p>
+            </div>
+          </div>
+          <div className="pointer-events-none absolute inset-0 z-[9] bg-white/30 backdrop-blur-[2px]" />
           <ServiceSectionHeader title="Concierge Plus" />
           <div className="max-w-7xl mx-auto mb-24 px-4 sm:px-6 lg:px-8 md:mb-32">
-            <div className="grid grid-cols-1 items-start gap-8 md:gap-10 lg:grid-cols-[1.08fr_0.92fr] lg:gap-14">
+            <div className="grid grid-cols-1 items-start gap-12 md:gap-16 lg:grid-cols-2 lg:gap-20">
               <motion.div
-                initial={{ opacity: 0, x: -10 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.18 }}
+                transition={{ duration: 0.72, ease: [0.22, 1, 0.36, 1] }}
               >
-                <div className="mb-6 border border-gray-300 bg-white p-7 shadow-sm">
+                <div className="mb-10 border border-gray-300 bg-white p-8 shadow-sm">
                   <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-gold">Advanced Prevention</p>
                   <h3 className="mb-5 text-3xl font-semibold tracking-tight text-navy">A More Proactive Approach</h3>
                   <p className="text-[19px] leading-9 text-foreground/80">
                     Our Concierge Plus offering is an enhanced program designed for patients who want to take a proactive approach to their long-term health. It focuses on advanced diagnostics and early detection to help you stay ahead of potential health concerns.
                   </p>
                 </div>
-                <div className="flex items-center justify-center overflow-hidden border border-navy/70 bg-white shadow-sm mx-auto w-fit">
+                <div className="overflow-hidden border border-navy/70 bg-white shadow-sm">
                   <img
                     src={preventativeImage}
                     alt="Concierge Plus care"
-                    className="h-72 w-auto object-cover object-center md:h-80"
+                    className="h-72 w-full object-cover md:h-80"
                   />
                 </div>
               </motion.div>
               <motion.div
-                initial={{ opacity: 0, x: 10 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.1 }}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.18 }}
+                transition={{ duration: 0.72, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
               >
                 <ServiceCard title="What We Offer" items={wellnessServices} />
               </motion.div>
@@ -166,10 +179,9 @@ function ServicesPage() {
               transition={{ duration: 0.5 }}
               className="mb-14 scroll-mt-32"
             >
-              <div className="mx-auto grid max-w-5xl grid-cols-1 gap-4">
-                <div className="border border-gray-300 bg-white px-6 py-4 shadow-sm min-h-[128px]">
-                  <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-gold">Travel Support</p>
-                  <h3 className="mb-3 text-[1.65rem] font-semibold tracking-tight text-navy">Travel Kits</h3>
+              <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+                <div className="flex flex-col border border-gray-300 bg-white p-8 shadow-sm">
+                  <h3 className="mb-4 border-b border-gray-200 pb-3 text-[1.65rem] font-semibold tracking-tight text-navy">Travel Kits</h3>
                   <p className="text-[17px] leading-8 text-foreground/80">
                     Our Travel Medicine program prepares you for international travel with personalized health planning, destination-specific vaccinations, prescription medications, and a curated travel health kit.
                   </p>
@@ -183,23 +195,21 @@ function ServicesPage() {
                         href="https://forms.gle/t9sRSCfSpkM2AxT79"
                         target="_blank"
                         rel="noreferrer"
-                        className="inline-flex min-w-[240px] justify-center border border-navy bg-navy px-7 py-3.5 text-sm font-semibold uppercase tracking-[0.14em] text-white shadow-[0_10px_24px_rgba(20,36,74,0.12)] transition-colors duration-200 hover:bg-white hover:text-navy"
+                        className="inline-flex min-w-[180px] justify-center border border-navy bg-navy px-7 py-3.5 text-sm font-semibold uppercase tracking-[0.14em] text-white shadow-[0_10px_24px_rgba(20,36,74,0.12)] transition-colors duration-200 hover:bg-white hover:text-navy"
                       >
                         Request a Travel Kit
                       </a>
                     </div>
                   </div>
                 </div>
-                <div className="border border-gray-300 bg-white px-6 py-4 shadow-sm min-h-[128px]">
-                  <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-gold">Additional Care</p>
-                  <h3 className="mb-3 text-[1.65rem] font-semibold tracking-tight text-navy">On-Demand Nursing Services</h3>
+                <div className="flex flex-col border border-gray-300 bg-white p-8 shadow-sm">
+                  <h3 className="mb-4 border-b border-gray-200 pb-3 text-[1.65rem] font-semibold tracking-tight text-navy">On-Demand Nursing</h3>
                   <p className="text-[17px] leading-8 text-foreground/80">
                     When additional support is needed, we can help arrange concierge private duty nursing through Luminate Wellness &amp; Recovery. We coordinate setup for flexible day, night, and live-in shifts for short-term recovery or ongoing care, including medication administration, wound care, vital sign monitoring, IV vitamin and hydration therapy, and physician coordination. Discreet home visits and hotel-based care are also available.
                   </p>
                 </div>
-                <div className="border border-gray-300 bg-white px-6 py-4 shadow-sm min-h-[128px]">
-                  <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-gold">Connected Resources</p>
-                  <h3 className="mb-3 text-[1.65rem] font-semibold tracking-tight text-navy">Partnerships</h3>
+                <div className="flex flex-col border border-gray-300 bg-white p-8 shadow-sm">
+                  <h3 className="mb-4 border-b border-gray-200 pb-3 text-[1.65rem] font-semibold tracking-tight text-navy">Partnerships</h3>
                   <p className="text-[17px] leading-8 text-foreground/80">
                     We can help connect patients with trusted specialists, allied health professionals, and other supportive care partners as needed.
                   </p>

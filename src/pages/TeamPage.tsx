@@ -19,36 +19,32 @@ function TeamPage() {
 
         {/* DR. SUJANSKY */}
         <section className="pb-16">
-          <div className="relative mb-12 overflow-hidden border-y border-navy/20 bg-[linear-gradient(120deg,#f7f3ec_0%,#fefaf4_55%,#f3efe6_100%)]">
-            <div className="max-w-7xl mx-auto">
-              <div className="grid min-h-[175px] grid-cols-1 lg:min-h-[220px] lg:grid-cols-[1.08fr_0.92fr]">
+          <div className="mb-12 border-y border-navy/10 bg-white">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="grid grid-cols-1 items-center lg:grid-cols-2">
                 <motion.div
                   initial={{ opacity: 0, x: -10 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5 }}
-                  className="z-10 flex items-end px-6 pb-6 pt-7 sm:px-8 lg:px-12 lg:pb-7"
+                  className="py-8 lg:py-10"
                 >
-                  <div>
-                    <p className="mb-3 text-sm font-semibold uppercase tracking-[0.28em] text-gold md:text-base">Meet</p>
-                    <div className="mb-3 h-0.5 w-20 bg-navy/70" />
-                    <h2 className="text-balance text-[2.1rem] font-semibold leading-[1.02] tracking-tight text-navy md:text-[3.1rem] lg:text-[3.7rem]">
-                      Doctor Ulrike Sujansky
-                    </h2>
-                  </div>
+                  <p className="mb-3 text-sm font-semibold uppercase tracking-[0.28em] text-gold md:text-base">Meet</p>
+                  <div className="mb-3 h-0.5 w-20 bg-navy/70" />
+                  <h2 className="text-balance text-[2.1rem] font-semibold leading-[1.02] tracking-tight text-navy md:text-[3.1rem] lg:text-[3.7rem]">
+                    Doctor Ulrike Sujansky, M.D., FACP
+                  </h2>
                 </motion.div>
                 <motion.div
                   initial={{ opacity: 0, x: 10 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: 0.1 }}
-                  className="relative flex min-h-[220px] items-stretch justify-end overflow-hidden lg:min-h-[220px]"
+                  className="flex justify-end py-6"
                 >
-                  <img
-                    src={drHero}
-                    alt="Dr. Ulrike Sujansky"
-                    className="h-full w-full object-cover object-top lg:w-[48%]"
-                  />
+                  <div className="h-44 w-44 overflow-hidden rounded-full border-2 border-navy/15 shadow-md">
+                    <img src={drHero} alt="Dr. Ulrike Sujansky" className="h-full w-full object-cover object-top" />
+                  </div>
                 </motion.div>
               </div>
             </div>
@@ -57,9 +53,6 @@ function TeamPage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 gap-14 lg:grid-cols-2 lg:gap-16">
               <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}>
-                <h3 className="text-3xl font-bold text-navy mb-8 tracking-tight border-b border-gray-300 pb-3">
-                  Ulrike Sujansky, M.D., FACP
-                </h3>
                 <div className="mb-8">
                   <h4 className="text-lg font-bold text-navy mb-3 uppercase tracking-wide">Experience</h4>
                   <ul className="space-y-3 text-[18px] text-foreground/90 leading-9">
@@ -88,7 +81,7 @@ function TeamPage() {
                 </div>
               </motion.div>
 
-              <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.6, delay: 0.08, ease: [0.16, 1, 0.3, 1] }} className="space-y-10">
+              <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.6, delay: 0.08, ease: [0.16, 1, 0.3, 1] }} className="space-y-8">
                 <div className="bg-white p-6 shadow-sm border border-gray-300 border-t-4 border-t-gold">
                   <h4 className="text-lg font-bold text-navy mb-3 uppercase tracking-wide border-b border-gray-200 pb-2">Certifications</h4>
                   <p className="mt-3 text-[18px] text-foreground/90 leading-9">
@@ -116,63 +109,30 @@ function TeamPage() {
         </section>
 
         {/* SHAWNA G. */}
-        <section className="pb-16">
-          <div className="relative mb-12 overflow-hidden border-y border-navy/20 bg-[linear-gradient(120deg,#f0f4f8_0%,#f8fafc_55%,#edf2f7_100%)]">
-            <div className="max-w-7xl mx-auto">
-              <div className="grid min-h-[175px] grid-cols-1 lg:min-h-[220px] lg:grid-cols-[1.08fr_0.92fr]">
-                <motion.div
-                  initial={{ opacity: 0, x: -10 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5 }}
-                  className="z-10 flex items-end px-6 pb-6 pt-7 sm:px-8 lg:px-12 lg:pb-7"
-                >
-                  <div>
-                    <p className="mb-3 text-sm font-semibold uppercase tracking-[0.28em] text-steely-blue md:text-base">Meet</p>
-                    <div className="mb-3 h-0.5 w-20 bg-navy/70" />
-                    <h2 className="text-balance text-[2.1rem] font-semibold leading-[1.02] tracking-tight text-navy md:text-[3.1rem] lg:text-[3.7rem]">
-                      Shawna G.
-                    </h2>
-                  </div>
-                </motion.div>
-                <motion.div
-                  initial={{ opacity: 0, x: 10 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: 0.1 }}
-                  className="relative flex min-h-[220px] items-stretch justify-end overflow-hidden lg:min-h-[220px]"
-                >
-                  <img
-                    src={shawnaPortrait}
-                    alt="Shawna G., Office Manager"
-                    className="h-full w-full object-cover object-top lg:w-[48%]"
-                  />
-                </motion.div>
-              </div>
-            </div>
-          </div>
-
+        <section className="border-t border-navy/15 py-14">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 gap-14 lg:grid-cols-2 lg:gap-16">
-              <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}>
-                <h3 className="text-3xl font-bold text-navy mb-8 tracking-tight border-b border-gray-300 pb-3">
-                  Shawna G.
-                </h3>
-                <div className="mb-8">
-                  <h4 className="text-lg font-bold text-navy mb-3 uppercase tracking-wide">Role</h4>
-                  <ul className="space-y-3 text-[18px] text-foreground/90 leading-9">
-                    <li className="flex items-start gap-2"><span className="text-steely-blue mt-0.5">•</span> Office Manager</li>
-                    <li className="flex items-start gap-2"><span className="text-steely-blue mt-0.5">•</span> Patient Membership Coordinator</li>
-                    <li className="flex items-start gap-2"><span className="text-steely-blue mt-0.5">•</span> With the practice since 2004</li>
-                  </ul>
+            <div className="grid grid-cols-1 gap-8 lg:grid-cols-[200px_1fr] lg:gap-14 items-start">
+              <motion.div
+                initial={{ opacity: 0, y: 12 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+                className="flex flex-col items-center gap-4 lg:items-start"
+              >
+                <div className="h-40 w-40 overflow-hidden rounded-full border-2 border-navy/15 shadow-md">
+                  <img src={shawnaPortrait} alt="Shawna G." className="h-full w-full object-cover object-top" />
+                </div>
+                <div className="text-center lg:text-left">
+                  <p className="text-xl font-semibold text-navy">Shawna G.</p>
+                  <p className="mt-1 text-sm font-medium uppercase tracking-wider text-steely-blue">Office Manager</p>
                 </div>
               </motion.div>
 
-              <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.6, delay: 0.08, ease: [0.16, 1, 0.3, 1] }} className="space-y-10">
+              <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.6, delay: 0.08, ease: [0.16, 1, 0.3, 1] }}>
                 <div className="bg-white p-6 shadow-sm border border-gray-300 border-t-4 border-t-steely-blue">
                   <h4 className="text-lg font-bold text-navy mb-3 uppercase tracking-wide border-b border-gray-200 pb-2">About Shawna</h4>
                   <p className="mt-3 text-[18px] text-foreground/90 leading-9">
-                    Shawna was born and raised in the Bay Area. She has been working with the practice as a medical assistant and office manager since 2004. A self-described soccer mom and baseball mom, she spends much of her free time with her two children. She cheers on the Giants and 49ers, and spends many vacations at Disneyland.
+                    Shawna was born and raised in the Bay Area. A self-described soccer mom and baseball mom, she spends much of her free time with her two children. She cheers on the Giants and 49ers, and spends many vacations at Disneyland. Shawna is the Office Manager and has been with the practice since 2004.
                   </p>
                 </div>
               </motion.div>
@@ -181,62 +141,30 @@ function TeamPage() {
         </section>
 
         {/* KIM J. */}
-        <section className="pb-16">
-          <div className="relative mb-12 overflow-hidden border-y border-navy/20 bg-[linear-gradient(120deg,#f7f3ec_0%,#fefaf4_55%,#f3efe6_100%)]">
-            <div className="max-w-7xl mx-auto">
-              <div className="grid min-h-[175px] grid-cols-1 lg:min-h-[220px] lg:grid-cols-[1.08fr_0.92fr]">
-                <motion.div
-                  initial={{ opacity: 0, x: -10 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5 }}
-                  className="z-10 flex items-end px-6 pb-6 pt-7 sm:px-8 lg:px-12 lg:pb-7"
-                >
-                  <div>
-                    <p className="mb-3 text-sm font-semibold uppercase tracking-[0.28em] text-gold md:text-base">Meet</p>
-                    <div className="mb-3 h-0.5 w-20 bg-navy/70" />
-                    <h2 className="text-balance text-[2.1rem] font-semibold leading-[1.02] tracking-tight text-navy md:text-[3.1rem] lg:text-[3.7rem]">
-                      Kim J.
-                    </h2>
-                  </div>
-                </motion.div>
-                <motion.div
-                  initial={{ opacity: 0, x: 10 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: 0.1 }}
-                  className="relative flex min-h-[220px] items-stretch justify-end overflow-hidden lg:min-h-[220px]"
-                >
-                  <img
-                    src={kimPortrait}
-                    alt="Kim J., Medical Assistant"
-                    className="h-full w-full object-cover object-top lg:w-[48%]"
-                  />
-                </motion.div>
-              </div>
-            </div>
-          </div>
-
+        <section className="border-t border-navy/15 py-14 pb-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 gap-14 lg:grid-cols-2 lg:gap-16">
-              <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}>
-                <h3 className="text-3xl font-bold text-navy mb-8 tracking-tight border-b border-gray-300 pb-3">
-                  Kim J.
-                </h3>
-                <div className="mb-8">
-                  <h4 className="text-lg font-bold text-navy mb-3 uppercase tracking-wide">Role</h4>
-                  <ul className="space-y-3 text-[18px] text-foreground/90 leading-9">
-                    <li className="flex items-start gap-2"><span className="text-gold mt-0.5">•</span> Medical Assistant</li>
-                    <li className="flex items-start gap-2"><span className="text-gold mt-0.5">•</span> Joined the practice in 2021</li>
-                  </ul>
+            <div className="grid grid-cols-1 gap-8 lg:grid-cols-[200px_1fr] lg:gap-14 items-start">
+              <motion.div
+                initial={{ opacity: 0, y: 12 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+                className="flex flex-col items-center gap-4 lg:items-start"
+              >
+                <div className="h-40 w-40 overflow-hidden rounded-full border-2 border-navy/15 shadow-md">
+                  <img src={kimPortrait} alt="Kim J." className="h-full w-full object-cover object-top" />
+                </div>
+                <div className="text-center lg:text-left">
+                  <p className="text-xl font-semibold text-navy">Kim J.</p>
+                  <p className="mt-1 text-sm font-medium uppercase tracking-wider text-gold">Medical Assistant</p>
                 </div>
               </motion.div>
 
-              <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.6, delay: 0.08, ease: [0.16, 1, 0.3, 1] }} className="space-y-10">
+              <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.6, delay: 0.08, ease: [0.16, 1, 0.3, 1] }}>
                 <div className="bg-white p-6 shadow-sm border border-gray-300 border-t-4 border-t-gold">
                   <h4 className="text-lg font-bold text-navy mb-3 uppercase tracking-wide border-b border-gray-200 pb-2">About Kim</h4>
                   <p className="mt-3 text-[18px] text-foreground/90 leading-9">
-                    Kim joined the team as a medical assistant in 2021. A Bay Area native, Kim spends her free time hiking and enjoying time at the beach. She loves to travel and hopes to do more of this in the future.
+                    Kim is a Bay Area native who spends her free time hiking and enjoying time at the beach. She loves to travel and hopes to do more of this in the future. Kim is the Medical Assistant and has been with the practice since 2021.
                   </p>
                 </div>
               </motion.div>
