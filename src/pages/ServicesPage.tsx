@@ -185,21 +185,9 @@ function ServicesPage() {
                   <p className="text-[17px] leading-8 text-foreground/80">
                     Our Travel Medicine program prepares you for international travel with personalized health planning, destination-specific vaccinations, prescription medications, and a curated travel health kit.
                   </p>
-                  <div className="mt-6 border border-gold/35 bg-[linear-gradient(135deg,rgba(184,142,63,0.08),rgba(255,255,255,0.88))] px-5 py-5">
-                    <p className="mb-2 text-sm font-semibold uppercase tracking-[0.18em] text-gold">Planning a Trip?</p>
-                    <p className="text-[17px] leading-8 text-foreground/80">
-                      If you are a current patient preparing for a trip, please complete the form around three weeks in advance so our office can review your plans and follow up about a personalized travel kit. Prospective patients interested in a tailored medicine kit are also welcome to complete the form, and we will be in touch.
-                    </p>
-                    <div className="mt-5 flex justify-center">
-                      <a
-                        href="https://forms.gle/t9sRSCfSpkM2AxT79"
-                        target="_blank"
-                        rel="noreferrer"
-                        className="inline-flex min-w-[180px] justify-center border border-navy bg-navy px-7 py-3.5 text-sm font-semibold uppercase tracking-[0.14em] text-white shadow-[0_10px_24px_rgba(20,36,74,0.12)] transition-colors duration-200 hover:bg-white hover:text-navy"
-                      >
-                        Request a Travel Kit
-                      </a>
-                    </div>
+                  <div className="mt-auto pt-6 flex items-center gap-2 text-sm font-semibold text-gold">
+                    <span className="h-px w-4 bg-gold/60" />
+                    <span className="uppercase tracking-[0.14em]">See below to request</span>
                   </div>
                 </div>
                 <div className="flex flex-col border border-gray-300 bg-white p-8 shadow-sm">
@@ -213,6 +201,26 @@ function ServicesPage() {
                   <p className="text-[17px] leading-8 text-foreground/80">
                     We can help connect patients with trusted specialists, allied health professionals, and other supportive care partners as needed.
                   </p>
+                </div>
+              </div>
+
+              {/* Travel Kit CTA */}
+              <div>
+                <div className="mt-6 border border-gold/35 bg-[linear-gradient(135deg,rgba(184,142,63,0.06),rgba(255,255,255,0.95))] px-8 py-7 shadow-sm">
+                  <div className="flex flex-col items-center gap-4 text-center">
+                    <p className="text-sm font-semibold uppercase tracking-[0.18em] text-gold">Planning a Trip?</p>
+                    <p className="text-[17px] leading-8 text-foreground/80 max-w-2xl">
+                      If you are a current patient preparing for a trip, please complete the form around three weeks in advance. Prospective patients interested in a travel kit are also welcome to reach out.
+                    </p>
+                    <a
+                      href="https://forms.gle/t9sRSCfSpkM2AxT79"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="mt-1 inline-flex min-w-[200px] justify-center border border-navy bg-navy px-7 py-3.5 text-sm font-semibold uppercase tracking-[0.14em] text-white shadow-[0_10px_24px_rgba(20,36,74,0.12)] transition-colors duration-200 hover:bg-white hover:text-navy"
+                    >
+                      Request a Travel Kit
+                    </a>
+                  </div>
                 </div>
               </div>
             </motion.div>
