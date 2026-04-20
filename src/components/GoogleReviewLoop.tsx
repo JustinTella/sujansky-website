@@ -173,9 +173,6 @@ function GoogleReviewLoop() {
                               />
                             ))}
                           </div>
-                          {review.relativeTime ? (
-                            <span className="text-xs text-foreground/55">{review.relativeTime}</span>
-                          ) : null}
                         </div>
                       </div>
                     </div>
