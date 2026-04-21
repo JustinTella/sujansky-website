@@ -40,7 +40,7 @@ function ServicesPage() {
       <strong>Direct communication</strong> by personal phone support after hours and same-day or next-day email support
     </>,
     <>
-      <strong>Limited size</strong> that allows for <strong>longer appointments</strong> and expedited scheduling
+      <strong>Limited number of patients</strong> that allows for <strong>longer appointments</strong> and expedited scheduling
     </>,
     <>
       <strong>Executive-style</strong> physical with <strong>thorough guidance</strong> through history review, screening data, and follow-up

@@ -64,7 +64,7 @@ function TeamPage() {
                   <h4 className="text-lg font-bold text-navy mb-3 uppercase tracking-wide">Education</h4>
                   <ul className="space-y-3 text-[18px] text-foreground/90 leading-9">
                     <li className="flex items-start gap-2"><span className="text-gold mt-0.5">•</span> Completed undergrad at Harvard graduating summa cum laude</li>
-                    <li className="flex items-start gap-2"><span className="text-gold mt-0.5">•</span> Passed Stanford School of Medicine</li>
+                    <li className="flex items-start gap-2"><span className="text-gold mt-0.5">•</span> Graduated from Stanford School of Medicine</li>
                     <li className="flex items-start gap-2"><span className="text-gold mt-0.5">•</span> Completed internal medicine residency at Stanford</li>
                   </ul>
                 </div>
@@ -76,7 +76,7 @@ function TeamPage() {
                     <li className="flex items-start gap-2"><span className="text-gold mt-0.5">•</span> California Medical Association</li>
                     <li className="flex items-start gap-2"><span className="text-gold mt-0.5">•</span> American Academy of Medical Acupuncture</li>
                     <li className="flex items-start gap-2"><span className="text-gold mt-0.5">•</span> Board Certified by American Board of Internal Medicine in 1997, recertified in 2017</li>
-                    <li className="flex items-start gap-2"><span className="text-gold mt-0.5">•</span> Nominated as a Fellow of the American College of Physicians in 2019</li>
+                    <li className="flex items-start gap-2"><span className="text-gold mt-0.5">•</span> Elected as a Fellow of the American College of Physicians in 2019</li>
                   </ul>
                 </div>
               </motion.div>
@@ -88,7 +88,7 @@ function TeamPage() {
                     Board Certified by the American Board of Internal Medicine in 1997, recertified in 2017.
                   </p>
                   <p className="mt-3 text-[18px] text-foreground/90 leading-9">
-                    Nominated as a Fellow of the American College of Physicians in 2019.
+                    Elected as a Fellow of the American College of Physicians in 2019.
                   </p>
                 </div>
                 <div className="bg-white p-6 shadow-sm border border-gray-300 border-t-4 border-t-steely-blue">
@@ -132,7 +132,7 @@ function TeamPage() {
                 <div className="bg-white p-6 shadow-sm border border-gray-300 border-t-4 border-t-steely-blue">
                   <h4 className="text-lg font-bold text-navy mb-3 uppercase tracking-wide border-b border-gray-200 pb-2">About Shawna</h4>
                   <p className="mt-3 text-[18px] text-foreground/90 leading-9">
-                    Shawna was born and raised in the Bay Area. A self-described soccer mom and baseball mom, she spends much of her free time with her two children. She cheers on the Giants and 49ers, and spends many vacations at Disneyland. Shawna is the Office Manager and has been with the practice since 2004.
+                    Shawna was born and raised in the Bay Area. A self-described soccer mom and baseball mom, she spends much of her free time with her three children. She cheers on the Giants and 49ers. Shawna is the Office Manager and has been with the practice since 2004.
                   </p>
                 </div>
               </motion.div>
