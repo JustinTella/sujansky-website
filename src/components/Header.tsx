@@ -69,6 +69,10 @@ function Header() {
           </Link>
 
           <nav className="hidden lg:flex items-center gap-14 xl:gap-16">
+            <Link to="/" onClick={(e) => handleNavClick(e, '/')} className={`${linkBase} ${isActive('/') ? activeStyle : ''}`}>
+              Home
+            </Link>
+
             <Link to="/membership" onClick={(e) => handleNavClick(e, '/membership')} className={`${linkBase} ${isActive('/membership') ? activeStyle : ''}`}>
               Membership
             </Link>
@@ -155,6 +159,9 @@ function Header() {
 
         {mobileMenuOpen && (
           <nav className="lg:hidden py-4 space-y-1 border-t border-gray-100">
+            <Link to="/" onClick={() => setMobileMenuOpen(false)} className={`block py-2.5 text-sm font-medium text-navy hover:text-gold ${isActive('/') ? 'text-gold' : ''}`}>
+              Home
+            </Link>
             <Link to="/membership" onClick={() => setMobileMenuOpen(false)} className={`block py-2.5 text-sm font-medium text-navy hover:text-gold ${isActive('/membership') ? 'text-gold' : ''}`}>
               Membership
             </Link>
