@@ -82,6 +82,11 @@ function MembershipPage() {
         'Please call our office and ask for the Patient Membership Agreement. Then complete and sign the Agreement and send it on to our office at 34 North San Mateo Drive, Suite #1, San Mateo, CA 94401.',
     },
     {
+      question: 'How much does the program cost?',
+      answer:
+        'Please call our office at 650 393-5851 to discuss current pricing. We offer discounts for couples and for annual payments. You can pay monthly, annually, or quarterly. You will not pay anything at the time of your office visit. (Note that a few services, such as some vaccinations, are not included in Dr. Sujansky\'s Private Medicine practice and will be billed separately.)',
+    },
+    {
       question: 'Will my private insurance reimburse my annual concierge fee?',
       answer:
         'It is unlikely that the annual fee will be reimbursable. Please consult your tax advisors or human resources representative at your place of employment.',
