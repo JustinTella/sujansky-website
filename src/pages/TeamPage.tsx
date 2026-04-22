@@ -124,7 +124,7 @@ function TeamPage() {
                 </div>
                 <div className="text-center lg:text-left">
                   <p className="text-xl font-semibold text-navy">Shawna G.</p>
-                  <p className="mt-1 text-sm font-medium uppercase tracking-wider text-steely-blue">Office Manager</p>
+                  <p className="mt-1 text-sm font-medium uppercase tracking-wider text-steely-blue whitespace-nowrap">Office Manager</p>
                 </div>
               </motion.div>
 
@@ -156,7 +156,7 @@ function TeamPage() {
                 </div>
                 <div className="text-center lg:text-left">
                   <p className="text-xl font-semibold text-navy">Kim J.</p>
-                  <p className="mt-1 text-sm font-medium uppercase tracking-wider text-gold">Medical Assistant</p>
+                  <p className="mt-1 text-sm font-medium uppercase tracking-wider text-gold whitespace-nowrap">Medical Assistant</p>
                 </div>
               </motion.div>
 
