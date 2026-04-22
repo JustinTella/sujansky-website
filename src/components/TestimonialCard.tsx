@@ -28,11 +28,11 @@ function TestimonialCard({ quote, name, profession, yearJoined, featured = false
         }
       } : undefined}
     >
-      <blockquote className="mb-5 text-base italic leading-relaxed text-navy">"{quote}"</blockquote>
-      <div className="border-t border-gray-200 pt-4">
-        <p className="text-sm font-bold text-navy">{name}</p>
-        <p className="text-xs text-foreground/70">{profession}</p>
-        {yearJoined && <p className="text-xs text-gold">Joined in {yearJoined}</p>}
+      <blockquote className="mb-5 text-[1.25rem] italic leading-8 text-navy">"{quote}"</blockquote>
+      <div className="border-t border-gray-200 pt-3">
+        <p className="text-xs font-bold text-navy">{name}</p>
+        <p className="text-[11px] text-foreground/60">{profession}</p>
+        {yearJoined && <p className="text-[11px] text-gold">Joined in {yearJoined}</p>}
       </div>
     </motion.div>
   );
