@@ -79,8 +79,8 @@ function HomePage() {
                 transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
               >
                 <h2 className="mb-6 text-2xl font-bold leading-snug tracking-tight text-navy md:text-3xl">What is Concierge Medicine?</h2>
-                <p className="mb-4 text-[18px] leading-[1.95] text-foreground/80">Concierge medicine represents a return to the traditional doctor-patient relationship, where your physician has the time to truly know you and your health needs. Through an annual membership, you gain direct access to Dr. Sujansky, same-day or next-day appointments, and comprehensive care that goes beyond the constraints of traditional insurance-based medicine.</p>
-                <p className="mb-8 text-[18px] leading-[1.95] text-foreground/80">This model allows for longer appointments, proactive health planning, and a genuine partnership in maintaining your wellbeing.</p>
+                <p className="mb-4 text-[26px] leading-[2rem] text-foreground/90">Concierge medicine represents a return to the traditional doctor-patient relationship, where your physician has the time to truly know you and your health needs. Through an annual membership, you gain direct access to Dr. Sujansky, same-day or next-day appointments, and comprehensive care that goes beyond the constraints of traditional insurance-based medicine.</p>
+                <p className="mb-8 text-[26px] leading-[2rem] text-foreground/90">This model allows for longer appointments, proactive health planning, and a genuine partnership in maintaining your wellbeing.</p>
                 <Link to="/services" className="inline-flex items-center text-sm font-semibold uppercase tracking-wider text-gold transition-colors hover:text-navy">
                   View Our Services <ArrowRight className="ml-1.5 h-4 w-4" />
                 </Link>
@@ -101,7 +101,7 @@ function HomePage() {
                 ].map((card, i) => (
                   <div key={i} className={`flex flex-col border border-navy/70 border-t-[3px] bg-white p-4 md:p-4.5 ${i >= 2 ? 'translate-y-4 md:translate-y-5' : ''} ${card.accent}`}>
                     <h3 className="mb-2.5 text-[1.18rem] font-semibold leading-tight text-navy md:text-[1.28rem]">{card.title}</h3>
-                    <p className="text-[1.2rem] leading-8 text-foreground/70">{card.desc}</p>
+                    <p className="text-[1.3rem] leading-8 text-foreground/85">{card.desc}</p>
                   </div>
                 ))}
               </motion.div>

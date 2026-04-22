@@ -135,7 +135,7 @@ function BlogPage() {
                     <h2 className="mb-4 max-w-3xl text-xl font-semibold leading-[1.12] tracking-tight text-navy md:text-[1.7rem]">
                       {featuredPost.title}
                     </h2>
-                    <p className="mb-6 max-w-2xl text-base leading-relaxed text-foreground/70">
+                    <p className="mb-6 max-w-2xl text-[22px] leading-9 text-foreground/90">
                       {featuredPost.excerpt}
                     </p>
                     <button

@@ -372,7 +372,7 @@ function MembershipPage() {
                         transition={{ duration: 0.22 }}
                       >
                         <div className="border-t border-gray-200 px-5 py-4 md:px-6">
-                          <p className="text-[27px] leading-[3.4rem] text-foreground/80">{item.answer}</p>
+                          <p className="text-[27px] leading-[3.4rem] text-foreground/90">{item.answer}</p>
                         </div>
                       </motion.div>
                     )}

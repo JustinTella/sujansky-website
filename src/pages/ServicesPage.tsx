@@ -97,7 +97,7 @@ function ServicesPage() {
                 <div className="mb-10 border border-gray-300 bg-white p-8 shadow-sm">
                   <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-gold">Core Offering</p>
                   <h3 className="mb-5 text-3xl font-semibold tracking-tight text-navy">Comprehensive Care</h3>
-                  <p className="text-[26px] leading-[3.2rem] text-foreground/80">
+                  <p className="text-[26px] leading-[3.2rem] text-foreground/90">
                     Our Concierge Care offering begins with an annual executive physical that includes a thorough review of your personal and family history, physical exam, screening test data, and follow-up communications that help guide health care decisions. From there, the practice is built around direct communication, longer visits, preventive planning, and close coordination that support more personalized and responsive care.
                   </p>
                 </div>
@@ -145,7 +145,7 @@ function ServicesPage() {
                 <div className="mb-10 border border-gray-300 bg-white p-8 shadow-sm">
                   <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-gold">Advanced Prevention</p>
                   <h3 className="mb-5 text-3xl font-semibold tracking-tight text-navy">A More Proactive Approach</h3>
-                  <p className="text-[26px] leading-[3.2rem] text-foreground/80">
+                  <p className="text-[26px] leading-[3.2rem] text-foreground/90">
                     Our Concierge Plus offering is an enhanced program designed for patients who want to take a proactive approach to their long-term health. It focuses on advanced diagnostics and early detection to help you stay ahead of potential health concerns.
                   </p>
                 </div>
@@ -182,7 +182,7 @@ function ServicesPage() {
               <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
                 <div className="flex flex-col border border-gray-300 bg-white p-8 shadow-sm">
                   <h3 className="mb-4 border-b border-gray-200 pb-3 text-[1.65rem] font-semibold tracking-tight text-navy">Travel Kits</h3>
-                  <p className="text-[26px] leading-[3.2rem] text-foreground/80">
+                  <p className="text-[26px] leading-[3.2rem] text-foreground/90">
                     Our Travel Medicine program prepares you for international travel with personalized health planning, destination-specific vaccinations, prescription medications, and a curated travel health kit.
                   </p>
                   <div className="mt-auto pt-6 flex items-center gap-2 text-sm font-semibold text-gold">
@@ -192,13 +192,13 @@ function ServicesPage() {
                 </div>
                 <div className="flex flex-col border border-gray-300 bg-white p-8 shadow-sm">
                   <h3 className="mb-4 border-b border-gray-200 pb-3 text-[1.65rem] font-semibold tracking-tight text-navy">On-Demand Nursing</h3>
-                  <p className="text-[26px] leading-[3.2rem] text-foreground/80">
+                  <p className="text-[26px] leading-[3.2rem] text-foreground/90">
                     When additional support is needed, we can help arrange concierge private duty nursing through Luminate Wellness &amp; Recovery. We coordinate setup for flexible day, night, and live-in shifts for short-term recovery or ongoing care, including medication administration, wound care, vital sign monitoring, IV vitamin and hydration therapy, and physician coordination. Discreet home visits and hotel-based care are also available.
                   </p>
                 </div>
                 <div className="flex flex-col border border-gray-300 bg-white p-8 shadow-sm">
                   <h3 className="mb-4 border-b border-gray-200 pb-3 text-[1.65rem] font-semibold tracking-tight text-navy">Partnerships</h3>
-                  <p className="text-[26px] leading-[3.2rem] text-foreground/80">
+                  <p className="text-[26px] leading-[3.2rem] text-foreground/90">
                     We can help connect patients with trusted specialists, allied health professionals, and other supportive care partners as needed.
                   </p>
                 </div>
@@ -209,7 +209,7 @@ function ServicesPage() {
                 <div className="mt-6 border border-gold/35 bg-[linear-gradient(135deg,rgba(184,142,63,0.06),rgba(255,255,255,0.95))] px-8 py-7 shadow-sm">
                   <div className="flex flex-col items-center gap-4 text-center">
                     <p className="text-sm font-semibold uppercase tracking-[0.18em] text-gold">Planning a Trip?</p>
-                    <p className="text-[26px] leading-[3.2rem] text-foreground/80 max-w-2xl">
+                    <p className="text-[26px] leading-[3.2rem] text-foreground/90 max-w-2xl">
                       If you are a current patient preparing for a trip, please complete the form around three weeks in advance. Prospective patients interested in a travel kit are also welcome to reach out.
                     </p>
                     <a
