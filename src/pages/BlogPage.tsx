@@ -154,7 +154,7 @@ function BlogPage() {
                 </div>
                 {expandedPostTitle === featuredPost.title && (
                   <div className="border-t border-navy/10 bg-white px-7 py-8 md:px-9">
-                    <div className="mx-auto max-w-4xl space-y-4 bg-white px-2 text-[15px] leading-8 text-foreground/85 md:px-4 md:text-[16px]">
+                    <div className="mx-auto max-w-4xl space-y-4 bg-white px-2 text-[24px] leading-[3rem] text-foreground/85 md:px-4 md:text-[25px]">
                       {featuredPost.content.map((line, index) => (
                         normalizeLine(line).startsWith('•') ? (
                           <div key={index} className="flex items-start gap-3">

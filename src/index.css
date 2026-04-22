@@ -78,22 +78,22 @@ html {
   main input,
   main textarea,
   main select {
-    font-size: 1.125rem !important;
+    font-size: 1.4rem !important;
     line-height: 1.85 !important;
   }
 
   footer p,
   footer li,
   footer a {
-    font-size: 1.0625rem !important;
-    line-height: 1.7 !important;
+    font-size: 1.25rem !important;
+    line-height: 1.75 !important;
   }
 
   /* Slightly boost the smallest text styles without touching headers. */
   main .text-xs,
   main .text-sm {
-    font-size: 1.0625rem !important;
-    line-height: 1.7 !important;
+    font-size: 1.25rem !important;
+    line-height: 1.75 !important;
   }
 
   button,

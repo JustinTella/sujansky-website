@@ -11,10 +11,10 @@ function ServiceCard({ title, items }: { title: string; items: ReactNode[] }) {
       transition={{ duration: 0.4 }}
     >
       <h3 className="mb-4 border-b border-gray-200 pb-3 text-xl font-bold text-navy">{title}</h3>
-      <ul className="space-y-4 text-[16px] text-foreground/95">
+      <ul className="space-y-4 text-[26px] text-foreground/95">
         {items.map((item, index) => (
           item === '__SUBHEAD_AS_WELL_AS__' ? (
-            <li key={index} className="pl-5 pt-1 text-[16px] font-bold text-foreground/95">
+            <li key={index} className="pl-5 pt-1 text-[24px] font-bold text-foreground/95">
               As well as:
             </li>
           ) : (

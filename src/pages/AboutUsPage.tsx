@@ -224,7 +224,7 @@ function AboutUsPage() {
               <div className="mb-6">
                 <h3 className="text-2xl font-bold tracking-tight text-navy">Who Are Our Patients</h3>
                 <div className="mt-3 h-1 w-16 bg-gold" />
-                <p className="mt-4 text-[15px] leading-7 text-foreground/75">
+                <p className="mt-4 text-[21px] leading-9 text-foreground/75">
                   Click the filter that best reflects you and hear from current patients with similar lifestyles and needs.
                 </p>
               </div>
@@ -250,7 +250,7 @@ function AboutUsPage() {
                         : 'border-gray-200 bg-light-gray hover:border-navy/30 hover:bg-white'
                     }`}
                   >
-                    <p className="text-[15px] leading-relaxed text-foreground/80">{item.label}</p>
+                    <p className="text-[21px] leading-relaxed text-foreground/80">{item.label}</p>
                   </button>
                 ))}
               </div>

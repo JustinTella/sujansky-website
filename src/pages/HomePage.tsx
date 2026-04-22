@@ -99,9 +99,9 @@ function HomePage() {
                   { title: 'Proactive Care', desc: 'Focus on prevention, wellness, and long-term health optimization.', accent: 'border-t-steely-blue' },
                   { title: 'Coordination', desc: 'Seamless specialist referrals and hospital care management.', accent: 'border-t-gold' }
                 ].map((card, i) => (
-                  <div key={i} className={`flex min-h-[8.7rem] flex-col border border-navy/70 border-t-[3px] bg-white p-4 md:min-h-[9.1rem] md:p-4.5 ${i >= 2 ? 'translate-y-4 md:translate-y-5' : ''} ${card.accent}`}>
+                  <div key={i} className={`flex flex-col border border-navy/70 border-t-[3px] bg-white p-4 md:p-4.5 ${i >= 2 ? 'translate-y-4 md:translate-y-5' : ''} ${card.accent}`}>
                     <h3 className="mb-2.5 text-[1.18rem] font-semibold leading-tight text-navy md:text-[1.28rem]">{card.title}</h3>
-                    <p className="text-[0.95rem] leading-6 text-foreground/70">{card.desc}</p>
+                    <p className="text-[1.2rem] leading-8 text-foreground/70">{card.desc}</p>
                   </div>
                 ))}
               </motion.div>

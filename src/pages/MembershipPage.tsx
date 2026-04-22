@@ -44,7 +44,7 @@ function MembershipPage() {
       title: 'Included Services',
       content: (
         <div className="mx-auto max-w-2xl text-left">
-          <p className="mb-4 text-center text-[18px] leading-8 text-foreground">
+          <p className="mb-4 text-center text-[27px] leading-[3.4rem] text-foreground">
             Our annual executive physical does all of the following:
           </p>
           <ul className="list-disc space-y-2.5 pl-5">
@@ -211,7 +211,7 @@ function MembershipPage() {
                     <h2 className="text-2xl md:text-3xl font-bold text-navy mb-6 text-balance tracking-tight">
                       {slides[currentSlide].title}
                     </h2>
-                    <div className="text-[18px] leading-9 text-foreground">{slides[currentSlide].content}</div>
+                    <div className="text-[27px] leading-[3.4rem] text-foreground">{slides[currentSlide].content}</div>
                   </motion.div>
                 </AnimatePresence>
               </div>
@@ -250,7 +250,7 @@ function MembershipPage() {
                   Begin Your Membership Conversation
                 </h2>
                 <div className="mx-auto mb-5 h-1 w-36 bg-gold" />
-                <p className="mx-auto max-w-2xl text-[21px] leading-10 text-foreground/88">
+                <p className="mx-auto max-w-2xl text-[27px] leading-[3.4rem] text-foreground/88">
                   Please call <span className="font-semibold text-navy">(650) 393-5851</span> if you have
                   questions or would like to schedule an initial appointment.
                 </p>
@@ -372,7 +372,7 @@ function MembershipPage() {
                         transition={{ duration: 0.22 }}
                       >
                         <div className="border-t border-gray-200 px-5 py-4 md:px-6">
-                          <p className="text-[18px] leading-9 text-foreground/80">{item.answer}</p>
+                          <p className="text-[27px] leading-[3.4rem] text-foreground/80">{item.answer}</p>
                         </div>
                       </motion.div>
                     )}

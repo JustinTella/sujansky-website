@@ -55,14 +55,14 @@ function TeamPage() {
               <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}>
                 <div className="mb-8">
                   <h4 className="text-lg font-bold text-navy mb-3 uppercase tracking-wide">Experience</h4>
-                  <ul className="space-y-3 text-[18px] text-foreground/90 leading-9">
+                  <ul className="space-y-3 text-[22px] text-foreground/90 leading-10">
                     <li className="flex items-start gap-2"><span className="text-gold mt-0.5">•</span> In practice in San Mateo for over 25 years</li>
                     <li className="flex items-start gap-2"><span className="text-gold mt-0.5">•</span> Chair of Department of Medicine at Peninsula Hospital (2015-2019)</li>
                   </ul>
                 </div>
                 <div className="mb-8">
                   <h4 className="text-lg font-bold text-navy mb-3 uppercase tracking-wide">Education</h4>
-                  <ul className="space-y-3 text-[18px] text-foreground/90 leading-9">
+                  <ul className="space-y-3 text-[22px] text-foreground/90 leading-10">
                     <li className="flex items-start gap-2"><span className="text-gold mt-0.5">•</span> Completed undergrad at Harvard graduating summa cum laude</li>
                     <li className="flex items-start gap-2"><span className="text-gold mt-0.5">•</span> Graduated from Stanford School of Medicine</li>
                     <li className="flex items-start gap-2"><span className="text-gold mt-0.5">•</span> Completed internal medicine residency at Stanford</li>
@@ -70,7 +70,7 @@ function TeamPage() {
                 </div>
                 <div>
                   <h4 className="text-lg font-bold text-navy mb-3 uppercase tracking-wide">Professional Associations</h4>
-                  <ul className="space-y-3 text-[18px] text-foreground/90 leading-9">
+                  <ul className="space-y-3 text-[22px] text-foreground/90 leading-10">
                     <li className="flex items-start gap-2"><span className="text-gold mt-0.5">•</span> American College of Physicians</li>
                     <li className="flex items-start gap-2"><span className="text-gold mt-0.5">•</span> San Mateo County Medical Association</li>
                     <li className="flex items-start gap-2"><span className="text-gold mt-0.5">•</span> California Medical Association</li>
@@ -84,22 +84,22 @@ function TeamPage() {
               <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.6, delay: 0.08, ease: [0.16, 1, 0.3, 1] }} className="space-y-8">
                 <div className="bg-white p-6 shadow-sm border border-gray-300 border-t-4 border-t-gold">
                   <h4 className="text-lg font-bold text-navy mb-3 uppercase tracking-wide border-b border-gray-200 pb-2">Certifications</h4>
-                  <p className="mt-3 text-[18px] text-foreground/90 leading-9">
+                  <p className="mt-3 text-[22px] text-foreground/90 leading-10">
                     Board Certified by the American Board of Internal Medicine in 1997, recertified in 2017.
                   </p>
-                  <p className="mt-3 text-[18px] text-foreground/90 leading-9">
+                  <p className="mt-3 text-[22px] text-foreground/90 leading-10">
                     Elected as a Fellow of the American College of Physicians in 2019.
                   </p>
                 </div>
                 <div className="bg-white p-6 shadow-sm border border-gray-300 border-t-4 border-t-steely-blue">
                   <h4 className="text-lg font-bold text-navy mb-3 uppercase tracking-wide border-b border-gray-200 pb-2">Family Life</h4>
-                  <p className="mt-3 text-[18px] text-foreground/90 leading-9">
+                  <p className="mt-3 text-[22px] text-foreground/90 leading-10">
                     Dr. Sujansky is married and has two sons and will be glad to talk about them anytime, anywhere. She loves to spend her free time with skiing (and apres-skiing!), hiking, knitting, and reading. She enjoys traveling to exotic places. At home, she looks forward to sharing good meal of pasta carbonara with friends and family.
                   </p>
                 </div>
                 <div className="bg-white p-6 shadow-sm border border-gray-300 border-t-4 border-t-gold">
                   <h4 className="text-lg font-bold text-navy mb-3 uppercase tracking-wide border-b border-gray-200 pb-2">Why I Practice</h4>
-                  <p className="mt-3 text-[18px] text-foreground/90 leading-9">
+                  <p className="mt-3 text-[22px] text-foreground/90 leading-10">
                     "I've wanted to be a doctor since I was a small child and I still love my job. I feel privileged to be able to spend more time with my patients so that I can care about them, not just care for them. I try to combine this time-honored doctor-patient relationships with modern medical advances."
                   </p>
                 </div>
@@ -131,7 +131,7 @@ function TeamPage() {
               <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.6, delay: 0.08, ease: [0.16, 1, 0.3, 1] }}>
                 <div className="bg-white p-6 shadow-sm border border-gray-300 border-t-4 border-t-steely-blue">
                   <h4 className="text-lg font-bold text-navy mb-3 uppercase tracking-wide border-b border-gray-200 pb-2">About Shawna</h4>
-                  <p className="mt-3 text-[18px] text-foreground/90 leading-9">
+                  <p className="mt-3 text-[22px] text-foreground/90 leading-10">
                     Shawna was born and raised in the Bay Area. A self-described soccer mom and baseball mom, she spends much of her free time with her three children. She cheers on the Giants and 49ers. Shawna is the Office Manager and has been with the practice since 2004.
                   </p>
                 </div>
@@ -163,7 +163,7 @@ function TeamPage() {
               <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.6, delay: 0.08, ease: [0.16, 1, 0.3, 1] }}>
                 <div className="bg-white p-6 shadow-sm border border-gray-300 border-t-4 border-t-gold">
                   <h4 className="text-lg font-bold text-navy mb-3 uppercase tracking-wide border-b border-gray-200 pb-2">About Kim</h4>
-                  <p className="mt-3 text-[18px] text-foreground/90 leading-9">
+                  <p className="mt-3 text-[22px] text-foreground/90 leading-10">
                     Kim is a Bay Area native who spends her free time hiking and enjoying time at the beach. She loves to travel and hopes to do more of this in the future. Kim is the Medical Assistant and has been with the practice since 2021.
                   </p>
                 </div>

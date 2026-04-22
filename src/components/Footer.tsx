@@ -19,7 +19,7 @@ function Footer() {
             <p className="mb-3 border-b border-gold/50 pb-2 text-xs font-semibold uppercase tracking-[0.2em] text-navy">
               Our Office
             </p>
-            <div className="space-y-3 text-[15px] leading-6.5 text-navy/80">
+            <div className="space-y-3 text-[20px] leading-6.5 text-navy/80">
               <p className="flex items-start gap-3">
                 <MapPin className="mt-1 h-4 w-4 shrink-0 text-gold" />
                 <span>
@@ -54,7 +54,7 @@ function Footer() {
                 <Link
                   key={to}
                   to={to}
-                  className="inline-flex items-center gap-3 text-[15px] text-navy/78 transition-colors duration-200 hover:text-gold"
+                  className="inline-flex items-center gap-3 text-[20px] text-navy/78 transition-colors duration-200 hover:text-gold"
                 >
                   <Icon className="h-4 w-4 text-gold" />
                   {label}
@@ -72,7 +72,7 @@ function Footer() {
                 href="https://www.google.com/maps/place/Ulrike+Sujansky,+MD/@37.568004,-122.3289013,796m/data=!3m1!1e3!4m8!3m7!1s0x808f9e76eab22fc9:0x16272bd44374ea91!8m2!3d37.568004!4d-122.326321!9m1!1b1!16s%2Fg%2F11bv33mb38?entry=ttu&g_ep=EgoyMDI2MDMyNC4wIKXMDSoASAFQAw%3D%3D"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 text-[15px] text-navy/78 transition-colors duration-200 hover:text-gold"
+                className="inline-flex items-center gap-3 text-[20px] text-navy/78 transition-colors duration-200 hover:text-gold"
               >
                 <Star className="h-4 w-4 text-gold" />
                 Google Reviews
@@ -82,7 +82,7 @@ function Footer() {
                 href="https://www.yelp.com/biz/ulrike-sujansky-md-san-mateo?osq=Ulrike+Sujansky+MD"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 text-[15px] text-navy/78 transition-colors duration-200 hover:text-gold"
+                className="inline-flex items-center gap-3 text-[20px] text-navy/78 transition-colors duration-200 hover:text-gold"
               >
                 <Star className="h-4 w-4 text-gold" />
                 Yelp Reviews
