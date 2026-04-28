@@ -18,7 +18,7 @@ function TeamPage() {
         </section>
 
         {/* DR. SUJANSKY */}
-        <section className="pb-16">
+        <section id="ulrike" className="pb-16 scroll-mt-28">
           <div className="mb-12 border-y border-navy/10 bg-white">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="grid grid-cols-1 items-center lg:grid-cols-2">
@@ -109,7 +109,7 @@ function TeamPage() {
         </section>
 
         {/* SHAWNA G. */}
-        <section className="border-t border-navy/15 py-14">
+        <section id="shawna" className="border-t border-navy/15 py-14 scroll-mt-28">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 gap-8 lg:grid-cols-[200px_1fr] lg:gap-14 items-start">
               <motion.div
@@ -141,7 +141,7 @@ function TeamPage() {
         </section>
 
         {/* KIM J. */}
-        <section className="border-t border-navy/15 py-14 pb-20">
+        <section id="kim" className="border-t border-navy/15 py-14 pb-20 scroll-mt-28">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 gap-8 lg:grid-cols-[200px_1fr] lg:gap-14 items-start">
               <motion.div

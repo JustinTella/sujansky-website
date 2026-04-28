@@ -13,9 +13,9 @@ import kimPortrait from '@/assets/Kim (1).webp';
 
 function HomePage() {
   const teamMembers = [
-    { name: 'Dr. Ulrike Sujansky', image: drPortrait, role: 'Physician' },
-    { name: 'Shawna G.', image: shawnaPortrait, role: 'Office Manager' },
-    { name: 'Kim J.', image: kimPortrait, role: 'Medical Assistant' }
+    { name: 'Dr. Ulrike Sujansky', image: drPortrait, role: 'Physician', link: '/team#ulrike' },
+    { name: 'Shawna G.', image: shawnaPortrait, role: 'Office Manager', link: '/team#shawna' },
+    { name: 'Kim J.', image: kimPortrait, role: 'Medical Assistant', link: '/team#kim' }
   ];
 
   return (
@@ -134,9 +134,11 @@ function HomePage() {
                   transition={{ duration: 0.6, delay: index * 0.08, ease: [0.16, 1, 0.3, 1] }}
                   className="group border border-navy/12 bg-white/80 p-4 shadow-[0_12px_30px_rgba(15,23,42,0.05)]"
                 >
-                  <div className="mb-5 overflow-hidden border border-navy/15">
-                    <img src={member.image} alt={`${member.name}, ${member.role}`} className="h-72 w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.02]" />
-                  </div>
+                  <Link to={member.link} className="block">
+                    <div className="mb-5 overflow-hidden border border-navy/15">
+                      <img src={member.image} alt={`${member.name}, ${member.role}`} className="h-72 w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.02]" />
+                    </div>
+                  </Link>
                   <div className="border-t border-gold/40 pt-4 text-center">
                     <p className="text-lg font-semibold text-navy">{member.name}</p>
                     <p className="mt-1 text-lg tracking-[0.08em] text-steely-blue">{member.role}</p>
