@@ -5,7 +5,8 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ContactForm from '@/components/ContactForm';
 import MapEmbed from '@/components/MapEmbed';
-import officeImage from '@/assets/Gemini_Generated_Image_l6jcc5l6jcc5l6jc.png';
+import officeImage from '@/assets/hero-consultation.webp';
+import contactOfficeImage from '@/assets/Gemini_Generated_Image_l6jcc5l6jcc5l6jc.png';
 import drPortrait from '@/assets/Rika+in+brown+blouse (1).webp';
 import shawnaPortrait from '@/assets/image-asset (4).webp';
 import kimPortrait from '@/assets/Kim (1).webp';
@@ -26,11 +27,11 @@ function HomePage() {
           <div className="absolute inset-0 z-0">
             <img
               src={officeImage}
-              alt="Office at 34 North San Mateo Drive"
-              className="h-full w-full scale-[1.08] object-cover object-left"
+              alt="Dr. Ulrike Sujansky speaking with a patient"
+              className="h-full w-full scale-[1.08] object-cover object-[center_46%]"
             />
-            <div className="absolute inset-0 bg-[linear-gradient(110deg,rgba(16,30,52,0.56)_0%,rgba(16,30,52,0.38)_30%,rgba(16,30,52,0.12)_56%,rgba(16,30,52,0.02)_100%)]" />
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(214,171,83,0.14),transparent_35%),radial-gradient(circle_at_bottom_left,rgba(255,255,255,0.06),transparent_30%)]" />
+            <div className="absolute inset-0 bg-[linear-gradient(110deg,rgba(93,72,24,0.26)_0%,rgba(126,98,35,0.18)_30%,rgba(255,227,158,0.14)_58%,rgba(255,248,222,0.04)_100%)]" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(245,216,128,0.26),transparent_36%),radial-gradient(circle_at_bottom_left,rgba(255,244,209,0.18),transparent_30%)]" />
           </div>
           <div className="relative z-10 mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
             <motion.div
@@ -39,7 +40,7 @@ function HomePage() {
               transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
               className="relative max-w-3xl"
             >
-              <div className="pointer-events-none absolute -inset-x-6 -inset-y-8 bg-[radial-gradient(circle_at_left_center,rgba(16,30,52,0.5)_0%,rgba(16,30,52,0.34)_38%,rgba(16,30,52,0.14)_62%,transparent_82%)] blur-xl md:-inset-x-10 md:-inset-y-10" />
+              <div className="pointer-events-none absolute -inset-x-8 -inset-y-10 bg-[radial-gradient(circle_at_left_center,rgba(16,30,52,0.68)_0%,rgba(16,30,52,0.5)_34%,rgba(16,30,52,0.26)_60%,transparent_84%)] blur-2xl md:-inset-x-12 md:-inset-y-12" />
               <div className="mt-5 px-1 md:px-2">
                 <p className="hero-text mb-2 text-2xl font-semibold uppercase tracking-[0.18em] text-[#f1d06f] drop-shadow-[0_2px_10px_rgba(15,23,42,0.6)] md:text-3xl">
                   Partnering in Your Health
@@ -170,9 +171,18 @@ function HomePage() {
                 whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-                className="h-[400px] overflow-hidden border border-navy/70"
+                className="space-y-6"
               >
-                <MapEmbed />
+                <div className="h-[400px] overflow-hidden border border-navy/70">
+                  <MapEmbed />
+                </div>
+                <div className="overflow-hidden border border-navy/70 bg-white">
+                  <img
+                    src={contactOfficeImage}
+                    alt="Exterior of the Sujansky medical office"
+                    className="h-64 w-full object-cover object-center"
+                  />
+                </div>
               </motion.div>
 
               <motion.div
