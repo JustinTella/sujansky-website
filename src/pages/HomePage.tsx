@@ -5,7 +5,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ContactForm from '@/components/ContactForm';
 import MapEmbed from '@/components/MapEmbed';
-import officeImage from '@/assets/hero-consultation.webp';
+import officeImage from '@/assets/hero-consultation-v3.png';
 import contactOfficeImage from '@/assets/Gemini_Generated_Image_l6jcc5l6jcc5l6jc.png';
 import drPortrait from '@/assets/Rika+in+brown+blouse (1).webp';
 import shawnaPortrait from '@/assets/image-asset (4).webp';
