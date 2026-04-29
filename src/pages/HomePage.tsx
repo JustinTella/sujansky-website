@@ -5,7 +5,8 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ContactForm from '@/components/ContactForm';
 import MapEmbed from '@/components/MapEmbed';
-import officeImage from '@/assets/hero-consultation-v3.png';
+import officeImageDesktop from '@/assets/hero-desktop-mobilehdaodas.png';
+import officeImageMobile from '@/assets/hero-mobile-0d007873.png';
 import contactOfficeImage from '@/assets/Gemini_Generated_Image_l6jcc5l6jcc5l6jc.png';
 import drPortrait from '@/assets/Rika+in+brown+blouse (1).webp';
 import shawnaPortrait from '@/assets/image-asset (4).webp';
@@ -25,11 +26,14 @@ function HomePage() {
         {/* HERO - office building background */}
         <section className="relative flex min-h-[88vh] items-end overflow-hidden pb-12 pt-28 md:pb-20 md:pt-32">
           <div className="absolute inset-0 z-0">
-            <img
-              src={officeImage}
-              alt="Dr. Ulrike Sujansky speaking with a patient"
-              className="h-full w-full scale-[1.08] object-cover object-[center_46%]"
-            />
+            <picture>
+              <source media="(max-width: 767px)" srcSet={officeImageMobile} />
+              <img
+                src={officeImageDesktop}
+                alt="Dr. Ulrike Sujansky speaking with a patient"
+                className="h-full w-full scale-[1.16] object-cover object-[58%_36%] md:scale-[1.22] md:object-[78%_42%]"
+              />
+            </picture>
             <div className="absolute inset-0 bg-[linear-gradient(110deg,rgba(93,72,24,0.26)_0%,rgba(126,98,35,0.18)_30%,rgba(255,227,158,0.14)_58%,rgba(255,248,222,0.04)_100%)]" />
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(245,216,128,0.26),transparent_36%),radial-gradient(circle_at_bottom_left,rgba(255,244,209,0.18),transparent_30%)]" />
           </div>
