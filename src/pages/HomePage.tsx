@@ -31,7 +31,7 @@ function HomePage() {
               <img
                 src={officeImageDesktop}
                 alt="Dr. Ulrike Sujansky speaking with a patient"
-                className="h-full w-full scale-[1.22] object-cover object-[74%_34%] md:scale-[1.22] md:object-[78%_42%]"
+                className="h-full w-full scale-[1.18] object-cover object-[30%_34%] md:scale-[1.22] md:object-[78%_42%]"
               />
             </picture>
             <div className="absolute inset-0 bg-[linear-gradient(110deg,rgba(93,72,24,0.26)_0%,rgba(126,98,35,0.18)_30%,rgba(255,227,158,0.14)_58%,rgba(255,248,222,0.04)_100%)]" />
