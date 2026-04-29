@@ -132,7 +132,7 @@ function TeamPage() {
                 <div className="bg-white p-6 shadow-sm border border-gray-300 border-t-4 border-t-steely-blue">
                   <h4 className="text-2xl font-bold text-navy mb-3 uppercase tracking-wide border-b border-gray-200 pb-2">About Shawna</h4>
                   <p className="mt-3 text-[26px] text-foreground/90 leading-[3.2rem]">
-                    Shawna was born and raised in the Bay Area. A self-described soccer mom and baseball mom, she spends much of her free time with her three children. She cheers on the Giants and 49ers. Shawna is the Office Manager and has been with the practice since 2004.
+                    Shawna was born and raised in the Bay Area. She is a sports mom who loves nothing more than spending time with her kids and cheering on their teams. Also, as a Bay Area local, she's a fan of all the teams whose homes are here. Shawna is the Office Manager and has been with the practice since 2004.
                   </p>
                 </div>
               </motion.div>
@@ -156,7 +156,7 @@ function TeamPage() {
                 </div>
                 <div className="text-center lg:text-left">
                   <p className="text-xl font-semibold text-navy">Kim J.</p>
-                  <p className="mt-1 text-sm font-medium uppercase tracking-wider text-gold whitespace-nowrap">Medical Assistant</p>
+                  <p className="mt-1 text-sm font-medium uppercase tracking-wider text-gold">Medical Assistant</p>
                 </div>
               </motion.div>
 
