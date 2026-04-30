@@ -83,9 +83,9 @@ function HomePage() {
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
               >
-                <h2 className="mb-6 text-2xl font-bold leading-snug tracking-tight text-navy md:text-3xl">What is Concierge Medicine?</h2>
-                <p className="mb-4 text-[26px] leading-[2rem] text-foreground/90">Concierge medicine represents a return to the traditional doctor-patient relationship, where your physician has the time to truly know you and your health needs. Through an annual membership, you gain direct access to Dr. Sujansky, same-day or next-day appointments, and comprehensive care that goes beyond the constraints of traditional insurance-based medicine.</p>
-                <p className="mb-8 text-[26px] leading-[2rem] text-foreground/90">This model allows for longer appointments, proactive health planning, and a genuine partnership in maintaining your wellbeing.</p>
+                <h2 className="mb-6 text-[1.75rem] font-bold leading-snug tracking-tight text-navy md:text-[2rem]">What is Concierge Medicine?</h2>
+                <p className="mb-4 text-[1.45rem] leading-[1.85] text-foreground/90">Concierge medicine represents a return to the traditional doctor-patient relationship, where your physician has the time to truly know you and your health needs. Through an annual membership, you gain direct access to Dr. Sujansky, same-day or next-day appointments, and comprehensive care that goes beyond the constraints of traditional insurance-based medicine.</p>
+                <p className="mb-8 text-[1.45rem] leading-[1.85] text-foreground/90">This model allows for longer appointments, proactive health planning, and a genuine partnership in maintaining your wellbeing.</p>
                 <Link to="/services" className="inline-flex items-center text-sm font-semibold uppercase tracking-wider text-gold transition-colors hover:text-navy">
                   View Our Services <ArrowRight className="ml-1.5 h-4 w-4" />
                 </Link>
@@ -105,8 +105,8 @@ function HomePage() {
                   { title: 'Coordination', desc: 'Seamless specialist referrals and hospital care management.', accent: 'border-t-gold' }
                 ].map((card, i) => (
                   <div key={i} className={`flex flex-col border border-navy/70 border-t-[3px] bg-white p-4 md:p-4.5 ${i >= 2 ? 'translate-y-4 md:translate-y-5' : ''} ${card.accent}`}>
-                    <h3 className="mb-2.5 text-[1.18rem] font-semibold leading-tight text-navy md:text-[1.28rem]">{card.title}</h3>
-                    <p className="text-[1.3rem] leading-8 text-foreground/85">{card.desc}</p>
+                    <h3 className="mb-2.5 text-[1.32rem] font-semibold leading-tight text-navy">{card.title}</h3>
+                    <p className="text-[1.1rem] leading-6 text-foreground/85">{card.desc}</p>
                   </div>
                 ))}
               </motion.div>
@@ -125,7 +125,7 @@ function HomePage() {
               className="mb-14 text-center"
             >
               <p className="mb-3 text-sm font-medium uppercase tracking-[0.18em] text-gold">Our Practice</p>
-              <h3 className="text-2xl font-bold tracking-tight text-navy md:text-3xl">Meet Our Team</h3>
+              <h3 className="text-[1.75rem] font-bold tracking-tight text-navy md:text-[2rem]">Meet Our Team</h3>
               <div className="mx-auto mt-4 h-px w-24 bg-gradient-to-r from-transparent via-gold to-transparent" />
             </motion.div>
             <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
@@ -144,8 +144,8 @@ function HomePage() {
                     </div>
                   </Link>
                   <div className="border-t border-gold/40 pt-4 text-center">
-                    <p className="text-lg font-semibold text-navy">{member.name}</p>
-                    <p className="mt-1 text-lg tracking-[0.08em] text-steely-blue">{member.role}</p>
+                    <p className="text-[1.2rem] font-semibold text-navy">{member.name}</p>
+                    <p className="mt-1 text-[1rem] tracking-[0.08em] text-steely-blue">{member.role}</p>
                   </div>
                 </motion.div>
               ))}
@@ -168,7 +168,7 @@ function HomePage() {
               transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
               className="mb-14 text-center"
             >
-              <h2 className="text-2xl font-bold tracking-tight text-navy md:text-3xl">Get in Touch</h2>
+              <h2 className="text-[1.75rem] font-bold tracking-tight text-navy md:text-[2rem]">Get in Touch</h2>
               <p className="mt-2 text-sm text-foreground/60">We look forward to partnering in your health.</p>
             </motion.div>
             <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
@@ -198,7 +198,7 @@ function HomePage() {
                 transition={{ duration: 0.6, delay: 0.08, ease: [0.16, 1, 0.3, 1] }}
                 className="border border-navy/70 bg-light-gray p-6"
               >
-                <h3 className="mb-5 border-b border-gray-200 pb-3 text-lg font-semibold text-navy">Send a Message</h3>
+                <h3 className="mb-5 border-b border-gray-200 pb-3 text-[1.45rem] font-semibold text-navy">Send a Message</h3>
                 <ContactForm />
               </motion.div>
 

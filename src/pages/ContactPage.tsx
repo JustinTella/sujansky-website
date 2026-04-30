@@ -31,14 +31,14 @@ function ContactPage() {
 
             <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.2 }} className="lg:col-span-1">
               <div className="h-full border border-navy/70 bg-light-gray p-6 md:p-8 shadow-sm">
-                <h2 className="mb-5 border-b border-gray-200 pb-3 text-lg font-semibold text-navy">Send a Message</h2>
+                <h2 className="mb-5 border-b border-gray-200 pb-3 text-[2rem] font-semibold text-navy">Send a Message</h2>
                 <ContactForm />
               </div>
             </motion.div>
 
             <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.3 }} className="space-y-6 lg:col-span-1">
               <div className="border border-navy/70 bg-white p-6 shadow-sm">
-                <h3 className="mb-4 flex items-center gap-2 border-b border-gray-100 pb-3 font-semibold text-navy"><MapPin className="h-4 w-4 text-gold" /> Contact Information</h3>
+                <h3 className="mb-4 flex items-center gap-2 border-b border-gray-100 pb-3 text-[2rem] font-semibold text-navy"><MapPin className="h-4 w-4 text-gold" /> Contact Information</h3>
                 <p className="mb-4 text-sm leading-relaxed text-foreground/80">34 North San Mateo Drive<br />Suite 1<br />San Mateo, CA 94401</p>
                 <div className="space-y-2">
                   <p className="flex items-center gap-2 text-sm text-foreground/80"><Phone className="h-3.5 w-3.5 text-steely-blue" /><span className="font-medium text-navy">Phone:</span> (650) 393-5851</p>
@@ -46,7 +46,7 @@ function ContactPage() {
                 </div>
               </div>
               <div className="border border-navy/70 bg-white p-6 shadow-sm">
-                <h3 className="mb-4 flex items-center gap-2 border-b border-gray-100 pb-3 font-semibold text-navy"><Clock className="h-4 w-4 text-gold" /> Office Hours</h3>
+                <h3 className="mb-4 flex items-center gap-2 border-b border-gray-100 pb-3 text-[2rem] font-semibold text-navy"><Clock className="h-4 w-4 text-gold" /> Office Hours</h3>
                 <div className="space-y-2.5 text-sm text-foreground/80">
                   <div className="flex justify-between"><span className="font-medium text-navy">Mon - Fri</span><span>9:00am - 5:00pm</span></div>
                   <div className="flex justify-between"><span className="font-medium text-navy">Sat - Sun</span><span className="text-foreground/50">Closed</span></div>

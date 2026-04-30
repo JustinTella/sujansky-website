@@ -52,7 +52,7 @@ function TestimonialsPage() {
 
           <motion.div initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="bg-white p-8 md:p-10 shadow-sm border border-gray-300">
             <div className="text-center mb-10">
-              <h2 className="text-2xl md:text-3xl font-bold text-navy mb-4 tracking-tight">Find More Reviews On</h2>
+              <h2 className="text-[1.6rem] font-bold text-navy mb-4 tracking-tight">Find More Reviews On</h2>
               <div className="w-12 h-1 bg-gold mx-auto" />
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">

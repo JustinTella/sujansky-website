@@ -269,7 +269,7 @@ function AboutUsPage() {
               </div>
               <div className="mx-auto flex max-w-4xl flex-col gap-8">
                 <div className="flex flex-col items-center text-center p-6 bg-white border border-gray-300">
-                  <div className="mb-2 text-[1.45rem] font-semibold tracking-tight" aria-label="Google">
+                  <div className="mb-2 text-[1.6rem] font-semibold tracking-tight" aria-label="Google">
                     <span style={{ color: '#4285F4' }}>G</span>
                     <span style={{ color: '#EA4335' }}>o</span>
                     <span style={{ color: '#FBBC05' }}>o</span>

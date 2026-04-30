@@ -208,7 +208,7 @@ function MembershipPage() {
                     exit={{ opacity: 0, y: -5 }}
                     transition={{ duration: 0.2 }}
                   >
-                    <h2 className="text-2xl md:text-3xl font-bold text-navy mb-6 text-balance tracking-tight">
+                    <h2 className="text-[2.4rem] md:text-[2.8rem] font-bold text-navy mb-6 text-balance tracking-tight">
                       {slides[currentSlide].title}
                     </h2>
                     <div className="text-[27px] leading-[3.4rem] text-foreground">{slides[currentSlide].content}</div>
@@ -246,7 +246,7 @@ function MembershipPage() {
           >
             <div className="relative z-10">
               <div className="text-center mb-10">
-                <h2 className="text-2xl md:text-3xl font-bold text-navy mb-3 text-balance tracking-tight">
+                <h2 className="text-[2.4rem] md:text-[2.8rem] font-bold text-navy mb-3 text-balance tracking-tight">
                   Begin Your Membership Conversation
                 </h2>
                 <div className="mx-auto mb-5 h-1 w-36 bg-gold" />
@@ -260,7 +260,7 @@ function MembershipPage() {
                 <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-gold">
                   Alternatively
                 </p>
-                <h3 className="mt-2 text-xl md:text-2xl font-semibold tracking-tight text-navy">
+                <h3 className="mt-2 text-xl font-semibold tracking-tight text-navy md:text-2xl">
                   Fill Out the Form Below
                 </h3>
               </div>
@@ -345,7 +345,7 @@ function MembershipPage() {
             className="mb-16 bg-white shadow-sm border border-gray-300 p-6 md:p-10"
           >
             <div className="mb-8 text-center">
-              <h2 className="text-2xl md:text-3xl font-bold text-navy tracking-tight">Frequently Asked Questions</h2>
+              <h2 className="text-[2.4rem] md:text-[2.8rem] font-bold text-navy tracking-tight">Frequently Asked Questions</h2>
               <div className="mx-auto mt-3 h-1 w-16 bg-gold" />
             </div>
             <div className="space-y-4">
@@ -356,7 +356,7 @@ function MembershipPage() {
                     onClick={() => setOpenFaqIndex((current) => (current === index ? null : index))}
                     className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left md:px-6"
                   >
-                    <h3 className="text-lg md:text-xl font-semibold text-navy">{item.question}</h3>
+                    <h3 className="text-[1.25rem] font-semibold text-navy">{item.question}</h3>
                     <ChevronDown
                       className={`h-5 w-5 shrink-0 text-navy transition-transform duration-200 ${
                         openFaqIndex === index ? 'rotate-180' : ''

@@ -71,29 +71,28 @@ html {
     @apply bg-background text-foreground;
   }
 
-  /* Increase body copy readability for older audiences. */
+  /* Body copy readability — accessible for older audiences */
   main p:not(.hero-text),
   main li,
   main label,
   main input,
   main textarea,
   main select {
-    font-size: 1.6rem !important;
-    line-height: 1.85 !important;
+    font-size: 1.3rem;
+    line-height: 1.85;
+  }
+
+  main .text-xs,
+  main .text-sm {
+    font-size: 1.075rem;
+    line-height: 1.7;
   }
 
   footer p,
   footer li,
   footer a {
-    font-size: 1.25rem !important;
-    line-height: 1.75 !important;
-  }
-
-  /* Slightly boost the smallest text styles without touching headers. */
-  main .text-xs,
-  main .text-sm {
-    font-size: 1.25rem !important;
-    line-height: 1.75 !important;
+    font-size: 1.05rem;
+    line-height: 1.7;
   }
 
   button,
