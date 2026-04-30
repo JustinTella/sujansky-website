@@ -5,8 +5,8 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ContactForm from '@/components/ContactForm';
 import MapEmbed from '@/components/MapEmbed';
-import officeImageDesktop from '@/assets/hero-desktop-mobilehdaodas.png';
-import officeImageMobile from '@/assets/hero-mobile-0d007873.png';
+import officeImageDesktop from '@/assets/hero-desktop-apr30-website.png';
+import officeImageMobile from '@/assets/hero-mobile-apr30-2026.png';
 import contactOfficeImage from '@/assets/Gemini_Generated_Image_l6jcc5l6jcc5l6jc.png';
 import drPortrait from '@/assets/Rika+in+brown+blouse (1).webp';
 import shawnaPortrait from '@/assets/image-asset (4).webp';
@@ -31,7 +31,7 @@ function HomePage() {
               <img
                 src={officeImageDesktop}
                 alt="Dr. Ulrike Sujansky speaking with a patient"
-                className="h-full w-full scale-[1.18] object-cover object-[30%_34%] md:scale-[1.22] md:object-[78%_42%]"
+                className="h-full w-full scale-[1.18] object-cover object-[35%_34%] md:scale-[1.2] md:object-[64%_40%]"
               />
             </picture>
             <div className="absolute inset-0 bg-[linear-gradient(110deg,rgba(93,72,24,0.26)_0%,rgba(126,98,35,0.18)_30%,rgba(255,227,158,0.14)_58%,rgba(255,248,222,0.04)_100%)]" />
