@@ -7,12 +7,12 @@ import PageSectionHeader from '@/components/PageSectionHeader';
 
 function TestimonialsPage() {
   const placeholderTestimonials = [
-    { quote: 'The level of care and attention I receive is unmatched. Dr. Sujansky takes the time to really understand my health concerns.', name: 'Michael Chen', profession: 'Software Engineer', yearJoined: '2018' },
-    { quote: 'Having direct access to my doctor has been life-changing. No more waiting weeks for appointments or feeling rushed during visits.', name: 'Patricia Martinez', profession: 'Retired Teacher', yearJoined: '2015' },
-    { quote: 'The preventative care approach has helped me stay healthy and catch potential issues early. Worth every penny.', name: 'David Thompson', profession: 'Business Owner', yearJoined: '2019' },
-    { quote: 'Dr. Sujansky coordinated my care seamlessly when I needed specialist consultations. She truly advocates for her patients.', name: 'Jennifer Lee', profession: 'Marketing Director', yearJoined: '2017' },
-    { quote: 'The travel medicine program prepared me perfectly for my trip to Southeast Asia. I felt confident and protected.', name: 'Robert Anderson', profession: 'Consultant', yearJoined: '2020' },
-    { quote: 'As an athlete, the wellness program with advanced diagnostics helps me optimize my performance and recovery.', name: 'Sarah Kim', profession: 'Professional Athlete', yearJoined: '2021' }
+    { quote: 'The level of care and attention I receive is unmatched. Dr. Sujansky takes the time to really understand my health concerns.', name: 'Michael C.', profession: 'Software Engineer', yearJoined: '2018' },
+    { quote: 'Having direct access to my doctor has been life-changing. No more waiting weeks for appointments or feeling rushed during visits.', name: 'Patricia M.', profession: 'Retired Teacher', yearJoined: '2015' },
+    { quote: 'The preventative care approach has helped me stay healthy and catch potential issues early. Worth every penny.', name: 'David T.', profession: 'Business Owner', yearJoined: '2019' },
+    { quote: 'Dr. Sujansky coordinated my care seamlessly when I needed specialist consultations. She truly advocates for her patients.', name: 'Jennifer L.', profession: 'Marketing Director', yearJoined: '2017' },
+    { quote: 'The travel medicine program prepared me perfectly for my trip to Southeast Asia. I felt confident and protected.', name: 'Robert A.', profession: 'Consultant', yearJoined: '2020' },
+    { quote: 'As an athlete, the wellness program with advanced diagnostics helps me optimize my performance and recovery.', name: 'Sarah K.', profession: 'Professional Athlete', yearJoined: '2021' }
   ];
 
   return (
